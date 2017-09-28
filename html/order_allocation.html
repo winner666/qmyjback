@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>Basic Table</title>
+
+    <link href="../css/style1.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+    <script src="../js/jquery-1.8.0.min.js"></script>
+    <script src="../js/url.js"></script>
+    <script src="../js/order_allocation.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <!--<script src="js/html5shiv.js"></script>-->
+    <!--<script src="js/respond.min.js"></script>-->
+
+
+    <![endif]-->
+</head>
+
+<body class="sticky-header" onload="load()">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="../img/logo1.png" alt=""></a>
+        </div>
+
+        <div class="logo-icon text-center">
+            <a href="index.html"><img src="../img/logo_icon.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="../img/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">John Doe</a></h4>
+                        <span>"Hello There..."</span>
+                    </div>
+                </div>
+
+                <h5 class="left-nav-title">Account Information</h5>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>广告管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="blank_page.html"> app banner管理</a></li>
+                        <li><a href="boxed_view.html"> 关于我们</a></li>
+                        <li><a href="user_fw.html"> 青木易家用户服务协议</a></li>
+                        <li><a href="userUseText.html"> 用户使用说明</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span> 新手技能培训</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="general.html"> 公司奖惩制度</a></li>
+                        <li><a href="buttons.html"> 礼貌服务要求</a></li>
+                        <li><a href="tabs-accordions.html"> 施工流程方法</a></li>
+                        <li><a href="exam.html"> 新手考试题目</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span> 用户管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="userlist.html"> 用户列表</a></li>
+                        <li><a href="blacklist.html"> 黑名单</a></li>
+                    </ul>
+                </li>
+
+               <!-- <li><a href="orderlist.html"><i class="fa fa-bullhorn"></i> <span> 订单管理</span></a></li>-->
+               <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>订单管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="orderlist.html"> 订单列表</a></li>
+                        <li><a href="backlist.html"> 退单列表</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-list"><a href=""><i class="fa fa-envelope"></i> <span> 设备耗材</span></a>
+                    <ul class="sub-menu-list">
+                       <li><a href="new_supplies.html"> 耗材列表</a></li>
+                        <li><a href="consumable_order.html"> 耗材订单</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="drug_quota.html"><i class="fa fa-tasks"></i> <span> 药剂配额管理</span></a>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-bar-chart-o"></i> <span> 财务管理</span></a>
+                    <ul style="display: block;" class="sub-menu-list">
+                        <li><a style="color:#65CEA7;" href="order_allocation.html"> 订单额分配</a></li>
+                        <li><a href="cash_management.html"> 提现管理</a></li>
+                        <li><a href="bank_statement.html">流水</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href="#"><i class="fa fa-th-list"></i> <span> 消息管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="message_list.html"> 消息列表</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+            <!--search start-->
+            <form class="searchform" action="http://view.jqueryfuns.com/2014/4/10/7_df25ceea231ba5f44f0fc060c943cdae/index.html" method="post">
+                <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+            </form>
+            <!--search end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="../img/photos/user-avatar.png" alt="" />
+                            John Doe
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                           <li><a href="modifyPass.html"><i class="fa fa-cog"></i>修改密码</a></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out"></i> 退出</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            订单额分配
+                        </header>
+                        <div class="panel-body">
+                            <table id="tab" class="table  table-hover general-table">
+                                <thead>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td class="col-xs-1" style="color:#333;">施工人员比例 </td>
+                                    <input type="hidden" value="00" id="input1">
+                                    <td style="padding-left: 40px">
+                                        <div style="color:#333;display:inline-block;width:60px;;" id="percent"></div>
+                                        <button style="color: #a4a4a4;"  id="editor1" onclick="doit(divs1);">编辑</button>
+                                    </td>
+                                    <td>
+                                        <button style="color: #a4a4a4;"   onclick="savePercent();">保存</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-1" style="color:#333;">微信端下单单价 </td>
+                                    <input type="hidden" value="01" id="input01">
+                                    <td style="padding-left: 40px">
+                                        <div style="color:#333;display:inline-block;width:60px;;" id="percent01"></div>
+                                        <button style="color: #a4a4a4;"  id="editor01" onclick="doit(H5DJ);">编辑</button>
+                                    </td>
+                                    <td>
+                                        <button style="color: #a4a4a4;"   onclick="savePercent01();">保存</button>
+                                    </td>
+
+                                </tr>
+<!--                                <tr>
+                                    <td style="color:#333;">代理商比例 </td>
+                                    <td style="padding-left: 40px">
+                                        <div  style="color:#333;display:inline-block;width:60px;;">10%</div>
+                                        <button style="color: #a4a4a4;" id="editor2" onclick="doit(divs2);">编辑</button>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td style="color:#333;">推荐人 </td>
+                                    <td style="padding-left: 40px">
+                                        <div style="color:#333;display:inline-block;width:60px;;"  onBlur="javascript:blur(divs3);">10%</div>
+                                        <button style="color: #a4a4a4;" id="editor3"  onclick="doit(divs3);">编辑</button>
+                                    </td>
+                                </tr>-->
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            2014 &copy; AdminEx by ThemeBucket
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<!--<script src="../js/jquery-migrate-1.2.1.min.js"></script>-->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+
+<!--common scripts for all pages-->
+<script src="../js/scripts.js"></script>
+<!--可编辑文本的JS-->
+<script>
+    var $edit_text1=$('#editor1');
+    var divs1 = $edit_text1.prev("div")[0];
+
+    var $edit_text2=$('#editor2');
+    var divs2 = $edit_text2.prev("div")[0];
+
+    var $edit_text3=$('#editor3');
+    var divs3 = $edit_text3.prev("div")[0];
+
+    var $edit_text01=$('#editor01');
+    var H5DJ = $edit_text01.prev("div")[0];
+    /*点击编辑可以修改  的方法*/
+    function doit(dom){
+        /* console.log($edit_text1);
+         console.log(divs1);*/
+        dom.contentEditable=true;
+    };
+    /*点击编辑可以修改  的方法 end*/
+
+    /*失去焦点的时候不可以修改*/
+    $(divs1).blur(function(){
+        divs1.contentEditable=false;
+    });
+    $(divs2).blur(function(){
+        divs2.contentEditable=false;
+    });
+    $(divs3).blur(function(){
+        divs3.contentEditable=false;
+    });
+    /*失去焦点的时候不可以修改 end*/
+</script>
+<!--可编辑文本的JS  end-->
+</body>
+</html>

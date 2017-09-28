@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="ThemeBucket">
+		<link rel="shortcut icon" href="#" type="image/png">
+
+		<title>Blank Page</title>
+		<style>
+			#add-btn {
+				padding: 5px 20px;
+				margin-left: 10px;
+				border-radius: 5px;
+				border: 1px solid #eee;
+			}
+			.look,.remove{
+				cursor: pointer;
+			}
+		</style>
+		<link href="../css/style1.css" rel="stylesheet">
+		<link href="../css/style-responsive.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+
+  <script src="../js/jquery-1.4.3.js"></script>
+  <![endif]-->
+	</head>
+
+	<body class="sticky-header">
+
+		<section>
+			<!-- left side start-->
+			<div class="left-side sticky-left-side">
+
+				<!--logo and iconic logo start-->
+				<div class="logo">
+					<a href="index.html"><img src="../img/logo1.png" alt=""></a>
+				</div>
+
+				<div class="logo-icon text-center">
+					<a href="index.html"><img src="../img/logo_icon.png" alt=""></a>
+				</div>
+				<!--logo and iconic logo end-->
+
+				<div class="left-side-inner">
+
+					<!-- visible to small devices only -->
+					<div class="visible-xs hidden-sm hidden-md hidden-lg">
+						<div class="media logged-user">
+							<img alt="" src="../img/photos/user-avatar.png" class="media-object">
+							<div class="media-body">
+								<h4><a href="#">John Doe</a></h4>
+								<span>"Hello There..."</span>
+							</div>
+						</div>
+
+						<h5 class="left-nav-title">Account Information</h5>
+						<ul class="nav nav-pills nav-stacked custom-nav">
+							<li>
+								<a href="#"><i class="fa fa-user"></i> <span>Profile</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a>
+							</li>
+						</ul>
+					</div>
+
+					<!--sidebar nav start-->
+					<ul class="nav nav-pills nav-stacked custom-nav">
+						<li>
+							<a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-laptop"></i> <span>广告管理</span></a>
+							<ul style="display: block;" class="sub-menu-list">
+								<li>
+									<a style="color:#65CEA7;" href="blank_page.html"> app banner管理</a>
+								</li>
+								<li>
+									<a href="boxed_view.html"> 关于我们</a>
+								</li>
+								<li>
+									<a href="user_fw.html"> 青木易家用户服务协议</a>
+								</li>
+								<li>
+									<a href="userUseText.html"> 用户使用说明</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-book"></i> <span> 新手技能培训</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="general.html"> 公司奖惩制度</a>
+								</li>
+								<li>
+									<a href="buttons.html"> 礼貌服务要求</a>
+								</li>
+								<li>
+									<a href="tabs-accordions.html"> 施工流程方法</a>
+								</li>
+								<li>
+									<a href="exam.html"> 新手考试题目</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-cogs"></i> <span> 用户管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="userlist.html"> 用户列表</a>
+								</li>
+								<li>
+									<a href="blacklist.html"> 黑名单</a>
+								</li>
+							</ul>
+						</li>
+
+						<!--<li><a href="orderlist.html"><i class="fa fa-bullhorn"></i> <span> 订单管理</span></a></li>-->
+						<li class="menu-list">
+							<a href=""><i class="fa fa-cogs"></i> <span>订单管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="orderlist.html"> 订单列表</a>
+								</li>
+								<li>
+									<a href="backlist.html"> 退单列表</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="menu-list">
+							<a href=""><i class="fa fa-envelope"></i> <span> 设备耗材</span></a>
+							<ul class="sub-menu-list">
+								<li><a href="new_supplies.html"> 耗材列表</a></li>
+								<li>
+									<a href="consumable_order.html"> 耗材订单</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="drug_quota.html"><i class="fa fa-tasks"></i> <span> 药剂配额管理</span></a>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-bar-chart-o"></i> <span> 财务管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="order_allocation.html"> 订单额分配</a>
+								</li>
+								<li>
+									<a href="cash_management.html"> 提现管理</a>
+								</li>
+								<li>
+									<a href="bank_statement.html">流水</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href="#"><i class="fa fa-th-list"></i> <span> 消息管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="message_list.html"> 消息列表</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--sidebar nav end-->
+
+				</div>
+			</div>
+			<!-- left side end-->
+
+			<!-- main content start-->
+			<div class="main-content">
+
+				<!-- header section start-->
+				<div class="header-section">
+
+					<!--toggle button start-->
+					<a class="toggle-btn"><i class="fa fa-bars"></i></a>
+					<!--toggle button end-->
+
+					<!--search start-->
+					<form class="searchform" action="http://view.jqueryfuns.com/2014/4/10/7_df25ceea231ba5f44f0fc060c943cdae/index.html" method="post">
+						<input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+					</form>
+					<!--search end-->
+
+					<!--notification menu start -->
+
+					<!--notification menu end -->
+
+				</div>
+
+				<!-- header section end-->
+				<!-- page heading start-->
+				<!-- page heading end-->
+
+				<!--body wrapper start-->
+				<div class="row" style="margin-top:50px;">
+					<div class="col-sm-12">
+						<section class="panel">
+							<header class="panel-heading">
+								<span style="font-size:18px;"> 图片列表</span>
+								<!-- 按钮触发模态框 -->
+
+								<!-- 按钮触发模态框 end-->
+								<!-- 模态框（Modal） -->
+								<div class="am-form-group am-form-file" id="adImg">
+									<div class="tpl-form-file-img">
+										<img src="" alt="" id="adShow">
+									</div>
+									<!--<button type="button" class="am-btn am-btn-danger am-btn-sm">
+		                                    <i class="am-icon-cloud-upload"></i> </button>-->
+									<input id="AddPicture" type="file" multiple="">
+								</div>
+
+							</header>
+							<div class="panel-body">
+								<table class="table  table-hover general-table">
+									<thead>
+										<tr>
+											<th>顺序</th>
+											<th class="hidden-phone">图片</th>
+											<th>路径</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody class="bannerList">
+										<!--<tr>
+                                    <td class="hidden-phone">6 </td>
+                                    <td>
+                                        <u onclick="javascript:doit();">点击查看</u>
+                                    </td>
+                                    <div class="modal fade" id="view_picture" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <img src="../img/1.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <td>images/1.jpg  </td>
+                                    <td>
+                                        <u>删除</u>
+                                    </td>
+                                </tr>-->
+
+									</tbody>
+								</table>
+								<div STYLE="display: block;" onclick="hiddenImg()">
+									<img src="" id="imageId" />
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				<!--body wrapper end-->
+
+				<!--footer section start-->
+				<footer class="sticky-footer">
+					2014 &copy; AdminEx by ThemeBucket
+				</footer>
+				<!--footer section end-->
+
+			</div>
+			<!-- main content end-->
+		</section>
+
+		<!--添加试题的模态框 end-->
+	</body>
+
+</html>
+
+		<script src="../js/url.js"></script>
+		<!-- Placed js at the end of the document so the pages load faster -->
+		<script src="../js/jquery-1.10.2.min.js"></script>
+		<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/modernizr.min.js"></script>
+		<script src="../js/jquery.nicescroll.js"></script>
+		<script src="../js/moxie.js"></script>'
+		<script src="../js/plupload.dev.js"></script>
+		<script src="../js/qiniu.js">
+		<script></script>
+
+		
+		<script type="text/javascript">
+	
+
+	
+$(document).ready(function () {
+
+    getTokenMessage();
+});
+/*获取七牛上传tocken方法
+   * 在该ajax回调方法中,调用上传控件初始化方法*/
+function getTokenMessage() {
+
+    $.ajax({
+      // url: 'http://192.168.0.169:8072/main/upToken',
+       url:dataUrl+'/AdvPicController/upToken.do', 
+
+        type: 'POST',
+        data: {},
+        cache: false,
+        contentType: false,    //不可缺
+        processData: false,    //不可缺
+        dataType: 'json',
+        success: function (data) {
+            var obj = data;
+            console.log(data);
+            /*初始化方法, param1:请求tocken|param2上传控件ID*/
+            uploaderReady(obj.upToken, 'AddPicture');
+
+        }
+    });
+}
+//document.getElementById('AddPicture').on('click',function(){
+//	uploader.start();
+//})
+/*上传图片*/
+function uploaderReady(token, divId) {
+    //alert(2)
+    var uploader = Qiniu.uploader({
+        runtimes: 'html5,flash,html4',
+        browse_button: divId,//上传按钮的ID
+        container: adImg,//上传按钮的上级元素ID
+        drop_element: 'btn-uploader',
+        max_file_size: '100mb',//最大文件限制
+        dragdrop: false,
+        chunk_size: '4mb',//分块大小
+        //Ajax请求upToken的Url，**强烈建议设置**（服务端提供）
+        uptoken: token,
+        // 默认 false，key为文件名。若开启该选项，SDK会为每个文件自动生成key（文件名）
+        // save_key: true,
+        // 默认 false。若在服务端生成uptoken的上传策略中指定了 `sava_key`，则开启，SDK在前端将不对key进行任何处理
+        //main: 'http://ojantumyo.bkt.clouddn.com/',//自己的七牛云存储空间域名
+        //domain: 'http://osytnx67q.bkt.clouddn.com/',
+        	domain: 'http://osytqedas.bkt.clouddn.com/',
+        multi_selection: false,//是否允许同时选择多文件
+        //文件类型过滤，这里限制为图片类型
+        filters: {
+            mime_types: [
+                {title: "Image files", extensions: "jpg,jpeg,gif,png"}
+            ]
+        },
+        auto_start: true,
+        unique_names: true,
+        init: {
+            'FilesAdded': function (up, files) {
+                //do something
+            },
+            'BeforeUpload': function (up, file) {
+                //do something
+            },
+            'UploadProgress': function (up, file) {
+                //可以在这里控制上传进度的显示
+                //可参考七牛的例子
+            },
+            'UploadComplete': function () {
+                //do something
+            },
+            'FileUploaded': function (up, file, info) {
+                //每个文件上传成功后,处理相关的事情
+                //console.log(up)
+                //alert(3)
+                var domain = up.getOption('domain');
+                var res = eval('(' + info + ')');
+                var sourceLink = domain + res.key; //**获取上传文件的链接地址**
+                console.log(sourceLink);
+								upImg(sourceLink)
+               // $('#adShow').attr('src', sourceLink);
+
+            },
+            'Error': function (up, err, errTip) {
+                //alert(errTip);
+            },
+            'Key': function (up, file) {
+                //当save_key和unique_names设为false时，该方法将被调用
+                return "";
+            }
+        }
+    });
+    uploader.start();
+}
+	
+	
+	
+//图片上传
+function upImg(imgsrc){
+
+		$.ajax({
+            type: "POST",
+            url: dataUrl+'/AdvPicController/insertBanner.do',
+            data:{
+            	"picUrl":imgsrc
+            },
+            dataType: "json",
+            success: function(data){
+            	if(data.code==0000){
+           			alert('上传成功') 
+           			list()
+            }else{
+            	alert('上传失败')
+            }
+       }
+})
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+   
+    	list()
+    	function list(){
+        $.ajax({
+            type: "GET",
+            url: dataUrl+'/AdvPicController/queryBanner.do',
+            data:{},
+            dataType: "json",
+            success: function(data){
+            	console.log(data)
+                var crmHtmlz2 = '';
+                var imgList=data.obj;
+                var html='';
+                for(var i=0;i<imgList.length;i++){
+                		html+='<tr><td>'+imgList[i].picCode+'</td><td class="look" url="'+imgList[i].picUrl+'">查看</td><td>'+imgList[i].picUrl+'</td><td id="' +imgList[i].picCode + '" class="remove">删除</a></td></tr>'
+                }
+
+                $('.bannerList').html(html);
+								  //查看
+								  $('.look').on('click',function(){
+								  	 var src=$(this).attr('url');
+								  	 console.log(src)
+								  	 window.location.href=src
+								  })
+								  //删除
+								  $('.remove').on('click',function(){
+								  	var id=$(this).attr('id');
+								  	console.log(id);
+								  	$.ajax({
+												url: dataUrl + "/AdvPicController/deleteBanner.do",
+												data: "picCode=" +id,
+												type: "post",
+												success: function(data) {
+													if(data == "9999")
+														alert("删除失败！");
+													else {
+														confirm("删除成功");
+														list()
+													}
+												}
+											});
+								  })
+								  
+            }
+        })
+        }
+  
+		
+			function hiddenImg() {
+				$("#imageId").css("display", "none");
+			}
+		</script>
+		<!--显示图片-->
+		<script type="text/javascript">
+			//显示图片信息
+			
+		</script>
+
+
+		<script type="text/javascript">
+			//删除试题信息
+		
+		</script>
+		<!--common scripts for all pages-->
+		<script src="../js/scripts.js"></script>
+		<!--添加试题的模态框-->
+		<script>
+			function doitAdd() {
+				$(function() {
+					$('#myModal').modal({
+						keyboard: true
+					})
+				});
+			}
+		</script>
+		<!--添加试题的模态框 end-->
+
+		<!--添加试题的模态框-->
+		<script>
+			function doit() {
+				$(function() {
+					$('#view_picture').modal({
+						keyboard: true
+					})
+				});
+			}
+		</script>

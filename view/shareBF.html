@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>分享</title>
+		<link rel="stylesheet" href="../css/share.css" />
+		<link rel="stylesheet" href="../css/jquery.datetimepicker.css" />
+		<link rel="stylesheet" href="../css/mui.picker.css" />
+		<link rel="stylesheet" href="../css/mui.poppicker.css" />
+		<script type="text/javascript" src="../js/weixin-1.2.0.js" ></script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box_logo">
+				<img src="../img/logo.png" />
+			</div>
+			<div class="box_mian">
+				<div class="box_input">
+					<input type="text" id="pos" placeholder="上海市-闵行区"/>
+					<img class="pos_img" id="pos_img" src="../img/right.png" />
+				</div>
+				<div class="box_input_1">
+					<input type="text" id="pos_xq" placeholder="详细地址" />
+				</div>
+				<div class="box_input_2">
+					<input type="text" id="name" placeholder="请输入姓名" />
+				</div>
+				<div class="box_input_3">
+					<input type="number" id="tel" placeholder="请输入电话" />
+				</div>
+				<div class="box_input_4">
+					<input type="text" id="time" placeholder="请输入预约时间" />
+					<img class="time_img" id="time_img" src="../img/right.png" />
+				</div>
+				<div class="box_input_5">
+					<input type="text" id="mianji" placeholder="房屋面积" />
+					<p class="yuan"><del style="color: #DD524D; font-size: 12px;">30元/㎡</del>&nbsp;&nbsp;25元/㎡</p>
+				</div>
+				<div class="box_input_6">
+					<input type="text" id="price" placeholder="房屋面积自动生成价格" />
+				</div>
+				<div class="box_input_7">
+					<input type="text" id="Zd_tel" placeholder="指定电话" />
+				</div>
+				<p class="share">注:分享成功后有优惠</p>
+				<div class="Zd_user" id="zd_use">
+					指定人
+				</div>
+			</div>
+			<button class="btn" id="btn">在线下单</button>
+		</div>
+		<script type="text/javascript" src="../mui/js/mui.js"></script>
+		<script type="text/javascript" src="../mui/js/mui.picker.js"></script>
+		<script type="text/javascript" src="../mui/js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="../mui/js/city.data.js"></script>
+		<script type="text/javascript" src="../mui/js/city.data-3.js"></script>
+		<script type="text/javascript" src="../mui/js/jquery-1.8.3.js"></script>
+		<script type="text/javascript" src="../js/jquery.datetimepicker.full.js"></script>
+		<script>
+			$(function(){
+				//获取openid
+				var openid = JSON.parse(localStorage.getItem("openid"));
+				var nickname = JSON.parse(localStorage.getItem("nickname"));
+				var headimgurl = JSON.parse(localStorage.getItem("headimgurl"));
+				//三级联动
+				var cityPicker3 = new mui.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = document.getElementById('pos_img');
+					var cityResult3 = document.getElementById('pos');
+					pos.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							cityResult3.value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+						});
+					}, false);
+				//时间控件
+					$.datetimepicker.setLocale('en');
+					$('#time').datetimepicker({
+						dayOfWeekStart: 1,
+						lang: 'en'
+					});
+					$('#time').datetimepicker({ value: '2017-05-15 05:03', step: 10 });
+					$("#zd_use").click(function(){
+							Getdate();
+					})
+					$('#btn').click(function(){
+						Getorder();
+					})
+					var price=document.getElementById("price");
+					var mianji=document.getElementById("mianji");
+					price.onclick=function(){
+							price.value=(parseInt(mianji.value)*(25));
+						}
+					});
+					//指定接单人接单
+					function getuser(){
+						var pos = $("#pos").val();
+						var pos_xq = $("#pos_xq").val();
+						var positions = pos + pos_xq;
+						var name = $("#name").val();
+						var tel = $("#tel").val();
+						var time = $("#time").val();
+						var s =time+'00';
+							s = s.replace(/-/g,"");
+							s=s.replace(/ /g,"");
+							s=s.replace(/:/g,"");
+						var mianji = $("#mianji").val();
+						var price = $("#price").val();
+						var Zd_tel = $("#Zd_tel").val();
+						var openid=JSON.parse(localStorage.getItem("openid"));
+						var _openid=JSON.parse(openid);
+						console.log(Zd_tel);
+						var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+						if(pos==""||pos==null){
+							pos.value="";
+						}if(pos_xq=""||pos_xq==null){
+							pos_xq.value="完善地址";
+						}if(name==""||name==null){
+							name.value=="请输入姓名"
+						}if(!myreg.test(tel)){
+							tel.value="";
+						}else{
+							$.ajax({
+							type: "POST",
+							url: hua+"OrderInfoController/addOrder.do",
+							async: true,
+							data: {
+								name: name,
+								telephone: tel,
+								areaQuantity: mianji,
+								totalPrice: price,
+								appointmentTime: s,//时间
+								constructionAddress: positions,
+								orderType:"00",
+								account:Zd_tel,
+								openId:_openid
+							},
+							dataType: "JSON",
+							jsonp: "jsonpCallback",
+							success: function(data) {
+									console.log(data);
+									var orderNo=JSON.stringify(data.orderInfo.orderNo);
+									var moblNo=JSON.parse(data.userMobilNo);
+									var orderCrtDateTime=JSON.parse(data.orderInfo.orderCrtDateTime);
+									var order=JSON.parse(orderNo);
+									console.log(order);
+									console.log(moblNo);
+									
+									localStorage.setItem("orderCrtDateTime", JSON.parse(orderCrtDateTime));
+									localStorage.setItem("order", JSON.stringify(order));
+									localStorage.setItem("moblNo", JSON.stringify(moblNo));
+									ZhiFu(order,moblNo);
+							},
+							error: function() {
+								//window.location.href = "fail.html"
+								console.log("网络错误");
+							}
+						});
+					}
+						
+				}
+					//在线下单
+					function Getorder(){
+						var pos = $("#pos").val();
+						var pos_xq = $("#pos_xq").val();
+						var positions = pos + pos_xq;
+						var name = $("#name").val();
+						var tel = $("#tel").val();
+						var time = $("#time").val();
+						var s =time+'00';
+							s = s.replace(/-/g,"");
+							s=s.replace(/ /g,"");
+							s=s.replace(/:/g,"");
+		//				var reg = /-| |:/g;
+		//				var str=time.replace(reg,'');
+						console.log(s);
+						var mianji = $("#mianji").val();
+						var price = $("#price").val();
+						//存值
+						localStorage.setItem("name", JSON.stringify(name));
+						console.log(name+"我的天啦");
+						localStorage.setItem("tel", JSON.stringify(tel));
+						localStorage.setItem("time", JSON.stringify(time));
+						localStorage.setItem("mianji", JSON.stringify(mianji));
+						localStorage.setItem("price", JSON.stringify(price));
+						localStorage.setItem("positions", JSON.stringify(positions));
+						var openid=JSON.parse(localStorage.getItem("openid"))
+						var _openid=JSON.parse(openid);
+						var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+						if(pos_xq == null || pos_xq == "" && name == null || name == "" && tel == null || tel == "" && mianji == null || mianji == "") {
+							alert("信息不完整");
+						} else if(!myreg.test(tel)) {
+							alert("电话号码不合法");
+							return;
+						} else {
+							$.ajax({
+								type: "POST",
+								url:hua+"OrderInfoController/addOrder.do",
+								async: true,
+								data: {
+									name: name,
+									telephone: tel,
+									areaQuantity: mianji,
+									totalPrice: price,
+									appointmentTime: s,//时间
+									constructionAddress: positions,
+									orderType:"00",
+									openId:_openid
+								},
+								dataType: "JSON",
+								success: function(data) {
+									console.log(data+"在线下单");
+		//							var resr=JSON.stringify(data.object.reserveConstructDateTime);
+		//							console.log(resr+"jdjd");
+									console.log(data.orderInfo);
+									var orderNo=JSON.stringify(data.orderInfo.orderNo);
+									console.log(orderNo+"编号");
+									var order=JSON.parse(orderNo);
+									console.log(order);
+									localStorage.setItem("order", JSON.stringify(order));
+									ZhiFu(order);
+								},
+								error: function() {
+									window.location.href = "fail.html"
+									console.log("网络错误");
+								}
+							});
+						}
+			}
+				//调后台支付接口
+				function ZhiFu(order,moblNo){
+				//用户的唯一标识_openid
+				var openid=JSON.parse(localStorage.getItem("openid"));
+				var _openid=JSON.parse(openid);
+					$.ajax({
+						type: "post",
+						url: hua+"buyRecordController/findapily.do",
+						dataType: "json",
+						data:{
+							orderNo:order,
+							channel:"wx_pub",
+							userType:"00",
+							openId:_openid
+						},
+						success: function(dt) {
+							console.log(JSON.stringify(dt));
+							var charge=JSON.stringify(dt.charge);
+							var orderN=JSON.stringify(dt.orderNo);
+							var Number=JSON.parse(orderN);
+							var txnS=JSON.stringify(dt.txnSsn);
+							var txnSsn=JSON.parse(txnS);
+							console.log(Number);
+							console.log(txnSsn);
+	//						var resr=JSON.stringify(dt.Object.reserveConstructDateTime);
+							//创建ping++支付
+							Ping(charge,Number,txnSsn,moblNo);
+						},
+
+						//window.location.href = "success_order.html";
+						error: function() {
+							console.log("网络错误");
+							}
+						});
+					}
+					//ping++
+					function Ping(charge,Number,txnSsn,moblNo){
+					console.log(charge+"我了个我");
+					pingpp.createPayment(charge, function(res, err){
+					console.log(res+"你是什么数据类型");
+					console.log(err);
+					    	//后台成功的回调函数
+					    	$.ajax({
+					    		type:"post",
+					    		url:hua+"buyRecordController/callBack.do",
+					    		async:true,
+					    		dataType: "json",
+								data:{
+									txnSsn:txnSsn,//订单流水号
+									orderNo:Number,//订单号
+									txnFinalStat:res,//通道最终状态
+									moblNo:moblNo,//手机号
+									userTp:"00",//用户类型
+								},
+								success:function(data){
+									   if (res == "success") {
+									   //console.log(result);
+									   window.location.href="success_order.html";
+			
+								    } else if (res == "fail") {
+									    	location.href = "fail.html";
+								        // charge 不正确或者微信公众账号支付失败时会在此处返回
+								    } else if (res == "cancel") {
+									    	window.location.href = "fail.html";
+								        // 微信公众账号支付取消支付
+								    }
+								},
+								error:function(){
+									console.log("网络出错");
+								}
+					    	});
+//					 
+					    });
+					}
+					
+			
+		</script>
+	</body>
+</html>

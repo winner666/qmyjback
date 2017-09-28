@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>公司奖惩制度</title>
+    <style>
+    	html,body,*{
+    		margin: 0px;
+    		padding: 0px;
+    		font-family: "微软雅黑";
+    	}
+    	.Thlog_box{
+    		/*width: 100%;*/
+    		height: auto;
+    		padding: 20px;
+    		margin: auto;
+    	}
+    	.Thlog_box>p{
+    		font-size: 0.8rem;
+    		line-height: 25px;
+    		margin-bottom: 20px;
+    		color: #0000;
+    	}
+    </style>
+	<script src="../js/jquery-1.10.2.min.js"></script>
+	<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+	<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/url.js"></script>
+	<script src="../js/modernizr.min.js"></script>
+	<script src="../js/jquery.nicescroll.js"></script>
+</head>
+<body bgcolor="#eeeeee">
+	<div class="Thlog_box" id="zhengyue">
+
+	</div>
+	<script type="text/javascript">
+        $(function(){
+            $.ajax({
+                type: "GET",
+                url:dataUrl+'/CommponyInfoController/queryCommponyInfo.do',
+                data:{"priKey":"00"},
+                dataType: "json",
+                success: function(data){
+                    $.each(data,function(i,item){
+                        $('#zhengyue').html(item.rewardSystem);
+                    });
+
+                }
+            });
+        });
+	</script>
+	<!--<p>
+		第一条 总则：为严明纪律，奖惩分明，调动员工工作积极性，提高工作效率和经济效率；本着公平竞争，公正管理的原则，进一步贯彻公司各
+	</p>
+	<p>
+		第二条 总则：为严明纪律，奖惩分明，调动员工工作积极性，提高工作效率和经济效率；本着公平竞争，公正管理的原则，进一步贯彻公司各
+	</p>
+	<p>
+		第三条 总则：为严明纪律，奖惩分明，调动员工工作积极性，提高工作效率和经济效率；
+	</p>
+	<p>
+		第四条 总则：为严明纪律，奖惩分明
+	</p>
+	<p>
+		1.为严明纪律，奖惩分明，调动员工工作积极性，
+	</p>
+	<p>
+		2.为严明纪律，奖惩分明，调动员工工作积极性，
+	</p>
+	<p>
+		第五条 总则：为严明纪律，奖惩分明如下：
+	</p>
+	<p>
+		1.员工推荐，本人自荐或者部门推荐
+	</p>
+	<p>
+		2.办公室，本部门审核
+	</p>
+	<p>
+		3.办公室会议
+	</p>
+	<p>
+		4.总经理批准
+	</p>-->
+</body>
+</html>

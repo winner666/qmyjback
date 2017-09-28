@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 设置log4j2的自身log级别为warn -->
+<!-- OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<configuration status="WARN" monitorInterval="30">
+    <properties>
+        <!-- 1. 生产日志配置 -->
+        <!-- 日志目录 -->
+        <property name="LOG_HOME">/home/qmyjback/logs/qmyjback</property>
+        <!-- 日志(完整)文件名 -->
+        <property name="PRO_FILE_NAME">qmyjback.log</property>
+        <!-- 生产日志级别 debug/info-->
+        <property name="PRO_LEVEL">debug</property>
+        <!-- 2. 运维日志(error日志) -->
+        <!-- 运维日志文件名 -->
+        <property name="PRO_ERROR_FILE_NAME">qmyjback_error.log</property>
+        <!-- 2. 日志分包备份配置 -->
+        <!-- 日志备份目录 -->
+        <property name="BACKUP_HOME">${LOG_HOME}/backups/qmyjback</property>
+        <!-- 单个备份文件大小 -->
+        <property name="BACKUP_FILE_SIZE">10 MB</property>
+        <!-- 备份文件最大个数 -->
+        <property name="BACKUP_FILE_MAX">100</property>
+        <!-- 3. 开发模式日志配置 (生产环境必须关闭) -->
+        <!-- 文件名称 -->
+        <!--<property name="DEV_FILE_NAME">qmyjback_dev.log</property>-->
+    </properties>
+
+    <appenders>
+        <!-- 控制台输出 -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+            <ThresholdFilter level="${PRO_LEVEL}" onMatch="ACCEPT" onMismatch="DENY" />
+        </Console>
+
+        <!-- 开发调试 -->
+        <File name="develop" fileName="${LOG_HOME}/${DEV_FILE_NAME}" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+            <ThresholdFilter level="${PRO_LEVEL}" onMatch="ACCEPT" onMismatch="DENY" />
+        </File>
+
+
+
+    </appenders>
+
+    <loggers>
+        <logger name="org.springframework" level="info" additivity="false">
+            <appender-ref ref="console" />
+            <appender-ref ref="develop" />	<!-- 仅用于本地开发 生产环境必须关闭 -->
+        </logger>
+        <logger name="org.apache.commons.beanutils" level="info"
+                additivity="false">
+            <appender-ref ref="console" />
+            <appender-ref ref="develop" />	<!-- 仅用于本地开发 生产环境必须关闭 -->
+        </logger>
+        <logger name="org.mybatis.spring" level="info" additivity="false">
+            <appender-ref ref="console" />
+            <appender-ref ref="develop" />	<!-- 仅用于本地开发 生产环境必须关闭 -->
+        </logger>
+        <logger name="org.hibernate.validator.internal.metadata.descriptor"
+                level="info" additivity="false">
+            <appender-ref ref="console" />
+            <appender-ref ref="develop" />	<!-- 仅用于本地开发 生产环境必须关闭 -->
+        </logger>
+        <logger name="org.quartz.core" level="error" additivity="false">
+            <appender-ref ref="console" />
+            <appender-ref ref="develop" />	<!-- 仅用于本地开发 生产环境必须关闭 -->
+        </logger>
+        <root level="debug" includeLocation="true">
+            <appender-ref ref="console" />
+            <appender-ref ref="develop" />	<!-- 仅用于本地开发 生产环境必须关闭 -->
+        </root>
+    </loggers>
+
+</configuration>

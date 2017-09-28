@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>订单列表</title>
+		<script type="text/javascript" src="../js/weixin-1.2.0.js"></script>
+		<style>
+	* {
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.order_box {
+				width: 100%;
+				height: auto;
+				margin: auto;
+			}
+			
+			.order_tap {
+				position: fixed;
+				width: 100%;
+				height: 46px;
+				margin: auto;
+				display: -webkit-box;
+				border: 1px solid gainsboro;
+				background: #FFFFFF;
+				box-sizing: border-box;
+			}
+			
+			.order_pay {
+				-webkit-box-flex: 5.5;
+				background: url(../img/order_right.png)left no-repeat;
+				background-position-x: 50px;
+			}
+			
+			.order_pay>img {
+				position: absolute;
+				left: 25px;
+				top: 10px;
+			}
+			
+			.order_pay>p {
+				position: absolute;
+				bottom: 0px;
+				font-size: 12px;
+				left: 15px;
+				color: #00C256;
+			}
+			
+			.order_jd {
+				-webkit-box-flex: 4;
+				background: url(../img/right_order.png) left no-repeat;
+				background-position-x: 40px;
+			}
+			
+			.order_jd>img {
+				float: left;
+				margin-top: 10px;
+				margin-left: 15px;
+			}
+			
+			.order_jd>p {
+				position: absolute;
+				bottom: 0px;
+				font-size: 12px;
+			}
+			
+			.order_over {
+				-webkit-box-flex: 1;
+			}
+			
+			.order_over>img {
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+			
+			.order_over>p {
+				position: absolute;
+				bottom: 0px;
+				font-size: 12px;
+			}
+			
+			.order_one {
+				padding-top: 30px;
+				width: 100%;
+				height: 190px;
+				margin: auto;
+				background: #FFFFFF;
+				border-bottom: 1px solid gainsboro;
+				margin-top:10px;
+			}
+			
+			.order_one_xq {
+				width: 90%;
+				height: auto;
+				margin: 10px auto;
+				padding-bottom: 10px;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.order_user {
+				width: 100%;
+				height: auto;
+				display: -webkit-box;
+				margin: 5px auto;
+			}
+			
+			.order_user>div {
+				-webkit-box-flex: 1;
+			}
+			
+			.order_mj {
+				display: -webkit-box;
+			}
+			
+			.order_mj .order_user_M {
+				-webkit-box-flex: 1;
+			}
+			
+			.order_mj .order_price {
+				-webkit-box-flex: 5;
+			}
+			
+			.up_order {
+				width: 115px;
+				height: 30px;
+				border: 1px solid gainsboro;
+				float: right;
+				margin-right: 20px;
+				text-align: center;
+				line-height: 30px;
+				border-radius: 5px;
+				background: #B6B6B6;
+				color: white;
+			}
+			
+			.order_two {
+				width: 100%;
+				height: auto;
+				margin: 10px auto;
+				background: #FFFFFF;
+			}
+			
+			.order_three {
+				width: 100%;
+				height: auto;
+				margin: 10px auto;
+				background: #FFFFFF;
+				padding-top: 5px;
+			}
+			
+			.order_pj_btn {
+				width: 90%;
+				height: 40px;
+				margin: auto;
+				border-top: 1px solid gainsboro;
+			}
+			
+			.pj_btn {
+				width: 112px;
+				height: 30px;
+				margin-top: 5px;
+				float: right;
+				text-align: center;
+				line-height: 30px;
+				background: #00DD1C;
+				color: white;
+				border-radius: 5px;
+			}
+			._order_box{
+				width:100%;
+				height:auto;
+				padding-top:5px;
+			}
+			.one,
+			.two,
+			.three {
+				z-index:998;
+				width: 100%;
+				height: auto;
+				margin: auto;
+				margin: 10px auto;
+				padding: 10px auto;
+			}
+		</style>
+	</head>
+
+	<body bgcolor="#EEEEEE">
+		<div class="order_box">
+			<div class="order_tap">
+				<div class="order_pay">
+					<img src="../img/33.png" />
+					<p>已支付</p>
+				</div>
+				<div class="order_jd">
+					<img src="../img/35.png" />
+					<p>待接单</p>
+				</div>
+				<div class="order_over">
+					<img src="../img/37.png" />
+					<p>已完成</p>
+				</div>
+			</div>
+			<div class="_order_box">
+			<div class="one">
+			</div>
+			<div class="two">
+			</div>
+			<div class="three">
+			</div>
+			</div>
+			<script type="text/javascript" src="../mui/js/jquery-1.8.3.js"></script>
+			<script type="text/javascript" src="../js/ip.js"></script>
+			<script>
+				//添加评价信息
+				$(".pj_btn").click('tap', function() {
+					window.location.href = "Fpinjia.html";
+//					alert(F_name);
+				})
+				//order详情
+				$(document).ready(function() {
+					var openId=JSON.parse(localStorage.getItem("openid"));
+					var _openid=JSON.parse(openId);
+					console.log(_openid);
+					$.ajax({
+						type: "POST",
+						url: hua+"OrderInfoController/seleteOrders.do",
+						dataType: "JSON",
+						data: {
+							openId: _openid
+						},
+						success: function(data) {
+							//var data = JSON.stringify(data);
+							//console.log(data);
+							//var datalist=JSON.stringify(data.orderinfoList);
+							//console.log(datalist+"dhfkdh");
+							var data1=eval(data);
+							var datalist=eval(data1.orderinfoList)
+							console.log(datalist);
+							var tel = JSON.parse(localStorage.getItem("tel"));   //用户tel
+							var name = JSON.parse(localStorage.getItem("name"));   //用户tel
+							console.log(tel+"......."+name);
+							var str='';
+							for(var i=0;i<datalist.length;i++){
+								orderNo=datalist[i].orderNo;//订单编号
+								moblNo=datalist[i].orderWorkMobil;//工人电话
+								orderUserName=datalist[i].orderWorkName;//工人姓名
+								orderAddress=datalist[i].orderAddress;//下单地址
+								userId=datalist[i].userId;//工人id
+								localStorage.setItem("userId", JSON.stringify(userId));
+								console.log(userId+"nfkjgflj我的天啊");
+								remark=datalist[i].remark;//备注
+								orderTxnAmt=datalist[i].orderTxnAmt;//金额
+								constructArea=datalist[i].constructArea;//施工面积
+								reserveConstructDateTime=datalist[i].reserveConstructDateTime;//预约时间
+								//转换时间格式
+								var year1 = reserveConstructDateTime.substring(0,4);
+								var year2 = reserveConstructDateTime.substring(4, 6);
+								var year3 = reserveConstructDateTime.substring(6, 8);
+								var year4 = reserveConstructDateTime.substring(8, 10);
+								var year5 = reserveConstructDateTime.substring(10, 12);
+								var year6 = reserveConstructDateTime.substring(12, 14);
+								var time= year1 + '-' + year2 + '-' + year3 + ' ' + year4 + ':' + year5 + ':'+ year6;
+
+								orderFinishStat=datalist[i].orderFinishStat;
+								console.log(orderFinishStat+"状态");
+								var order_by=$(".order_pay");
+								var order_jd=$(".order_jd");
+								var order_over=$(".order_over");
+								//待接单中
+								if(orderFinishStat==0){
+									str+="<div class='order_one'><div class='order_one_xq'><p id='order_Id' style='font-size: 16px;'>订单编号:"+orderNo+"</p><div class='order_user'><div class='order_user_name'><img src='../img/user_bf.png' /><p id='order_name' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;'>"+name+"</p></div><div class='order_phone'><img src='../img/phone_bf.png' /><p id='order_Phone' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;'>"+tel+"</p></div><div class='user_time'><img src='../img/time_bf.png' /><p id='order_Time' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;'>"+time+"</p></div></div><div class='order_mj'><div class='order_user_M'><img src='../img/fm_bf.png' /><p id='order_M' style='display: inline-block; margin-left: 5px; font-size: 13px; color: red;'>"+constructArea+"</p></div><div class='order_price'><img src='../img/price_bf.png' /><p id='order_Price' style='display: inline-block; margin-left: 5px; font-size: 13px; color: red'>"+orderTxnAmt+"元</p></div></div><div class='posti'><img src='../img/postition_bf.png' /><p id='order_posation' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;margin-top: 5px;'>"+orderAddress+"</p></div></div><div class='up_order' id='order_btn' onclick='GETAjax();' style='margin-bottom: 10px;'>取消订单</div></div>";
+								}
+								//01施工中
+								else if(orderFinishStat==01){
+									//order_jd.style.backgroundImage="url(../img/right_order.png)";
+									str+="<div class='order_two'><div class='order_one_xq'><p id='order_Id' style='font-size: 16px; padding-top: 10px;'>订单编号:" +orderNo + "</p><div class='order_user'><div class='order_user_name'><img src='../img/user_bf.png' /><p id='order_name' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;'>" + name + "</p></div><div class='order_phone'><img src='../img/phone_bf.png'/><p id='order_Phone' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;'>" + tel + "</p></div><div class='user_time'><img src='../img/time_bf.png' /><p id='order_Time' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;'>" +time+ "</p></div></div><div class='order_mj'><div class='order_user_M'><img src='../img/fm_bf.png' /><p id='order_M' style='display: inline-block; margin-left: 5px; font-size: 13px; color: red;'>" + constructArea+"㎡</p></div><div class='order_price'><img src='../img/price_bf.png' /><p id='order_Price' style='display: inline-block; margin-left: 5px; font-size: 13px; color: red'>" + orderTxnAmt+"元</p></div></div><div class='posti'><img src='../img/postition_bf.png' /><p id='order_posation' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;margin-top: 5px;'>" + orderAddress + "</p></div></div><p style='padding-left: 20px;'>接单人信息</p><div class='order_mj' style='padding-bottom: 15px; border-bottom: 1px solid gainsboro;margin-top: 5px;'><div class='order_user_M'><img style='margin-left: 20px;' src='../img/user_bf.png' /><p id='order_M' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #555555;'>" +orderUserName+ "</p></div><div class='order_price'><img style='margin-left: 20px;' src='../img/phone_bf.png' /><p id='order_Price' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #555555'>" +moblNo + "</p></div></div></div>";
+								}//订单初始化状态
+								else if(orderFinishStat==02){
+									str += "<div class='order_three'><div class='order_one_xq'><p id='order_Id' style=font-size: 16px; padding-top: 10px;'>订单编号:" +orderNo + "</p><div class='order_user'><div class='order_user_name'><img src='../img/user_bf.png' /><p id='order_name' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;'>" + name + "</p></div><div class='order_phone'><img src='../img/phone_bf.png' /><p id='order_Phone' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;'>" + tel + "</p></div><div class='user_time'><img src='../img/time_bf.png'/><p id='order_Time' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;'>" +time+ "</p></div></div><div class='order_mj'><div class='order_user_M'><img src='../img/fm_bf.png' /><p id='order_M' style='display: inline-block; margin-left: 5px; font-size: 13px; color: red;'>" + constructArea+"㎡</p></div><div class='order_price'><img src='../img/price_bf.png' /><p id='order_Price' style='display: inline-block; margin-left: 5px; font-size: 13px; color: red'>" + orderTxnAmt+"元</p></div></div><div class='posti'><img src='../img/postition_bf.png' /><p id='order_posation' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #B6B6B6;margin-top: 5px;'>" + orderAddress + "</p></div></div><p style='padding-left: 20px;'>接单人信息</p><div class='order_mj' style='padding-bottom: 15px;margin-top: 5px;'><div class='order_user_M'><img style='margin-left: 20px;' src='../img/user_bf.png' /><p id='order_M' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #555555;'id='F_name'>" +orderUserName+ "</p></div><div class='order_price' ><img style='margin-left: 20px;' src='../img/phone_bf.png' /><p id='order_Price' style='display: inline-block; margin-left: 5px; font-size: 13px; color: #555555' id='F_num'>" +moblNo + "</p></div></div><div class='order_pj_btn'><div class='pj_btn' id='pj_btn'>评价</div></div></div>";
+								}
+							}
+							localStorage.setItem("orderNo", JSON.stringify(orderNo));
+							localStorage.setItem("moblNo", JSON.stringify(moblNo));
+							localStorage.setItem("remark", JSON.stringify(remark));
+						
+							console.log(orderTxnAmt);
+							console.log(orderNo);
+							console.log(moblNo);
+							console.log(orderUserName);
+							$('.three').html(str);
+							$('.pj_btn').click(function(){
+								window.location.href="Fpinjia.html";
+							});
+						},
+						error: function() {
+							console.log("网络错误");
+						}
+					});
+				})
+			</script>
+
+	</body>
+
+</html>

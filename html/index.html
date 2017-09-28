@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="青木易家管理平台">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>青木易家管理平台</title>
+    <!--登录js-->   
+    <!--icheck-->
+    <link href="../js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
+    <link href="../js/iCheck/skins/square/square.css" rel="stylesheet">
+    <link href="../js/iCheck/skins/square/red.css" rel="stylesheet">
+    <link href="../js/iCheck/skins/square/blue.css" rel="stylesheet">
+
+    <!--dashboard calendar-->
+    <link href="../css/clndr.css" rel="stylesheet">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="../js/morris-chart/morris.css">
+
+    <!--common-->
+    <link href="../css/style1.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+  
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="../img/logo1.png" alt=""></a>
+        </div>
+
+        <div class="logo-icon text-center">
+            <a href="index.html"><img src="../img/logo_icon.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+        <div class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="../img/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">John Doe</a></h4>
+                        <span>"Hello There..."</span>
+                    </div>
+                </div>
+
+                <h5 class="left-nav-title">Account Information</h5>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li ><a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a>
+                </li>
+                <li class="menu-list"><a href="javascript:void(0)"><i class="fa fa-laptop"></i> <span>广告管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="blank_page.html"> app banner管理</a></li>
+                        <li><a href="boxed_view.html"> 关于我们</a></li>
+                        <li><a href="user_fw.html"> 青木易家用户服务协议</a></li>
+                        <li><a href="userUseText.html"> 用户使用说明</a></li>
+
+                        <!-- <li><a href="leftmenu_collapsed_view.html"> Sidebar Collapsed</a></li>
+                         <li><a href="horizontal_menu.html"> Horizontal Menu</a></li>-->
+
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span> 新手技能培训</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="general.html"> 公司奖惩制度</a></li>
+                        <li><a href="buttons.html"> 礼貌服务要求</a></li>
+                        <li><a href="../html/tabs-accordions.html"> 施工流程方法</a></li>
+                        <li><a href="../html/exam.html"> 新手考试题目</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span> 用户管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="../html/userlist.html"> 用户列表</a></li>
+                        <li><a href="../html/blacklist.html"> 黑名单</a></li>
+                    </ul>
+                </li>
+
+               <!-- <li><a href="orderlist.html"><i class="fa fa-bullhorn"></i> <span> 订单管理</span></a></li>-->
+                <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span> 订单管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="../html/orderlist.html"> 订单列表</a></li>
+                        <li><a href="../html/backlist.html"> 退单列表</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-list"><a href=""><i class="fa fa-envelope"></i> <span> 设备耗材</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="../html/new_supplies.html"> 耗材列表</a></li>
+                        <li><a href="../html/consumable_order.html"> 耗材订单</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="drug_quota.html"><i class="fa fa-tasks"></i> <span> 药剂配额管理</span></a>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-bar-chart-o"></i> <span> 财务管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="../html/order_allocation.html"> 订单额分配</a></li>
+                        <li><a href="../html/cash_management.html"> 提现管理</a></li>
+                        <li><a href="../html/bank_statement.html">流水</a></li>
+                        <!--<li><a href="../html/c3chart.html"> C3 Charts</a></li>-->
+                    </ul>
+                </li>
+                <li class="menu-list"><a href="#"><i class="fa fa-th-list"></i> <span> 消息管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="../html/message_list.html" onclick="load()"> 消息列表</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+          
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="../img/photos/user-avatar.png" alt="" />
+                            John Doe
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="modifyPass.html"><i class="fa fa-cog"></i>修改密码</a></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out"></i> 退出</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <di class="col-md-12">
+                    <!--statistics start-->
+                    <div class="row state-overview col-md-5">
+                        <div class="col-md-10 col-xs-12 col-sm-12">
+                            <div class="panel purple">
+                                <div class="symbol">
+                                    <i class="fa fa-gavel"></i>
+                                </div>
+                                <div class="state-value">
+                                    <div class="value" id="userCount"></div>
+                                    <div class="title">平台用户量</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-xs-12 col-sm-12">
+                            <div class="panel red">
+                                <div class="symbol">
+                                    <i class="fa fa-tags"></i>
+                                </div>
+                                <div class="state-value">
+                                    <div class="value" id="orderNumber"></div>
+                                    <div class="title">平台订单量</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row state-overview col-md-5">
+                        <div class="col-md-10 col-xs-12 col-sm-12">
+                            <div class="panel blue">
+                                <div class="symbol">
+                                    <i class="fa fa-money"></i>
+                                </div>
+                                <div class="state-value">
+                                    <div class="value" id="orderTotalAmt"></div>
+                                    <div class="title"> 平台订单总金额</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--statistics end-->
+                </di>
+                <!--more statistics box end-->
+            </div>
+        </div>
+    </div>
+    <!--body wrapper end-->
+
+    <!--footer section start-->
+    <!--<footer>
+        2014 &copy; AdminEx by ThemeBucket
+    </footer>-->
+    <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+
+
+<!-- Placed js at the end of the document so the pages load faster -->
+
+
+
+
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<!--菜单导航使用-->
+<script src="../js/jquery.nicescroll.js"></script>
+<script src="../js/scripts.js"></script>
+<script src="../js/url.js"></script>
+<script src="../js/index.js"></script>
+
+
+
+
+</body>
+</html>

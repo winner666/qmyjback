@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.EvaluationMapper" >
+    <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.Evaluation" >
+        <id column="user_id" property="userId" jdbcType="CHAR" />
+        <id column="evaluation_date_time" property="evaluationDateTime" jdbcType="CHAR" />
+        <result column="open_id" property="openId" jdbcType="VARCHAR" />
+        <result column="mobl_no" property="moblNo" jdbcType="VARCHAR" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="user_face_img" property="userFaceImg" jdbcType="VARCHAR" />
+        <result column="evaluation_content" property="evaluationContent" jdbcType="VARCHAR" />
+        <result column="evaluation_rank" property="evaluationRank" jdbcType="VARCHAR" />
+        <result column="total_start_count" property="totalStartCount" jdbcType="VARCHAR" />
+        <result column="stars_on_time" property="starsOnTime" jdbcType="VARCHAR" />
+        <result column="stars_cloth_attire" property="starsClothAttire" jdbcType="VARCHAR" />
+        <result column="stars_emp_card" property="starsEmpCard" jdbcType="VARCHAR" />
+        <result column="stars_politeness" property="starsPoliteness" jdbcType="VARCHAR" />
+        <result column="stars_carefully" property="starsCarefully" jdbcType="VARCHAR" />
+        <result column="stars_qualified" property="starsQualified" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        user_id, open_id, mobl_no, user_name, user_face_img, evaluation_content, evaluation_date_time,
+        evaluation_rank, total_start_count, stars_on_time, stars_cloth_attire, stars_emp_card,
+        stars_politeness, stars_carefully, stars_qualified, remark
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from evaluation
+        where user_id = #{userId,jdbcType=CHAR}
+        AND evaluation_date_time = #{evaluationDateTime,jdbcType=CHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+        delete from evaluation
+        where user_id = #{userId,jdbcType=CHAR}
+        AND evaluation_date_time = #{evaluationDateTime,jdbcType=CHAR}
+    </delete>
+    <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.Evaluation" >
+        insert into evaluation (user_id, open_id, mobl_no,
+        user_name, user_face_img, evaluation_content,
+        evaluation_date_time, evaluation_rank, total_start_count,
+        stars_on_time, stars_cloth_attire, stars_emp_card,
+        stars_politeness, stars_carefully, stars_qualified,
+        remark)
+        values (#{userId,jdbcType=CHAR}, #{openId,jdbcType=VARCHAR}, #{moblNo,jdbcType=VARCHAR},
+        #{userName,jdbcType=VARCHAR}, #{userFaceImg,jdbcType=VARCHAR}, #{evaluationContent,jdbcType=VARCHAR},
+        #{evaluationDateTime,jdbcType=CHAR}, #{evaluationRank,jdbcType=VARCHAR}, #{totalStartCount,jdbcType=VARCHAR},
+        #{starsOnTime,jdbcType=VARCHAR}, #{starsClothAttire,jdbcType=VARCHAR}, #{starsEmpCard,jdbcType=VARCHAR},
+        #{starsPoliteness,jdbcType=VARCHAR}, #{starsCarefully,jdbcType=VARCHAR}, #{starsQualified,jdbcType=VARCHAR},
+        #{remark,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.Evaluation" >
+        insert into evaluation
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="openId != null" >
+                open_id,
+            </if>
+            <if test="moblNo != null" >
+                mobl_no,
+            </if>
+            <if test="userName != null" >
+                user_name,
+            </if>
+            <if test="userFaceImg != null" >
+                user_face_img,
+            </if>
+            <if test="evaluationContent != null" >
+                evaluation_content,
+            </if>
+            <if test="evaluationDateTime != null" >
+                evaluation_date_time,
+            </if>
+            <if test="evaluationRank != null" >
+                evaluation_rank,
+            </if>
+            <if test="totalStartCount != null" >
+                total_start_count,
+            </if>
+            <if test="starsOnTime != null" >
+                stars_on_time,
+            </if>
+            <if test="starsClothAttire != null" >
+                stars_cloth_attire,
+            </if>
+            <if test="starsEmpCard != null" >
+                stars_emp_card,
+            </if>
+            <if test="starsPoliteness != null" >
+                stars_politeness,
+            </if>
+            <if test="starsCarefully != null" >
+                stars_carefully,
+            </if>
+            <if test="starsQualified != null" >
+                stars_qualified,
+            </if>
+            <if test="remark != null" >
+                remark,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="userId != null" >
+                #{userId,jdbcType=CHAR},
+            </if>
+            <if test="openId != null" >
+                #{openId,jdbcType=VARCHAR},
+            </if>
+            <if test="moblNo != null" >
+                #{moblNo,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null" >
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="userFaceImg != null" >
+                #{userFaceImg,jdbcType=VARCHAR},
+            </if>
+            <if test="evaluationContent != null" >
+                #{evaluationContent,jdbcType=VARCHAR},
+            </if>
+            <if test="evaluationDateTime != null" >
+                #{evaluationDateTime,jdbcType=CHAR},
+            </if>
+            <if test="evaluationRank != null" >
+                #{evaluationRank,jdbcType=VARCHAR},
+            </if>
+            <if test="totalStartCount != null" >
+                #{totalStartCount,jdbcType=VARCHAR},
+            </if>
+            <if test="starsOnTime != null" >
+                #{starsOnTime,jdbcType=VARCHAR},
+            </if>
+            <if test="starsClothAttire != null" >
+                #{starsClothAttire,jdbcType=VARCHAR},
+            </if>
+            <if test="starsEmpCard != null" >
+                #{starsEmpCard,jdbcType=VARCHAR},
+            </if>
+            <if test="starsPoliteness != null" >
+                #{starsPoliteness,jdbcType=VARCHAR},
+            </if>
+            <if test="starsCarefully != null" >
+                #{starsCarefully,jdbcType=VARCHAR},
+            </if>
+            <if test="starsQualified != null" >
+                #{starsQualified,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null" >
+                #{remark,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.Evaluation" >
+        update evaluation
+        <set >
+            <if test="openId != null" >
+                open_id = #{openId,jdbcType=VARCHAR},
+            </if>
+            <if test="moblNo != null" >
+                mobl_no = #{moblNo,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null" >
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="userFaceImg != null" >
+                user_face_img = #{userFaceImg,jdbcType=VARCHAR},
+            </if>
+            <if test="evaluationContent != null" >
+                evaluation_content = #{evaluationContent,jdbcType=VARCHAR},
+            </if>
+            <if test="evaluationDateTime != null" >
+                evaluation_date_time = #{evaluationDateTime,jdbcType=CHAR},
+            </if>
+            <if test="evaluationRank != null" >
+                evaluation_rank = #{evaluationRank,jdbcType=VARCHAR},
+            </if>
+            <if test="totalStartCount != null" >
+                total_start_count = #{totalStartCount,jdbcType=VARCHAR},
+            </if>
+            <if test="starsOnTime != null" >
+                stars_on_time = #{starsOnTime,jdbcType=VARCHAR},
+            </if>
+            <if test="starsClothAttire != null" >
+                stars_cloth_attire = #{starsClothAttire,jdbcType=VARCHAR},
+            </if>
+            <if test="starsEmpCard != null" >
+                stars_emp_card = #{starsEmpCard,jdbcType=VARCHAR},
+            </if>
+            <if test="starsPoliteness != null" >
+                stars_politeness = #{starsPoliteness,jdbcType=VARCHAR},
+            </if>
+            <if test="starsCarefully != null" >
+                stars_carefully = #{starsCarefully,jdbcType=VARCHAR},
+            </if>
+            <if test="starsQualified != null" >
+                stars_qualified = #{starsQualified,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null" >
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where user_id = #{userId,jdbcType=CHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.Evaluation" >
+        update evaluation
+        set open_id = #{openId,jdbcType=VARCHAR},
+        mobl_no = #{moblNo,jdbcType=VARCHAR},
+        user_name = #{userName,jdbcType=VARCHAR},
+        user_face_img = #{userFaceImg,jdbcType=VARCHAR},
+        evaluation_content = #{evaluationContent,jdbcType=VARCHAR},
+        evaluation_date_time = #{evaluationDateTime,jdbcType=CHAR},
+        evaluation_rank = #{evaluationRank,jdbcType=VARCHAR},
+        total_start_count = #{totalStartCount,jdbcType=VARCHAR},
+        stars_on_time = #{starsOnTime,jdbcType=VARCHAR},
+        stars_cloth_attire = #{starsClothAttire,jdbcType=VARCHAR},
+        stars_emp_card = #{starsEmpCard,jdbcType=VARCHAR},
+        stars_politeness = #{starsPoliteness,jdbcType=VARCHAR},
+        stars_carefully = #{starsCarefully,jdbcType=VARCHAR},
+        stars_qualified = #{starsQualified,jdbcType=VARCHAR},
+        remark = #{remark,jdbcType=VARCHAR}
+        where user_id = #{userId,jdbcType=CHAR}
+    </update>
+
+</mapper>

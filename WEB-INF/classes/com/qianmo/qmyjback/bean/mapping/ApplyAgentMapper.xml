@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.ApplyAgentMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.ApplyAgent" >
+    <id column="user_id" property="userId" jdbcType="CHAR" />
+    <result column="recieve_dose_address" property="recieveDoseAddress" jdbcType="VARCHAR" />
+    <result column="send_drugs_number" property="sendDrugsNumber" jdbcType="VARCHAR" />
+    <result column="apl_drug_stat" property="aplDrugStat" jdbcType="VARCHAR" />
+    <result column="apl_drug_dose" property="aplDrugDose" jdbcType="VARCHAR" />
+    <result column="apl_drug_count" property="aplDrugCount" jdbcType="VARCHAR" />
+    <result column="apl_drug_date_time" property="aplDrugDateTime" jdbcType="CHAR" />
+    <result column="confirm_dose_date_time" property="confirmDoseDateTime" jdbcType="CHAR" />
+    <result column="send_dose_date_time" property="sendDoseDateTime" jdbcType="CHAR" />
+    <result column="send_dose_channel" property="sendDoseChannel" jdbcType="VARCHAR" />
+    <result column="crd_date_time" property="crdDateTime" jdbcType="CHAR" />
+    <result column="upd_date_time" property="updDateTime" jdbcType="CHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, recieve_dose_address, send_drugs_number, apl_drug_stat, apl_drug_dose, apl_drug_count, 
+    apl_drug_date_time, confirm_dose_date_time, send_dose_date_time, send_dose_channel, 
+    crd_date_time, upd_date_time, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from apply_agent
+    where user_id = #{userId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from apply_agent
+    where user_id = #{userId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.ApplyAgent" >
+    insert into apply_agent (user_id, recieve_dose_address, send_drugs_number, 
+      apl_drug_stat, apl_drug_dose, apl_drug_count, 
+      apl_drug_date_time, confirm_dose_date_time, send_dose_date_time, 
+      send_dose_channel, crd_date_time, upd_date_time, 
+      remark)
+    values (#{userId,jdbcType=CHAR}, #{recieveDoseAddress,jdbcType=VARCHAR}, #{sendDrugsNumber,jdbcType=VARCHAR}, 
+      #{aplDrugStat,jdbcType=VARCHAR}, #{aplDrugDose,jdbcType=VARCHAR}, #{aplDrugCount,jdbcType=VARCHAR}, 
+      #{aplDrugDateTime,jdbcType=CHAR}, #{confirmDoseDateTime,jdbcType=CHAR}, #{sendDoseDateTime,jdbcType=CHAR}, 
+      #{sendDoseChannel,jdbcType=VARCHAR}, #{crdDateTime,jdbcType=CHAR}, #{updDateTime,jdbcType=CHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.ApplyAgent" >
+    insert into apply_agent
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="recieveDoseAddress != null" >
+        recieve_dose_address,
+      </if>
+      <if test="sendDrugsNumber != null" >
+        send_drugs_number,
+      </if>
+      <if test="aplDrugStat != null" >
+        apl_drug_stat,
+      </if>
+      <if test="aplDrugDose != null" >
+        apl_drug_dose,
+      </if>
+      <if test="aplDrugCount != null" >
+        apl_drug_count,
+      </if>
+      <if test="aplDrugDateTime != null" >
+        apl_drug_date_time,
+      </if>
+      <if test="confirmDoseDateTime != null" >
+        confirm_dose_date_time,
+      </if>
+      <if test="sendDoseDateTime != null" >
+        send_dose_date_time,
+      </if>
+      <if test="sendDoseChannel != null" >
+        send_dose_channel,
+      </if>
+      <if test="crdDateTime != null" >
+        crd_date_time,
+      </if>
+      <if test="updDateTime != null" >
+        upd_date_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="recieveDoseAddress != null" >
+        #{recieveDoseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDrugsNumber != null" >
+        #{sendDrugsNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="aplDrugStat != null" >
+        #{aplDrugStat,jdbcType=VARCHAR},
+      </if>
+      <if test="aplDrugDose != null" >
+        #{aplDrugDose,jdbcType=VARCHAR},
+      </if>
+      <if test="aplDrugCount != null" >
+        #{aplDrugCount,jdbcType=VARCHAR},
+      </if>
+      <if test="aplDrugDateTime != null" >
+        #{aplDrugDateTime,jdbcType=CHAR},
+      </if>
+      <if test="confirmDoseDateTime != null" >
+        #{confirmDoseDateTime,jdbcType=CHAR},
+      </if>
+      <if test="sendDoseDateTime != null" >
+        #{sendDoseDateTime,jdbcType=CHAR},
+      </if>
+      <if test="sendDoseChannel != null" >
+        #{sendDoseChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="crdDateTime != null" >
+        #{crdDateTime,jdbcType=CHAR},
+      </if>
+      <if test="updDateTime != null" >
+        #{updDateTime,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.ApplyAgent" >
+    update apply_agent
+    <set >
+      <if test="recieveDoseAddress != null" >
+        recieve_dose_address = #{recieveDoseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDrugsNumber != null" >
+        send_drugs_number = #{sendDrugsNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="aplDrugStat != null" >
+        apl_drug_stat = #{aplDrugStat,jdbcType=VARCHAR},
+      </if>
+      <if test="aplDrugDose != null" >
+        apl_drug_dose = #{aplDrugDose,jdbcType=VARCHAR},
+      </if>
+      <if test="aplDrugCount != null" >
+        apl_drug_count = #{aplDrugCount,jdbcType=VARCHAR},
+      </if>
+      <if test="aplDrugDateTime != null" >
+        apl_drug_date_time = #{aplDrugDateTime,jdbcType=CHAR},
+      </if>
+      <if test="confirmDoseDateTime != null" >
+        confirm_dose_date_time = #{confirmDoseDateTime,jdbcType=CHAR},
+      </if>
+      <if test="sendDoseDateTime != null" >
+        send_dose_date_time = #{sendDoseDateTime,jdbcType=CHAR},
+      </if>
+      <if test="sendDoseChannel != null" >
+        send_dose_channel = #{sendDoseChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="crdDateTime != null" >
+        crd_date_time = #{crdDateTime,jdbcType=CHAR},
+      </if>
+      <if test="updDateTime != null" >
+        upd_date_time = #{updDateTime,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.ApplyAgent" >
+    update apply_agent
+    set recieve_dose_address = #{recieveDoseAddress,jdbcType=VARCHAR},
+      send_drugs_number = #{sendDrugsNumber,jdbcType=VARCHAR},
+      apl_drug_stat = #{aplDrugStat,jdbcType=VARCHAR},
+      apl_drug_dose = #{aplDrugDose,jdbcType=VARCHAR},
+      apl_drug_count = #{aplDrugCount,jdbcType=VARCHAR},
+      apl_drug_date_time = #{aplDrugDateTime,jdbcType=CHAR},
+      confirm_dose_date_time = #{confirmDoseDateTime,jdbcType=CHAR},
+      send_dose_date_time = #{sendDoseDateTime,jdbcType=CHAR},
+      send_dose_channel = #{sendDoseChannel,jdbcType=VARCHAR},
+      crd_date_time = #{crdDateTime,jdbcType=CHAR},
+      upd_date_time = #{updDateTime,jdbcType=CHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=CHAR}
+  </update>
+  <select id="selectByCustomerId" resultMap="BaseResultMap" parameterType="map" >
+    select
+    <include refid="Base_Column_List" />
+    from apply_agent
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <!--按照日期和用户手机号查询申请药剂配额-->
+  <select id="selectAgentByMobilOrDate" resultMap="BaseResultMap" parameterType="com.qianmo.qmyjback.bean.dto.ApplyAgent" >
+    select
+    <include refid="Base_Column_List" />
+    from apply_agent
+    where  1=1
+    <if test="userId != null" >
+      and user_id = #{userId,jdbcType=INTEGER}
+    </if>
+    <if test="crdDateTime != null" >
+      and crd_date_time LIKE '${crdDateTime}%'
+    </if>
+    <if test="aplDrugStat != null" >
+      AND apl_drug_stat = #{aplDrugStat,jdbcType=VARCHAR}
+    </if>
+    order BY crd_date_time DESC
+  </select>
+</mapper>

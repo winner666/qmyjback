@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.QuestionsMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.Questions" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="sure" property="sure" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.qianmo.qmyjback.bean.dto.Questions" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+    <result column="optionsA" property="optionsa" jdbcType="LONGVARCHAR" />
+    <result column="optionsB" property="optionsb" jdbcType="LONGVARCHAR" />
+    <result column="optionsC" property="optionsc" jdbcType="LONGVARCHAR" />
+    <result column="optionsD" property="optionsd" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sure
+  </sql>
+  <sql id="Blob_Column_List" >
+    content, optionsA, optionsB, optionsC, optionsD
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from questions
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from questions
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.Questions" >
+    insert into questions (id, sure, content, 
+      optionsA, optionsB, optionsC, 
+      optionsD)
+    values (#{id,jdbcType=INTEGER}, #{sure,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}, 
+      #{optionsa,jdbcType=LONGVARCHAR}, #{optionsb,jdbcType=LONGVARCHAR}, #{optionsc,jdbcType=LONGVARCHAR}, 
+      #{optionsd,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.Questions" >
+    insert into questions
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sure != null" >
+        sure,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="optionsa != null" >
+        optionsA,
+      </if>
+      <if test="optionsb != null" >
+        optionsB,
+      </if>
+      <if test="optionsc != null" >
+        optionsC,
+      </if>
+      <if test="optionsd != null" >
+        optionsD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sure != null" >
+        #{sure,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optionsa != null" >
+        #{optionsa,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optionsb != null" >
+        #{optionsb,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optionsc != null" >
+        #{optionsc,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optionsd != null" >
+        #{optionsd,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.Questions" >
+    update questions
+    <set >
+      <if test="sure != null" >
+        sure = #{sure,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optionsa != null" >
+        optionsA = #{optionsa,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optionsb != null" >
+        optionsB = #{optionsb,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optionsc != null" >
+        optionsC = #{optionsc,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="optionsd != null" >
+        optionsD = #{optionsd,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qianmo.qmyjback.bean.dto.Questions" >
+    update questions
+    set sure = #{sure,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR},
+      optionsA = #{optionsa,jdbcType=LONGVARCHAR},
+      optionsB = #{optionsb,jdbcType=LONGVARCHAR},
+      optionsC = #{optionsc,jdbcType=LONGVARCHAR},
+      optionsD = #{optionsd,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.Questions" >
+    update questions
+    set sure = #{sure,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <!--查询所有试题-->
+  <select id="selectAllQuestion" resultMap="ResultMapWithBLOBs" parameterType="map" >
+    select * from questions
+  </select>
+</mapper>

@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.BuyRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.BuyRecord" >
+    <id column="txn_ssn" property="txnSsn" jdbcType="CHAR" />
+    <id column="order_no" property="orderNo" jdbcType="CHAR" />
+    <result column="ssn_crt_date_time" property="ssnCrtDateTime" jdbcType="CHAR" />
+    <result column="order_type" property="orderType" jdbcType="CHAR" />
+    <result column="txn_channel" property="txnChannel" jdbcType="VARCHAR" />
+    <result column="pagy_txn_ssn" property="pagyTxnSsn" jdbcType="VARCHAR" />
+    <result column="ping_id" property="pingId" jdbcType="VARCHAR" />
+    <result column="pagy_txn_stat" property="pagyTxnStat" jdbcType="VARCHAR" />
+    <result column="pagy_settle_amt" property="pagySettleAmt" jdbcType="VARCHAR" />
+    <result column="pagy_order_finish_time" property="pagyOrderFinishTime" jdbcType="VARCHAR" />
+    <result column="pagy_order_expire_time" property="pagyOrderExpireTime" jdbcType="VARCHAR" />
+    <result column="pagy_settle_time" property="pagySettleTime" jdbcType="VARCHAR" />
+    <result column="pagy_resp_fail_code" property="pagyRespFailCode" jdbcType="VARCHAR" />
+    <result column="pagy_resp_fail_msg" property="pagyRespFailMsg" jdbcType="VARCHAR" />
+    <result column="role_type" property="roleType" jdbcType="CHAR" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="customer_name" property="customerName" jdbcType="VARCHAR" />
+    <result column="customer_address" property="customerAddress" jdbcType="VARCHAR" />
+    <result column="product_size" property="productSize" jdbcType="VARCHAR" />
+    <result column="txn_amt" property="txnAmt" jdbcType="VARCHAR" />
+    <result column="mobl_no" property="moblNo" jdbcType="VARCHAR" />
+    <result column="recieve_id" property="recieveId" jdbcType="VARCHAR" />
+    <result column="refund_amt_apl" property="refundAmtApl" jdbcType="VARCHAR" />
+    <result column="refunded_amt" property="refundedAmt" jdbcType="VARCHAR" />
+    <result column="txn_stat" property="txnStat" jdbcType="VARCHAR" />
+    <result column="txn_type" property="txnType" jdbcType="VARCHAR" />
+    <result column="ssn_upd_date_time" property="ssnUpdDateTime" jdbcType="CHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    txn_ssn, order_no, ssn_crt_date_time, order_type, txn_channel, pagy_txn_ssn, ping_id, 
+    pagy_txn_stat, pagy_settle_amt, pagy_order_finish_time, pagy_order_expire_time, pagy_settle_time, 
+    pagy_resp_fail_code, pagy_resp_fail_msg, role_type, product_name, customer_name,
+    customer_address, product_size, txn_amt, mobl_no, recieve_id, refund_amt_apl, refunded_amt, 
+    txn_stat, txn_type, ssn_upd_date_time, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+    select 
+    <include refid="Base_Column_List" />
+    from buy_record
+    where txn_ssn = #{txnSsn,jdbcType=CHAR}
+      and order_no = #{orderNo,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from buy_record
+    where txn_ssn = #{txnSsn,jdbcType=CHAR}
+      and order_no = #{orderNo,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.BuyRecord" >
+    insert into buy_record (txn_ssn, order_no, ssn_crt_date_time, 
+      order_type, txn_channel, pagy_txn_ssn, 
+      ping_id, pagy_txn_stat, pagy_settle_amt, 
+      pagy_order_finish_time, pagy_order_expire_time, 
+      pagy_settle_time, pagy_resp_fail_code, pagy_resp_fail_msg, 
+      role_type, product_name,
+      customer_name, customer_address, product_size, 
+      txn_amt, mobl_no, recieve_id, 
+      refund_amt_apl, refunded_amt, txn_stat, 
+      txn_type, ssn_upd_date_time, remark
+      )
+    values (#{txnSsn,jdbcType=CHAR}, #{orderNo,jdbcType=CHAR}, #{ssnCrtDateTime,jdbcType=CHAR}, 
+      #{orderType,jdbcType=CHAR}, #{txnChannel,jdbcType=VARCHAR}, #{pagyTxnSsn,jdbcType=VARCHAR}, 
+      #{pingId,jdbcType=VARCHAR}, #{pagyTxnStat,jdbcType=VARCHAR}, #{pagySettleAmt,jdbcType=VARCHAR}, 
+      #{pagyOrderFinishTime,jdbcType=VARCHAR}, #{pagyOrderExpireTime,jdbcType=VARCHAR}, 
+      #{pagySettleTime,jdbcType=VARCHAR}, #{pagyRespFailCode,jdbcType=VARCHAR}, #{pagyRespFailMsg,jdbcType=VARCHAR}, 
+      #{roleType,jdbcType=CHAR}, #{productName,jdbcType=VARCHAR},
+      #{customerName,jdbcType=VARCHAR}, #{customerAddress,jdbcType=VARCHAR}, #{productSize,jdbcType=VARCHAR}, 
+      #{txnAmt,jdbcType=VARCHAR}, #{moblNo,jdbcType=VARCHAR}, #{recieveId,jdbcType=VARCHAR}, 
+      #{refundAmtApl,jdbcType=VARCHAR}, #{refundedAmt,jdbcType=VARCHAR}, #{txnStat,jdbcType=VARCHAR}, 
+      #{txnType,jdbcType=VARCHAR}, #{ssnUpdDateTime,jdbcType=CHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.BuyRecord" >
+    insert into buy_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="txnSsn != null" >
+        txn_ssn,
+      </if>
+      <if test="orderNo != null" >
+        order_no,
+      </if>
+      <if test="ssnCrtDateTime != null" >
+        ssn_crt_date_time,
+      </if>
+      <if test="orderType != null" >
+        order_type,
+      </if>
+      <if test="txnChannel != null" >
+        txn_channel,
+      </if>
+      <if test="pagyTxnSsn != null" >
+        pagy_txn_ssn,
+      </if>
+      <if test="pingId != null" >
+        ping_id,
+      </if>
+      <if test="pagyTxnStat != null" >
+        pagy_txn_stat,
+      </if>
+      <if test="pagySettleAmt != null" >
+        pagy_settle_amt,
+      </if>
+      <if test="pagyOrderFinishTime != null" >
+        pagy_order_finish_time,
+      </if>
+      <if test="pagyOrderExpireTime != null" >
+        pagy_order_expire_time,
+      </if>
+      <if test="pagySettleTime != null" >
+        pagy_settle_time,
+      </if>
+      <if test="pagyRespFailCode != null" >
+        pagy_resp_fail_code,
+      </if>
+      <if test="pagyRespFailMsg != null" >
+        pagy_resp_fail_msg,
+      </if>
+      <if test="roleType != null" >
+        role_type,
+      </if>
+      <if test="productName != null" >
+        product_name,
+      </if>
+      <if test="customerName != null" >
+        customer_name,
+      </if>
+      <if test="customerAddress != null" >
+        customer_address,
+      </if>
+      <if test="productSize != null" >
+        product_size,
+      </if>
+      <if test="txnAmt != null" >
+        txn_amt,
+      </if>
+      <if test="moblNo != null" >
+        mobl_no,
+      </if>
+      <if test="recieveId != null" >
+        recieve_id,
+      </if>
+      <if test="refundAmtApl != null" >
+        refund_amt_apl,
+      </if>
+      <if test="refundedAmt != null" >
+        refunded_amt,
+      </if>
+      <if test="txnStat != null" >
+        txn_stat,
+      </if>
+      <if test="txnType != null" >
+        txn_type,
+      </if>
+      <if test="ssnUpdDateTime != null" >
+        ssn_upd_date_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="txnSsn != null" >
+        #{txnSsn,jdbcType=CHAR},
+      </if>
+      <if test="orderNo != null" >
+        #{orderNo,jdbcType=CHAR},
+      </if>
+      <if test="ssnCrtDateTime != null" >
+        #{ssnCrtDateTime,jdbcType=CHAR},
+      </if>
+      <if test="orderType != null" >
+        #{orderType,jdbcType=CHAR},
+      </if>
+      <if test="txnChannel != null" >
+        #{txnChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyTxnSsn != null" >
+        #{pagyTxnSsn,jdbcType=VARCHAR},
+      </if>
+      <if test="pingId != null" >
+        #{pingId,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyTxnStat != null" >
+        #{pagyTxnStat,jdbcType=VARCHAR},
+      </if>
+      <if test="pagySettleAmt != null" >
+        #{pagySettleAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyOrderFinishTime != null" >
+        #{pagyOrderFinishTime,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyOrderExpireTime != null" >
+        #{pagyOrderExpireTime,jdbcType=VARCHAR},
+      </if>
+      <if test="pagySettleTime != null" >
+        #{pagySettleTime,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyRespFailCode != null" >
+        #{pagyRespFailCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyRespFailMsg != null" >
+        #{pagyRespFailMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="roleType != null" >
+        #{roleType,jdbcType=CHAR},
+      </if>
+      <if test="productName != null" >
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null" >
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerAddress != null" >
+        #{customerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="productSize != null" >
+        #{productSize,jdbcType=VARCHAR},
+      </if>
+      <if test="txnAmt != null" >
+        #{txnAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="moblNo != null" >
+        #{moblNo,jdbcType=VARCHAR},
+      </if>
+      <if test="recieveId != null" >
+        #{recieveId,jdbcType=VARCHAR},
+      </if>
+      <if test="refundAmtApl != null" >
+        #{refundAmtApl,jdbcType=VARCHAR},
+      </if>
+      <if test="refundedAmt != null" >
+        #{refundedAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="txnStat != null" >
+        #{txnStat,jdbcType=VARCHAR},
+      </if>
+      <if test="txnType != null" >
+        #{txnType,jdbcType=VARCHAR},
+      </if>
+      <if test="ssnUpdDateTime != null" >
+        #{ssnUpdDateTime,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.BuyRecord" >
+    update buy_record
+    <set >
+      <if test="ssnCrtDateTime != null" >
+        ssn_crt_date_time = #{ssnCrtDateTime,jdbcType=CHAR},
+      </if>
+      <if test="orderType != null" >
+        order_type = #{orderType,jdbcType=CHAR},
+      </if>
+      <if test="txnChannel != null" >
+        txn_channel = #{txnChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyTxnSsn != null" >
+        pagy_txn_ssn = #{pagyTxnSsn,jdbcType=VARCHAR},
+      </if>
+      <if test="pingId != null" >
+        ping_id = #{pingId,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyTxnStat != null" >
+        pagy_txn_stat = #{pagyTxnStat,jdbcType=VARCHAR},
+      </if>
+      <if test="pagySettleAmt != null" >
+        pagy_settle_amt = #{pagySettleAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyOrderFinishTime != null" >
+        pagy_order_finish_time = #{pagyOrderFinishTime,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyOrderExpireTime != null" >
+        pagy_order_expire_time = #{pagyOrderExpireTime,jdbcType=VARCHAR},
+      </if>
+      <if test="pagySettleTime != null" >
+        pagy_settle_time = #{pagySettleTime,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyRespFailCode != null" >
+        pagy_resp_fail_code = #{pagyRespFailCode,jdbcType=VARCHAR},
+      </if>
+      <if test="pagyRespFailMsg != null" >
+        pagy_resp_fail_msg = #{pagyRespFailMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="roleType != null" >
+        role_type = #{roleType,jdbcType=CHAR},
+      </if>
+      <if test="productName != null" >
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null" >
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerAddress != null" >
+        customer_address = #{customerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="productSize != null" >
+        product_size = #{productSize,jdbcType=VARCHAR},
+      </if>
+      <if test="txnAmt != null" >
+        txn_amt = #{txnAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="moblNo != null" >
+        mobl_no = #{moblNo,jdbcType=VARCHAR},
+      </if>
+      <if test="recieveId != null" >
+        recieve_id = #{recieveId,jdbcType=VARCHAR},
+      </if>
+      <if test="refundAmtApl != null" >
+        refund_amt_apl = #{refundAmtApl,jdbcType=VARCHAR},
+      </if>
+      <if test="refundedAmt != null" >
+        refunded_amt = #{refundedAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="txnStat != null" >
+        txn_stat = #{txnStat,jdbcType=VARCHAR},
+      </if>
+      <if test="txnType != null" >
+        txn_type = #{txnType,jdbcType=VARCHAR},
+      </if>
+      <if test="ssnUpdDateTime != null" >
+        ssn_upd_date_time = #{ssnUpdDateTime,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where txn_ssn = #{txnSsn,jdbcType=CHAR}
+      and order_no = #{orderNo,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.BuyRecord" >
+    update buy_record
+    set ssn_crt_date_time = #{ssnCrtDateTime,jdbcType=CHAR},
+      order_type = #{orderType,jdbcType=CHAR},
+      txn_channel = #{txnChannel,jdbcType=VARCHAR},
+      pagy_txn_ssn = #{pagyTxnSsn,jdbcType=VARCHAR},
+      ping_id = #{pingId,jdbcType=VARCHAR},
+      pagy_txn_stat = #{pagyTxnStat,jdbcType=VARCHAR},
+      pagy_settle_amt = #{pagySettleAmt,jdbcType=VARCHAR},
+      pagy_order_finish_time = #{pagyOrderFinishTime,jdbcType=VARCHAR},
+      pagy_order_expire_time = #{pagyOrderExpireTime,jdbcType=VARCHAR},
+      pagy_settle_time = #{pagySettleTime,jdbcType=VARCHAR},
+      pagy_resp_fail_code = #{pagyRespFailCode,jdbcType=VARCHAR},
+      pagy_resp_fail_msg = #{pagyRespFailMsg,jdbcType=VARCHAR},
+      role_type = #{roleType,jdbcType=CHAR},
+      product_name = #{productName,jdbcType=VARCHAR},
+      customer_name = #{customerName,jdbcType=VARCHAR},
+      customer_address = #{customerAddress,jdbcType=VARCHAR},
+      product_size = #{productSize,jdbcType=VARCHAR},
+      txn_amt = #{txnAmt,jdbcType=VARCHAR},
+      mobl_no = #{moblNo,jdbcType=VARCHAR},
+      recieve_id = #{recieveId,jdbcType=VARCHAR},
+      refund_amt_apl = #{refundAmtApl,jdbcType=VARCHAR},
+      refunded_amt = #{refundedAmt,jdbcType=VARCHAR},
+      txn_stat = #{txnStat,jdbcType=VARCHAR},
+      txn_type = #{txnType,jdbcType=VARCHAR},
+      ssn_upd_date_time = #{ssnUpdDateTime,jdbcType=CHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where txn_ssn = #{txnSsn,jdbcType=CHAR}
+      and order_no = #{orderNo,jdbcType=CHAR}
+  </update>
+
+  <!--查询工人的交易记录-->
+  <select id="selectAllByCustomerId" resultMap="BaseResultMap" parameterType="map" >
+    select
+    <include refid="Base_Column_List" />
+    from buy_record
+    where customer_id = #{customerId,jdbcType=INTEGER}
+  </select>
+  <update id="updateTxnSsn" parameterType="com.qianmo.qmyjback.bean.dto.BuyRecord" >
+    update buy_record
+    <set >
+      <if test="customerName != null" >
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerAddress != null" >
+        customer_address = #{customerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="productSize != null" >
+        product_size = #{productSize,jdbcType=VARCHAR},
+      </if>
+      <if test="txnAmt != null" >
+        txn_amt = #{txnAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="moblNo != null" >
+        mobl_no = #{moblNo,jdbcType=VARCHAR},
+      </if>
+      <if test="txnStat != null" >
+        txn_stat = #{txnStat,jdbcType=VARCHAR},
+      </if>
+      <if test="txnType != null" >
+        txn_type = #{txnType,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null" >
+        channel = #{channel,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null" >
+        order_no = #{orderNo,jdbcType=CHAR},
+      </if>
+      <if test="roleType != null" >
+        role_type = #{roleType,jdbcType=CHAR},
+      </if>
+      <if test="orderCrtTime != null" >
+        order_crt_time = #{orderCrtTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orderUpdTime != null" >
+        order_upd_time = #{orderUpdTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_no = #{orderNo,jdbcType=CHAR}
+    and product_name = #{productName,jdbcType=VARCHAR}
+  </update>
+
+    <resultMap id="RecordList" type="com.qianmo.qmyjback.cache.RecordCache" >
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="mobl_no" property="moblNo" jdbcType="VARCHAR" />
+        <result column="order_txn_amt" property="orderTxnAmt" jdbcType="VARCHAR" />
+        <result column="txn_channel" property="txnChannel" jdbcType="VARCHAR" />
+        <result column="ssn_upd_date_time" property="ssnUpdDateTime" jdbcType="CHAR" />
+        <result column="txn_stat" property="txnStat" jdbcType="VARCHAR" />
+    </resultMap>
+
+
+    <select id="getBuyRecordIndex" resultMap="RecordList" >
+        SELECT
+        ui.user_name,
+        ui.mobl_no,
+        oi.order_txn_amt,
+        br.txn_channel,
+        br.ssn_upd_date_time,
+        br.txn_stat
+        FROM
+        buy_record br,order_info oi,user_info ui
+        WHERE
+        br.order_no = oi.order_no
+        AND
+        oi.user_id = ui.user_id
+        AND
+        oi.txn_type='01'
+        AND
+        oi.order_type = '01'
+    </select>
+
+
+    <resultMap id="TxnSsnList" type="com.qianmo.qmyjback.cache.TxnSsnCache" >
+        <result column="ssn_upd_date_time" property="ssnUpdDateTime" jdbcType="CHAR" />
+        <result column="txn_type" property="txnType" jdbcType="VARCHAR" />
+        <result column="order_txn_amt" property="orderTxnAmt" jdbcType="VARCHAR" />
+        <result column="txn_channel" property="txnChannel" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="queryTxnSsn" resultMap="TxnSsnList" >
+        SELECT
+        br.ssn_upd_date_time,
+        oi.txn_type,
+        oi.order_txn_amt,
+        br.txn_channel
+        FROM
+        buy_record br,order_info oi,user_info ui
+        WHERE
+        br.order_no = oi.order_no
+        AND
+        oi.user_id = ui.user_id
+    </select>
+
+</mapper>

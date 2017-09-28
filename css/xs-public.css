@@ -1,0 +1,140 @@
+@charset "utf-8";
+/*全局样式开始*/
+*{margin: auto 0;padding: 0;font-size: 16px;font-family: "微软雅黑";}
+a,u{text-decoration:none;}
+a:hover{text-decoration:underline;}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; color: #fff;}
+select{background: none;}
+select option{text-indent: 2em;}
+/*select option:hover,select option:visited,select option:active{background-color: #fde5e8;}*/ 
+em,i{font-style:normal;}
+body,html{width: 100%;height: 100%;}
+
+
+button,input,select,textarea{font-size:100%;}
+input,select,option,button{outline:  none;border: 0 !important;}
+/*input,select,option{border: 0 !important;}*/
+/*body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}*/
+dl,dt,dd,ul,ol,li{list-style: none;}
+
+.fl{float: left;}
+.fr{float: right;}
+.cf{clear: both;}
+.b{border: 1px solid red;}
+.w{width: 1200px;}
+/*全局样式结束*/
+.box{width: 100%;height: 100%;}
+.bgTop{width: 100%;height: 50%;}
+.bgTop img{width: 100%;height: 100%;}
+.ctr{margin: auto;overflow: hidden;}
+.xs-color{color: #55a2da;}
+.star{color: #ff4f4f;}
+
+
+/*欢迎来到红宝石平台*/
+.xs-welcome-head{height: 40px;line-height: 40px;background: #3d3d3d;color: #fff;font-size: 14px;}
+/*login*/
+.xs-welcome-head-login{height: 100px;}
+.xs-welcome-login-icon{padding: 10px 0;overflow: hidden;}
+.xs-bg-img{height: 660px;background: url(../images/bg_im.png) no-repeat;}
+/*账号注册*/
+.xs-img-account{height: 58px;margin-top:11px;line-height: 58px;margin-left: 52px;padding-left: 30px;
+border-left: 1px solid #e6e6e6;font-size: 24px;color: #999;}
+/*loginContent*/
+.xs-bg-img-content{width:490px; height:475px;background: url(../images/bg_kuang.png) no-repeat;background-size: 100% 100%;
+margin-right: 24px;margin-top: 68px;}
+.xs-bg-img-content-box{width: 320px;margin: auto;margin-top: 100px;}
+.xs-member-login{font-size: 18px;color: #757575;padding-bottom: 18px;border-bottom: 1px solid #bfbfbf;}
+.xs-member-box.xs-member-box-user{margin-top: 15px;}
+.xs-member-box{width: 320px;border: 1px solid #e5e5e5;border-radius: 3px;height: 36px;margin-top: 10px;}
+.xs-member-icon{width: 15px;height:18px;float: left;padding: 8px 10px;}
+.xs-member-box input{height: 36px;width: 280px;font-size: 14px;}
+.xs-member-box input.checkCode{width: 196px;}
+.xs-member-box .checkCodeImg{width: 80px;border: 1px solid #e5e5e5;height: 36px;border-radius: 3px;color: #ebebeb;font-size: 14px;}
+.xs-member-box .checkCodeImg img{width: 100%;height: 100%;}
+.xs-member-color{font-size: 14px;color: #fc7988;padding-left: 10px;padding-top: 20px;}
+/*登录按钮*/
+.xs-member-btn{width: 100%;background: #fc7988;color: #fff;height: 36px;border: 0;border-radius: 6px;margin-top: 25px;}
+/*注册按钮*/
+.xs-registerBtn{width: 120px;margin-top: 30px;}
+/*注册*/
+.xs-register-box{border: 1px solid #fc7988;width: 728px;height: 458px;margin-left: 108px;margin-top: 3px;}
+.xs-activate-box{height: 738px;}
+.xs-sub-title{height: 40px;color: #FC7988;background: #fff1f3;padding-left: 24px;line-height: 40px;}
+.xs-register-box-account{width: 355px; overflow: hidden; padding-top: 40px;padding-left: 40px;}
+.xs-activate-msg{padding-top: 30px;}
+
+.xs-registerImg-word{height: 36px;line-height: 36px;display: block;color: #333;}
+.xs-registerImg-box{width: 202px;padding-left: 10px; height: 36px;border: 1px solid #ccc;border-radius: 6px;margin-right: 5px;margin-bottom: 30px;}
+.xs-registerImg-box input{width: 202px;height:36px;}
+.actmar{margin-bottom: 10px;}
+.xs-box-check{width: 100px;margin-right: 0;padding-left: 10px;}
+.xs-registerImg-box input.checkCode{width: 100px;}
+.checkCode-img{width: 95px;height: 36px;border-radius: 3px;color: #ebebeb;font-size: 14px;}
+.checkCode-img img{width: 100%;height: 100%;}
+
+/*input*/
+.xs-hint-box{position: relative;}
+.icon{width: 16px;float: left;padding: 11.5px 0 11.5px 16px;}
+.xs-div-box input{height: 40px;width: 270px;color: #000;}
+.xs-registerDiv-box input{width: 300px;}
+.xs-div-box input.checkCode{width: 170px;margin-left: 16px;}
+.checkCodeImg{width: 100px;border-left: 1px solid #e5e5e5;height: 40px;border-radius: 3px;}
+.checkCodeImg img{width: 100%;height: 100%;}
+
+/*提示弹框*/
+.xs-hint{width: 176px;height: 57px;background: url(../images/popUp.png) no-repeat;position: absolute;top: -28px;display: none;}
+.xs-hint-bg{background-size: 100% 100%;}
+.xs-hint-icon{background: url(../images/Icon-hint.png) 18px 7px no-repeat;width: 38px;height: 27px;margin-right: 10px;}
+.xs-hint-word{line-height: 36px;color: #fc7988;font-size: 12px;}
+
+/*充值提现*/
+.xs-recharge-box{height: 100%;width: 100%;}
+.xs-recharge-head{height: 90px;border-bottom: 6px solid #fde5e8;}
+.xs-recharge-logo{padding: 8px 0 10px 66px;}
+.xs-recharge-content{height: 100%;width:100%}
+.xs-recharge-leftSlider{height: 100%;}
+.xs-recharge-menuBox{width: 240px;border-right: 6px solid #fde5e8;height: 100%;}
+.xs-recharge-menu{margin-top: 84px;overflow: hidden;height: 100%;}
+.xs-recharge-menu li{height: 44px;}
+.xs-recharge-menu li em{font-size: 18px;color: #333;line-height: 44px;}
+.xs-recharge-icon{width: 22px;height: 22px;padding: 11px 10px 0 30px;}
+
+.xs-recharge-menu li:hover{background: #f7eeef;border-left: 4px solid #fc7988;}
+.xs-recharge-active{background: #f7eeef;border-left: 4px solid #fc7988;}
+
+/*单选按钮*/
+
+/*单选框*/
+.xs-radio {display: inline-block;width: 14px;height: 14px;/*margin-right: 10px;*/position: relative;border: 1px solid #fc7c8a;
+	vertical-align: middle;border-radius: 100%;margin-top: 12px;}
+.xs-radio input {opacity: 0;position: absolute;top:0;left:0;width: 100%;
+	height:100%;z-index:100;/*使input按钮在span的上一层，不加点击区域会出现不灵敏*/}
+.xs-radio span { display: block;width: 10px;height: 10px;border-radius: 100%;position: absolute;background: #fc7c8a;top: 50%;left:50%;
+	margin: -5px 0  0 -5px;z-index:1;}
+.xs-radio input[type="radio"] + span {opacity: 0;}
+.xs-radio input[type="radio"]:checked + span {opacity: 1;}
+
+.xs-radio-box{margin-left: 24px;overflow: hidden;float: left;width: 75px;}
+.xs-radio-word{margin-left: 10px;height: 16px;}
+
+/*充值按钮*/
+.xs-recharge-btn{width: 220px;height: 57px;margin-left: 194px;background: #fc7988;color: #fff;border: 0;border-radius: 3px;margin-top: 60px;}
+
+/*弹窗蒙版*/
+.xs-mask{background: rgba(0,0,0,0.5);z-index: 50px;position: absolute; left: 0; top: 0; 
+display: none; overflow: hidden;width: 100%;height: 100%;}
+/*弹窗提示*/
+.xs-popup-box{position: absolute;z-index: 25;left: 50%;top: 50%;margin-left: -160px;margin-top: -110px;display: none;}
+.xs-popup-content{width: 320px;height: 220px;background: white;border-radius: 6px;text-align: center;}
+.xs-popup-hint{width: 211px;color: #fc7988;margin: auto;padding-top: 50px;line-height: 24px;}
+.xs-popup-btn{width: 211px;margin: auto;}
+/*关闭*/
+.xs-close{width: 22px;height: 22px;position: absolute;top: -5px;right: -5px;}
+
+/*按钮美化*/
+.file {position: relative;display: inline-block;/*background: url(../images/addIcon.png) center no-repeat;border: 1px solid #fc7988;*/border-radius: 3px;
+width: 120px;height: 70px;overflow: hidden;margin-top:8px;margin-right: 10px;}
+.file input {position: absolute;font-size: 100px;right: 0;top: 0;opacity: 0;}
+.file:hover {background: url(../images/addIcon.png) center no-repeat;border-color: #f50100;}

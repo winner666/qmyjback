@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			html,body,*{
+    		margin: 0px;
+    		padding: 0px;
+    		font-family: "微软雅黑";
+    		background:#eeeeee;
+    	}
+    	.index_JC{
+    		/*width: 100%;*/
+    		height: auto;
+    		padding: 20px;
+    		margin: auto;
+    	}
+		</style>
+		<script src="../js/jquery-1.10.2.min.js"></script>
+		<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/modernizr.min.js"></script>
+		<script src="../js/jquery.nicescroll.js"></script>
+	</head>
+
+	<body>
+		<div class="Thlog_box" id="zhengyue">
+
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type: "GET",
+					url:dataUrl+'/CommponyInfoController/queryCommponyInfo.do',
+					data:{"priKey":"00"},
+					dataType: "json",
+					success: function(data){
+						$.each(data,function(i,item){
+							$('#zhengyue').html(item.kindService);
+						});
+
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="ThemeBucket">
+		<link rel="shortcut icon" href="#" type="image/png">
+
+		<title>Basic Table</title>
+		<style>
+			.user {
+				text-align: right;
+			}
+			
+			#btn {
+				margin: 28px;
+			}
+			
+			.block {
+				cursor: pointer;
+			}
+		</style>
+		<link href="../css/style1.css" rel="stylesheet">
+		<link href="../css/style-responsive.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/page.css" />
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+  <script src="../js/html5shiv.js"></script>
+  <script src="../js/respond.min.js"></script>
+
+  <script src="../js/jquery-1.4.3.js"></script>
+  <![endif]-->
+	</head>
+
+	<body class="sticky-header">
+
+		<section>
+			<!-- left side start-->
+			<div class="left-side sticky-left-side">
+
+				<!--logo and iconic logo start-->
+				<div class="logo">
+					<a href="index.html"><img src="../img/logo1.png" alt=""></a>
+				</div>
+
+				<div class="logo-icon text-center">
+					<a href="index.html"><img src="../img/logo_icon.png" alt=""></a>
+				</div>
+				<!--logo and iconic logo end-->
+
+				<div class="left-side-inner">
+
+					<!-- visible to small devices only -->
+					<div class="visible-xs hidden-sm hidden-md hidden-lg">
+						<div class="media logged-user">
+							<img alt="" src="../img/photos/user-avatar.png" class="media-object">
+							<div class="media-body">
+								<h4><a href="#">John Doe</a></h4>
+								<span>"Hello There..."</span>
+							</div>
+						</div>
+
+						<h5 class="left-nav-title">Account Information</h5>
+						<ul class="nav nav-pills nav-stacked custom-nav">
+							<li>
+								<a href="#"><i class="fa fa-user"></i> <span>Profile</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a>
+							</li>
+						</ul>
+					</div>
+
+					<!--sidebar nav start-->
+					<ul class="nav nav-pills nav-stacked custom-nav">
+						<li>
+							<a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-laptop"></i> <span>广告管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="blank_page.html"> app banner管理</a>
+								</li>
+								<li>
+									<a href="boxed_view.html"> 关于我们</a>
+								</li>
+								<li>
+									<a href="user_fw.html"> 青木易家用户服务协议</a>
+								</li>
+								<li>
+									<a href="userUseText.html"> 用户使用说明</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-book"></i> <span> 新手技能培训</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="general.html"> 公司奖惩制度</a>
+								</li>
+								<li>
+									<a href="buttons.html"> 礼貌服务要求</a>
+								</li>
+								<li>
+									<a href="tabs-accordions.html"> 施工流程方法</a>
+								</li>
+								<li>
+									<a href="exam.html"> 新手考试题目</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-cogs"></i> <span> 用户管理</span></a>
+							<ul style="display: block;" class="sub-menu-list">
+								<li>
+									<a style="color:#65CEA7;" href="userlist.html"> 用户列表</a>
+								</li>
+								<li>
+									<a href="blacklist.html"> 黑名单</a>
+								</li>
+							</ul>
+						</li>
+
+						<!--  <li><a href="orderlist.html"><i class="fa fa-bullhorn"></i> <span> 订单管理</span></a></li>-->
+						<li class="menu-list">
+							<a href=""><i class="fa fa-cogs"></i> <span>订单管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="orderlist.html"> 订单列表</a>
+								</li>
+								<li>
+									<a href="backlist.html"> 退单列表</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="menu-list">
+							<a href=""><i class="fa fa-envelope"></i> <span> 设备耗材</span></a>
+							<ul class="sub-menu-list">
+								<li><a href="new_supplies.html"> 耗材列表</a></li>
+								<li>
+									<a href="consumable_order.html"> 耗材订单</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="drug_quota.html"><i class="fa fa-tasks"></i> <span> 药剂配额管理</span></a>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-bar-chart-o"></i> <span> 财务管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="order_allocation.html"> 订单额分配</a>
+								</li>
+								<li>
+									<a href="cash_management.html"> 提现管理</a>
+								</li>
+								<li>
+									<a href="bank_statement.html">流水</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href="#"><i class="fa fa-th-list"></i> <span> 消息管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="message_list.html"> 消息列表</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--sidebar nav end-->
+
+				</div>
+			</div>
+			<!-- left side end-->
+
+			<!-- main content start-->
+			<div class="main-content">
+
+				<!-- header section start-->
+				<div class="header-section">
+
+					<!--toggle button start-->
+					<a class="toggle-btn"><i class="fa fa-bars"></i></a>
+					<!--toggle button end-->
+
+					<!--search start-->
+					<form class="searchform" action="http://view.jqueryfuns.com/2014/4/10/7_df25ceea231ba5f44f0fc060c943cdae/index.html" method="post">
+						<input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+					</form>
+					<!--search end-->
+
+					<!--notification menu start -->
+					<div class="menu-right">
+						<ul class="notification-menu">
+							<li>
+								<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<img src="../img/photos/user-avatar.png" alt="" /> John Doe
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+									<li>
+										<a href="modifyPass.html"><i class="fa fa-cog"></i>修改密码</a>
+									</li>
+									<li>
+										<a href="login.html"><i class="fa fa-sign-out"></i> 退出</a>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+					<!--notification menu end -->
+
+				</div>
+				<!-- header section end-->
+
+				<!-- page heading start-->
+
+				<!-- page heading end-->
+
+				<!--body wrapper start-->
+				<div class="wrapper">
+					<div class="row">
+						<div class="col-sm-12">
+							<section class="panel" style="padding:5px;">
+								<from class="panel-body">
+									<div class="col-xs-4">
+										<span class="col-xs-4 user">用户手机号码：</span><input id="userMobilNo" name="userMobilNo" class="col-xs-6" type="text" />
+									</div>
+									<div class="col-xs-4">
+										<span class="col-xs-4 user"> 用户名：</span><input id="userName" name="userName" class="col-xs-6" type="text" />
+									</div>
+									<div class="col-xs-4">
+										<button style="position: absolute;top:-22px;" class="btn btn-info col-xs-3" type="button" onclick="queryUser(1,-1)">搜索</button>
+									</div>
+								</from>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<section class="panel">
+								<header class="panel-heading">
+									用户列表
+								</header>
+								<div class="panel-body">
+									<table class="table  table-hover general-table">
+										<thead>
+											<tr>
+												<th>用户手机号</th>
+												<th class="hidden-phone">用户姓名</th>
+												<th>身份证号</th>
+												<th>用户地区</th>
+												<th style="text-align: center;">操作</th>
+											</tr>
+										</thead>
+										<tbody class="zhengyue">
+
+										</tbody>
+										<tfooter>
+											<!--<tr>
+                                        <td></td>
+                                        <td>用户统计量</td>
+                                        <td id="userCount"></td>
+                                    </tr>-->
+										</tfooter>
+									</table>
+									<div class='isPage'>
+										<!--<div class="tcdPageCode"></div>-->
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+				<!--body wrapper end-->
+
+				<!--footer section start-->
+				<footer>
+					2014 &copy; AdminEx by ThemeBucket
+				</footer>
+				<!--footer section end-->
+
+			</div>
+			<!-- main content end-->
+		</section>
+
+		<!-- Placed js at the end of the document so the pages load faster -->
+		<script src="../js/jquery-1.10.2.min.js"></script>
+		<script src="../js/jquery.page.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/modernizr.min.js"></script>
+		<script src="../js/jquery.nicescroll.js"></script>
+		<!--根据用户名和手机号查询用户-->
+		<script type="text/javascript">
+			var pageNum = 1; //当前页数
+			var pageSize = 10; //当前每页条数
+			var totalCount=0;			
+			var bTestTag = true; //测试代码
+			queryUser(pageNum)
+
+			function queryUser(pageNum,isInit) {
+				console.log(666)
+				var userMobil = document.getElementsByName("userMobilNo")[0].value;
+				var userName = document.getElementsByName("userName")[0].value;
+				$.ajax({
+					url: dataUrl + "/UserController/queryUserByMobilOrName.do",
+					async: false,
+					data: {
+						"userStaut": "00",
+						"mobil": userMobil,
+						"userName": userName,
+						"pageNumber": pageNum,
+						"pageSize": pageSize
+					},
+					type: "post",
+					success: function(data) {
+						        console.log(data)
+
+						var list = data.obj;
+							/*新添加的代码，仅供测试使用*/
+							//console.log(data.obj.total)
+							totalCount=Math.ceil(data.total/pageSize)
+						if(bTestTag||isInit==-1){
+							//console.log("为什么没进来？")
+							//window.location.reload()
+							bTestTag = false
+							isInit = !isInit
+							console.log(totalCount)
+							page()
+						}else{
+							//console.log("执行下一页")
+						}
+							
+							
+							
+							
+							
+							
+							
+						if(list.length != 0) {
+							
+							
+							// console.log(list)
+							var html = ''
+							for(var i = 0; i < list.length; i++) {
+
+								html += '<tr>'
+								html += '<td>' + list[i].moblNo + '</td>'
+								html += '<td>' + list[i].userName + '</td>'
+								html += '<td>' + list[i].certNo + '</td>'
+								html += '<td>' + list[i].address + '</td>'
+								html += '<td userId="' + list[i].userId + '" class="block">加入黑名单</td>"'
+								html += '</tr>'
+
+							}
+
+							$('.zhengyue').html(html);
+
+						} else {
+							$('.zhengyue').html('');
+						}
+
+						$('.block').click(function() {
+							var userId = $(this).attr('userId');
+							console.log(userId)
+							$.ajax({
+								url: dataUrl + "/UserController/updateUserStat.do",
+								data: {
+									"userId": userId,
+									"userStat": "99"
+								},
+								type: "post",
+								success: function(data) {
+									//		                      console.log(data)
+									if(data.code == 0000) {
+										queryUser(pageNum)
+									}
+
+								}
+							});
+						})
+
+					}
+				});
+				
+			}
+		
+			 function page(){  //这段代码不能放在tiaojianQuery()函数内执行，会引起下一页出问题
+			 	
+			 	$(".tcdPageCode").remove();
+   				 $(".isPage").append("<div class='tcdPageCode'></div>");
+			 	
+					$(".tcdPageCode").createPage({
+				        pageCount:totalCount,
+				        current:1,
+				        backFn:function(p){
+				        	queryUser(p)
+				        }
+				    });
+				}
+			
+		</script>
+		<script type="text/javascript">
+			//修改用户状态
+			//  function del(userId) {
+			//      if (confirm("是否加入黑名单？")) {
+			//          //进行删除操作(通过ajax)
+			//          //使用jquery实现ajax
+			//          $.ajax({
+			//              url:dataUrl+"/UserController/updateUserStat.do",
+			//              data:{"userId":userId,"userStat":"99"},
+			//              type: "post",
+			//              success: function(data) {
+			//                      confirm("成功");
+			//                      window.location='userlist.html';
+			//                      getusers();
+			//              }
+			//          });
+			//      }
+			//  }
+		</script>
+		<!--查询用户信息-->
+		<script type="text/javascript">
+			$(function() {
+				$.ajax({
+					type: "GET",
+					url: dataUrl + '/UserController/queryUserCount.do',
+					data: {
+						"userStat": "00"
+					},
+					dataType: "json",
+					success: function(data) {
+						var crmHtmlz2 = '';
+						$.each(data, function(i, item) {
+							$('#userCount').html(item);
+						});
+					}
+				});
+			});
+		</script>
+		<!--common scripts for all pages-->
+		<script src="../js/scripts.js"></script>
+
+	</body>
+
+</html>

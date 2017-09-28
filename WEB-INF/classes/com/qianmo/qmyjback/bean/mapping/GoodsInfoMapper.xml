@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.GoodsInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.GoodsInfo" >
+    <id column="goods_id" property="goodsId" jdbcType="CHAR" />
+    <result column="consum_name" property="consumName" jdbcType="VARCHAR" />
+    <result column="consum_unit_price" property="consumUnitPrice" jdbcType="VARCHAR" />
+    <result column="consum_img" property="consumImg" jdbcType="VARCHAR" />
+    <result column="consum_explanation" property="consumExplanation" jdbcType="VARCHAR" />
+    <result column="consum_title" property="consumTitle" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    goods_id, consum_name, consum_unit_price, consum_img, consum_explanation, consum_title, 
+    remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from goods_info
+    where goods_id = #{goodsId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from goods_info
+    where goods_id = #{goodsId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.GoodsInfo" >
+    insert into goods_info (goods_id, consum_name, consum_unit_price, 
+      consum_img, consum_explanation, consum_title, 
+      remark)
+    values (#{goodsId,jdbcType=CHAR}, #{consumName,jdbcType=VARCHAR}, #{consumUnitPrice,jdbcType=VARCHAR}, 
+      #{consumImg,jdbcType=VARCHAR}, #{consumExplanation,jdbcType=VARCHAR}, #{consumTitle,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.GoodsInfo" >
+    insert into goods_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="goodsId != null" >
+        goods_id,
+      </if>
+      <if test="consumName != null" >
+        consum_name,
+      </if>
+      <if test="consumUnitPrice != null" >
+        consum_unit_price,
+      </if>
+      <if test="consumImg != null" >
+        consum_img,
+      </if>
+      <if test="consumExplanation != null" >
+        consum_explanation,
+      </if>
+      <if test="consumTitle != null" >
+        consum_title,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=CHAR},
+      </if>
+      <if test="consumName != null" >
+        #{consumName,jdbcType=VARCHAR},
+      </if>
+      <if test="consumUnitPrice != null" >
+        #{consumUnitPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="consumImg != null" >
+        #{consumImg,jdbcType=VARCHAR},
+      </if>
+      <if test="consumExplanation != null" >
+        #{consumExplanation,jdbcType=VARCHAR},
+      </if>
+      <if test="consumTitle != null" >
+        #{consumTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.GoodsInfo" >
+    update goods_info
+    <set >
+      <if test="consumName != null" >
+        consum_name = #{consumName,jdbcType=VARCHAR},
+      </if>
+      <if test="consumUnitPrice != null" >
+        consum_unit_price = #{consumUnitPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="consumImg != null" >
+        consum_img = #{consumImg,jdbcType=VARCHAR},
+      </if>
+      <if test="consumExplanation != null" >
+        consum_explanation = #{consumExplanation,jdbcType=VARCHAR},
+      </if>
+      <if test="consumTitle != null" >
+        consum_title = #{consumTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where goods_id = #{goodsId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.GoodsInfo" >
+    update goods_info
+    set consum_name = #{consumName,jdbcType=VARCHAR},
+      consum_unit_price = #{consumUnitPrice,jdbcType=VARCHAR},
+      consum_img = #{consumImg,jdbcType=VARCHAR},
+      consum_explanation = #{consumExplanation,jdbcType=VARCHAR},
+      consum_title = #{consumTitle,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where goods_id = #{goodsId,jdbcType=CHAR}
+  </update>
+  <!--查询所有耗材————————————————————-->
+  <select id="SelectAllGoodsinfo" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select * from goods_info;
+  </select>
+</mapper>

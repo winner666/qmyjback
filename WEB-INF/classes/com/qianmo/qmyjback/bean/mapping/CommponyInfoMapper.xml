@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.CommponyInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.CommponyInfo" >
+    <id column="pri_key" property="priKey" jdbcType="CHAR" />
+    <result column="about_us" property="aboutUs" jdbcType="VARCHAR" />
+    <result column="reward_system" property="rewardSystem" jdbcType="VARCHAR" />
+    <result column="kind_service" property="kindService" jdbcType="VARCHAR" />
+    <result column="construct_method" property="constructMethod" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pri_key, about_us, reward_system, kind_service, construct_method, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from commpony_info
+    where pri_key = #{priKey,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from commpony_info
+    where pri_key = #{priKey,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.CommponyInfo" >
+    insert into commpony_info (pri_key, about_us, reward_system, 
+      kind_service, construct_method, remark
+      )
+    values (#{priKey,jdbcType=CHAR}, #{aboutUs,jdbcType=VARCHAR}, #{rewardSystem,jdbcType=VARCHAR}, 
+      #{kindService,jdbcType=VARCHAR}, #{constructMethod,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.CommponyInfo" >
+    insert into commpony_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="priKey != null" >
+        pri_key,
+      </if>
+      <if test="aboutUs != null" >
+        about_us,
+      </if>
+      <if test="rewardSystem != null" >
+        reward_system,
+      </if>
+      <if test="kindService != null" >
+        kind_service,
+      </if>
+      <if test="constructMethod != null" >
+        construct_method,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="priKey != null" >
+        #{priKey,jdbcType=CHAR},
+      </if>
+      <if test="aboutUs != null" >
+        #{aboutUs,jdbcType=VARCHAR},
+      </if>
+      <if test="rewardSystem != null" >
+        #{rewardSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="kindService != null" >
+        #{kindService,jdbcType=VARCHAR},
+      </if>
+      <if test="constructMethod != null" >
+        #{constructMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.CommponyInfo" >
+    update commpony_info
+    <set >
+      <if test="aboutUs != null" >
+        about_us = #{aboutUs,jdbcType=VARCHAR},
+      </if>
+      <if test="rewardSystem != null" >
+        reward_system = #{rewardSystem,jdbcType=VARCHAR},
+      </if>
+      <if test="kindService != null" >
+        kind_service = #{kindService,jdbcType=VARCHAR},
+      </if>
+      <if test="constructMethod != null" >
+        construct_method = #{constructMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pri_key = #{priKey,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.CommponyInfo" >
+    update commpony_info
+    set about_us = #{aboutUs,jdbcType=VARCHAR},
+      reward_system = #{rewardSystem,jdbcType=VARCHAR},
+      kind_service = #{kindService,jdbcType=VARCHAR},
+      construct_method = #{constructMethod,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where pri_key = #{priKey,jdbcType=CHAR}
+  </update>
+  <!--查询公司信息-->
+  <select id="selectByAll" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from commpony_info
+  </select>
+</mapper>

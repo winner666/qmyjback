@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="ThemeBucket">
+		<link rel="shortcut icon" href="#" type="image/png">
+		<link rel="stylesheet" href="../css/page.css" />
+		<title>Basic Table</title>
+		<style>
+			.add-on {
+				display: inline-block;
+				height: 26px;
+				min-width: 16px;
+				padding: 6px 5px;
+				font-size: 14px;
+				font-weight: normal;
+				line-height: 20px;
+				text-align: center;
+				text-shadow: 0 1px 0 #ffffff;
+				border: 1px solid #999;
+				border-left: none;
+				border-radius: 0 20% 20% 0;
+				margin-top: -37px;
+			}
+			
+			.icon-th {
+				display: inline-block;
+				width: 14px;
+				height: 14px;
+				line-height: 14px;
+				vertical-align: text-top;
+				background-position: -240px 0;
+				background-image: url(../img/glyphicons-halflings.png);
+				background-repeat: no-repeat;
+				margin-top: 1px;
+			}
+		</style>
+		<link href="../css/style1.css" rel="stylesheet">
+		<link href="../css/style-responsive.css" rel="stylesheet">
+		<!--日期选择部分-->
+		<link rel="stylesheet" href="../js/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+		<!--日期选择部分结束-->
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.min.js"></script>
+
+    <script src="../js/jquery-1.4.3.js"></script>
+    <![endif]-->
+
+	</head>
+
+	<body class="sticky-header">
+
+		<section>
+			<!-- left side start-->
+			<div class="left-side sticky-left-side">
+
+				<!--logo and iconic logo start-->
+				<div class="logo">
+					<a href="index.html"><img src="../img/logo1.png" alt=""></a>
+				</div>
+
+				<div class="logo-icon text-center">
+					<a href="index.html"><img src="../img/logo_icon.png" alt=""></a>
+				</div>
+				<!--logo and iconic logo end-->
+
+				<div class="left-side-inner">
+
+					<!-- visible to small devices only -->
+					<div class="visible-xs hidden-sm hidden-md hidden-lg">
+						<div class="media logged-user">
+							<img alt="" src="../img/photos/user-avatar.png" class="media-object">
+							<div class="media-body">
+								<h4><a href="#">John Doe</a></h4>
+								<span>"Hello There..."</span>
+							</div>
+						</div>
+
+						<h5 class="left-nav-title">Account Information</h5>
+						<ul class="nav nav-pills nav-stacked custom-nav">
+							<li>
+								<a href="#"><i class="fa fa-user"></i> <span>Profile</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a>
+							</li>
+						</ul>
+					</div>
+
+					<!--sidebar nav start-->
+					<ul class="nav nav-pills nav-stacked custom-nav">
+						<li>
+							<a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-laptop"></i> <span>广告管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="blank_page.html"> app banner管理</a>
+								</li>
+								<li>
+									<a href="boxed_view.html"> 关于我们</a>
+								</li>
+								<li>
+									<a href="user_fw.html"> 青木易家用户服务协议</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-book"></i> <span> 新手技能培训</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="general.html"> 公司奖惩制度</a>
+								</li>
+								<li>
+									<a href="buttons.html"> 礼貌服务要求</a>
+								</li>
+								<li>
+									<a href="tabs-accordions.html"> 施工流程方法</a>
+								</li>
+								<li>
+									<a href="exam.html"> 新手考试题目</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-cogs"></i> <span> 用户管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="userlist.html"> 用户列表</a>
+								</li>
+								<li>
+									<a href="blacklist.html"> 黑名单</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- <li><a href="orderlist.html"><i class="fa fa-bullhorn"></i> <span> 订单管理</span></a></li>-->
+						<li class="menu-list">
+							<a href=""><i class="fa fa-cogs"></i> <span>订单管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="orderlist.html"> 订单列表</a>
+								</li>
+								<li>
+									<a href="backlist.html"> 退单列表</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="menu-list">
+							<a href=""><i class="fa fa-envelope"></i> <span> 设备耗材</span></a>
+							<ul class="sub-menu-list">
+								
+								<li>
+									<a href="new_supplies.html"> 耗材列表</a>
+								</li>
+								<li>
+									<a href="consumable_order.html"> 耗材订单</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="drug_quota.html"><i class="fa fa-tasks"></i> <span> 药剂配额管理</span></a>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-bar-chart-o"></i> <span> 财务管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="order_allocation.html"> 订单额分配</a>
+								</li>
+								<li>
+									<a href="cash_management.html"> 提现管理</a>
+								</li>
+								<li>
+									<a href="bank_statement.html">流水</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href="#"><i class="fa fa-th-list"></i> <span> 消息管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="message_list.html"> 消息列表</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--sidebar nav end-->
+
+				</div>
+			</div>
+			<!-- left side end-->
+
+			<!-- main content start-->
+			<div class="main-content">
+
+				<!-- header section start-->
+				<div class="header-section">
+
+					<!--toggle button start-->
+					<a class="toggle-btn"><i class="fa fa-bars"></i></a>
+					<!--toggle button end-->
+
+					<!--search start-->
+					<form class="searchform" action="http://view.jqueryfuns.com/2014/4/10/7_df25ceea231ba5f44f0fc060c943cdae/index.html" method="post">
+						<input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+					</form>
+					<!--search end-->
+
+					<!--notification menu start -->
+					<div class="menu-right">
+						<ul class="notification-menu">
+							<li>
+								<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<img src="../img/photos/user-avatar.png" alt="" /> John Doe
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+									<li>
+										<a href="modifyPass.html"><i class="fa fa-cog"></i>修改密码</a>
+									</li>
+									<li>
+										<a href="login.html"><i class="fa fa-sign-out"></i> 退出</a>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+					<!--notification menu end -->
+
+				</div>
+				<!-- header section end-->
+
+				<!-- page heading start-->
+
+				<!-- page heading end-->
+
+				<!--body wrapper start-->
+				<div class="wrapper">
+					<div class="row">
+						<div class="col-sm-12">
+							<section class="panel">
+								<from class="panel-body">
+									<div class="row">
+										<div class="col-xs-3">
+											<span class="col-xs-5 user">订单编号：</span>
+											<input class="col-xs-7" id="orderNo" type="text" />
+										</div>
+										<div class="col-xs-3">
+											<span class="col-xs-5 user">订单状态：</span>
+											<select id="order">
+												<option value="-1">请选择</option>
+												<option value="0">待审核</option>
+												<option value="1">审核通过</option>
+												<option value="2">未通过</option>
+
+											</select>
+										</div>
+										<div class="col-xs-3">
+											<span class="col-xs-5 user">下单人：</span>
+											<input class="col-xs-7" id="orderName" type="text" />
+										</div>
+
+									</div>
+									<div class="row" style="margin-top: 28px;">
+										<div class="col-xs-3">
+											<span class="col-xs-5 user">下单人电话：</span>
+											<input class="col-xs-7" id="orderNumber" type="text" />
+										</div>
+										<button style="position: absolute;right:10%;" class="btn btn-info col-xs-1" onclick="tiaojianQuery(1,-1)" type="button">搜索
+                                </button>
+									</div>
+								</from>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<section class="panel">
+								<header class="panel-heading">
+									订单管理
+								</header>
+								<div class="panel-body">
+									<table class="table  table-hover general-table">
+										<thead>
+											<tr>
+												<th>订单编号</th>
+												<th>退单编号</th>
+												<th>下单人</th>
+												<th class="hidden-phone">下单人电话</th>
+												<th>地区</th>
+												<th>房屋面积</th>
+												<th>施工日期</th>
+												<th>退单日期</th>
+												<th>交易金额</th>
+												<th>退单原因</th>
+												<th>状态</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody class="orderList">
+											<!--<tr>
+										<td>221121212</td>
+										<td>张三</td>
+										<td>18968566987</td>
+										<td>上海</td>
+										<td>46</td>
+										<td>2017.07.06</td>
+										<td>2017.07.06</td>
+										<td>20</td>
+										<td>已审核</td>
+										<td>											
+											<a href="#myModal2" data-toggle="modal" class="btn btn-info btn-xs" style="color:#fff;"  onclick='backorder()'>通过</a>
+                                     		<a href="#myModal3" data-toggle="modal" class="btn btn-primary btn-xs" style="color:#fff;" onclick='backorder()'>驳回</a>
+										</td>
+									</tr>-->
+										</tbody>
+
+										<!--<tfooter>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td id="userCount"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td id="allOrderAmt"></td>
+                                    </tr>
+                                </tfooter>-->
+									</table>
+									<div class='isPage'>
+										<!--<div class="tcdPageCode"></div>-->
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+				<!--body wrapper end-->
+
+				<!--<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal2" class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                                    <h4 class="modal-title">审核</h4>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    	确定审核通过吗？
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                    <button type="button" class="btn btn-info go"> 确定</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+									<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal3" class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                                    <h4 class="modal-title">审核</h4>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                   	确定驳回吗？
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                    <button type="button" class="btn btn-info back"> 确定</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>-->
+
+				<!--footer section start-->
+				<footer>
+					2014 &copy; AdminEx by ThemeBucket
+				</footer>
+				<!--footer section end-->
+			</div>
+			<!-- main content end-->
+		</section>
+
+		<!-- Placed js at the end of the document so the pages load faster -->
+
+		<script src="../js/jquery-1.8.3.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/jquery.page.js"></script>
+		<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/modernizr.min.js"></script>
+		<script src="../js/jquery.nicescroll.js"></script>
+		
+		<script type="text/javascript">
+			Date.prototype.format = function(format) {
+				var date = {
+					"M+": this.getMonth() + 1,
+					"d+": this.getDate(),
+					"h+": this.getHours(),
+					"m+": this.getMinutes(),
+					"s+": this.getSeconds(),
+					"q+": Math.floor((this.getMonth() + 3) / 3),
+					"S+": this.getMilliseconds()
+				};
+				if(/(y+)/i.test(format)) {
+					format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+				}
+				for(var k in date) {
+					if(new RegExp("(" + k + ")").test(format)) {
+						format = format.replace(RegExp.$1, RegExp.$1.length == 1 ?
+							date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+					}
+				}
+				return format;
+			}
+
+			var pageNum = 1; //当前页数
+			var pageSize = 10; //当前每页条数
+			var totalCount = 0;
+
+			var bTestTag = true; //测试代码
+			tiaojianQuery(pageNum)
+
+			function tiaojianQuery(pageNum, isInit) {
+				var orderNo = $("#orderNo").val();
+				var orderNumber = $('#orderNumber').val();
+				var orderName = $('#orderName').val();
+				var myselect = document.getElementById("order");
+				var index = myselect.selectedIndex; // selectedIndex代表的是你所选中项的index
+				var orderState = myselect.options[index].value;
+				console.log(orderNo, orderNumber, orderName, orderState)
+				$.ajax({
+					type: "POST",
+					url: dataUrl + '/OrderInfoController/getAllByRetreatOrder.do',
+					contentType: 'application/json;charset=utf-8',
+					dataType: "JSON",
+					async: false,
+					data: JSON.stringify({
+						"orderNo": orderNo,
+						"orderUserName": orderName,
+						"moblNo": orderNumber,
+						"state": orderState,
+						"pageNumber": pageNum,
+						"pageSize": pageSize
+					}),
+					success: function(data) {
+						console.log(data)
+						if(data.code == 0000) {
+							totalCount = Math.ceil(data.tatol / pageSize);
+							if(bTestTag || isInit == -1) {
+								console.log("为什么没进来？")
+								//window.location.reload()
+								bTestTag = false
+								isInit = !isInit
+								page()
+							} else {
+								console.log("执行下一页")
+							}
+							if(data.object.length != 0) {
+								var list = data.object;
+								var html = '';
+								for(var i = 0; i < list.length; i++) {
+									var newDate = new Date();
+									var createTime = list[i].createTime
+
+									newDate.setTime(createTime);
+									time = newDate.format('yyyy-MM-dd hh:mm:ss');
+									var newDate2 = new Date();
+									if(list[i].reserveConstructDateTime != undefined) {
+										var year = list[i].reserveConstructDateTime.substring(0, 4);
+										var month = list[i].reserveConstructDateTime.substring(4, 6);
+										var data = list[i].reserveConstructDateTime.substring(6, 8);
+										var hour = list[i].reserveConstructDateTime.substring(8, 10);
+										var minute = list[i].reserveConstructDateTime.substring(10, 12);
+										var second = list[i].reserveConstructDateTime.substring(12, 14);
+
+										time2 = year + '-' + month + '-' + data + ' ' + hour + ':' + minute + ':' + second;
+									}
+
+									html += '<tr>'
+									html += '<td>' + list[i].orderNo + '</td>'
+									html += '<td>' + list[i].retreatid + '</td>'
+									html += '<td>' + list[i].orderUserName + '</td>'
+									html += '<td>' + list[i].moblNo + '</td>'
+									html += '<td>' + list[i].orderAddress + '</td>'
+									html += '<td>' + list[i].constructArea + '</td>'
+									html += '<td>' + time + '</td>'
+									html += '<td>' + time2 + '</td>'
+									html += '<td>' + list[i].orderTxnAmt + '</td>'
+									html += '<td>' + list[i].reason + '</td>'
+									if(list[i].state == 0) {
+										html += '<td>待审核</td>'
+										html += '<td>'
+										//html+='<a href="#myModal2" data-toggle="modal" class="btn btn-info btn-xs" style="color:#fff;" id="'+list[i].retreatid+'">通过</a>'
+										//html+='<a href="#myModal3" data-toggle="modal" class="btn btn-primary btn-xs" style="color:#fff;" id="'+list[i].retreatid+'">驳回</a>'
+										html += '<button class="btn btn-info btn-xs go" id="' + list[i].retreatid + '">通过</button>'
+										html += '<button class="btn btn-primary btn-xs back" id="' + list[i].retreatid + '">驳回</button>'
+										html += '</td>'
+									} else if(list[i].state == 1) {
+										html += '<td>审核通过</td>'
+										html += '<td>'
+										html += '</td>'
+									} else {
+										html += '<td>未通过审核</td>'
+										html += '<td>'
+										html += '<button class="btn btn-info btn-xs go" id="' + list[i].retreatid + '">通过</button>'
+										html += '</td>'
+									}
+
+									html += '</tr>'
+								}
+
+								$('.orderList').html(html)
+								//审核通过
+								$('.go').on('click', function() {
+									var id = $(this).attr('id');
+									backorder(id, 1)
+								})
+								//审核不通过
+								$('.back').on('click', function() {
+									var id = $(this).attr('id');
+									backorder(id, 2)
+								})
+							} else {
+								console.log('wu')
+								$('.orderList').html('暂无数据')
+							}
+						}
+
+					}
+				});
+			}
+
+			function page() { //这段代码不能放在tiaojianQuery()函数内执行，会引起下一页出问题
+
+				$(".tcdPageCode").remove();
+				$(".isPage").append("<div class='tcdPageCode'></div>");
+				console.log(66)
+				$(".tcdPageCode").createPage({
+					pageCount: totalCount,
+					current: 1,
+					backFn: function(p) {
+
+						tiaojianQuery(p)
+
+					}
+				});
+			}
+
+			//审核不审核
+			function backorder(retreatid, orderState) {
+				$.ajax({
+					type: "POST",
+					url: dataUrl + '/OrderInfoController/getOrderByUpdateState.do',
+					contentType: 'application/json;charset=utf-8',
+					dataType: "JSON",
+					data: JSON.stringify({
+						"retreatid": parseFloat(retreatid),
+						"state": orderState,
+					}),
+					success: function(data) {
+
+						if(data.code == 0000) {
+							console.log(data)
+							console.log("ceshi" + data)
+							tiaojianQuery(1)
+						}
+					}
+				})
+			}
+		</script>
+		<script type="text/javascript">
+			//  $(function () {
+			//
+			//      $.ajax({
+			//          type: "GET",
+			//          url: 'http://qmyj.100dz.cn/qingmuyijia/CommponyInfoController/queryOrderByDateOrNo.do',
+			//          data: {},
+			//          dataType: "json",
+			//          success: function (data) {
+			//              var crmHtmlz2 = '';
+			//              $.each(data, function (i, item) {
+			//                  $.each(item, function (i, dd) {
+			//                      //        crmHtmlz2 += "<tr><td>"+(i+1)+"</td><td>"+dd.content+"</td><td>"+dd.optionsa+"</td><td>"+dd.optionsb+"</td><td>"+dd.optionsc+"</td><td>"+dd.optionsd+"</td><td>"+dd.sure+"</td><td><a href=javascript:del(" + dd.id + ")>删除</a></td></tr>";
+			//                      crmHtmlz2 += "<tr><td>" + dd.orderUserName + "</td><td><a>" + dd.moblNo + "</a></td><td>" + dd.orderAddress + "</td><td>" + dd.constructArea + "㎡</td><td>" + dd.reserveConstructDateTime + "</td><td>" + dd.orderCrtDateTime + "</td> <td>" + dd.orderTxnAmt + "</td><td>" + dd.orderFinishStat + "</td></tr>";
+			//                      $('#userCount').html(dd.orderCount);
+			//                      $('#allOrderAmt').html(dd.allOrderAmt);
+			//                  });
+			//                  $('.orderList').html(crmHtmlz2);
+			//              });
+			//
+			//          }
+			//      });
+			//  });
+		</script>
+
+		<!--common scripts for all pages-->
+		<script src="../js/scripts.js"></script>
+
+
+	</body>
+
+</html>

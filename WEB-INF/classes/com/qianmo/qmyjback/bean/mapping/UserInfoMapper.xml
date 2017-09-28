@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.UserInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.UserInfo" >
+    <id column="user_id" property="userId" jdbcType="CHAR" />
+    <result column="mobl_no" property="moblNo" jdbcType="VARCHAR" />
+    <result column="login_pwd" property="loginPwd" jdbcType="VARCHAR" />
+    <result column="pay_pwd" property="payPwd" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="cert_no" property="certNo" jdbcType="VARCHAR" />
+    <result column="cert_tp" property="certTp" jdbcType="VARCHAR" />
+    <result column="acct_bal" property="acctBal" jdbcType="VARCHAR" />
+    <result column="user_face_img" property="userFaceImg" jdbcType="VARCHAR" />
+    <result column="id_card_positive_img" property="idCardPositiveImg" jdbcType="VARCHAR" />
+    <result column="id_card_negative_img" property="idCardNegativeImg" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="socre" property="socre" jdbcType="VARCHAR" />
+    <result column="remin_drug_number" property="reminDrugNumber" jdbcType="VARCHAR" />
+    <result column="certif_stat" property="certifStat" jdbcType="VARCHAR" />
+    <result column="newbie_purchase_stat" property="newbiePurchaseStat" jdbcType="VARCHAR" />
+    <result column="all_star" property="allStar" jdbcType="VARCHAR" />
+    <result column="avg_start" property="avgStart" jdbcType="VARCHAR" />
+    <result column="crt_channel" property="crtChannel" jdbcType="VARCHAR" />
+    <result column="crt_date_time" property="crtDateTime" jdbcType="CHAR" />
+    <result column="crt_upd_time" property="crtUpdTime" jdbcType="CHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="user_stat" property="userStat" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, mobl_no, login_pwd, pay_pwd, user_name, sex, cert_no, cert_tp, acct_bal, 
+    user_face_img, id_card_positive_img, id_card_negative_img, address, socre, remin_drug_number, 
+    certif_stat, newbie_purchase_stat, all_star, avg_start, crt_channel, crt_date_time, 
+    crt_upd_time, remark, user_stat
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_info
+    where user_id = #{userId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from user_info
+    where user_id = #{userId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.UserInfo" >
+    insert into user_info (user_id, mobl_no, login_pwd, 
+      pay_pwd, user_name, sex, 
+      cert_no, cert_tp, acct_bal, 
+      user_face_img, id_card_positive_img, id_card_negative_img, 
+      address, socre, remin_drug_number, 
+      certif_stat, newbie_purchase_stat, all_star, 
+      avg_start, crt_channel, crt_date_time, 
+      crt_upd_time, remark)
+    values (#{userId,jdbcType=CHAR}, #{moblNo,jdbcType=VARCHAR}, #{loginPwd,jdbcType=VARCHAR}, 
+      #{payPwd,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{certNo,jdbcType=VARCHAR}, #{certTp,jdbcType=VARCHAR}, #{acctBal,jdbcType=VARCHAR}, 
+      #{userFaceImg,jdbcType=VARCHAR}, #{idCardPositiveImg,jdbcType=VARCHAR}, #{idCardNegativeImg,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{socre,jdbcType=VARCHAR}, #{reminDrugNumber,jdbcType=VARCHAR}, 
+      #{certifStat,jdbcType=VARCHAR}, #{newbiePurchaseStat,jdbcType=VARCHAR}, #{allStar,jdbcType=VARCHAR}, 
+      #{avgStart,jdbcType=VARCHAR}, #{crtChannel,jdbcType=VARCHAR}, #{crtDateTime,jdbcType=CHAR}, 
+      #{crtUpdTime,jdbcType=CHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.UserInfo" >
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="moblNo != null" >
+        mobl_no,
+      </if>
+      <if test="loginPwd != null" >
+        login_pwd,
+      </if>
+      <if test="payPwd != null" >
+        pay_pwd,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="certNo != null" >
+        cert_no,
+      </if>
+      <if test="certTp != null" >
+        cert_tp,
+      </if>
+      <if test="acctBal != null" >
+        acct_bal,
+      </if>
+      <if test="userFaceImg != null" >
+        user_face_img,
+      </if>
+      <if test="idCardPositiveImg != null" >
+        id_card_positive_img,
+      </if>
+      <if test="idCardNegativeImg != null" >
+        id_card_negative_img,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="socre != null" >
+        socre,
+      </if>
+      <if test="reminDrugNumber != null" >
+        remin_drug_number,
+      </if>
+      <if test="certifStat != null" >
+        certif_stat,
+      </if>
+      <if test="newbiePurchaseStat != null" >
+        newbie_purchase_stat,
+      </if>
+      <if test="allStar != null" >
+        all_star,
+      </if>
+      <if test="avgStart != null" >
+        avg_start,
+      </if>
+      <if test="crtChannel != null" >
+        crt_channel,
+      </if>
+      <if test="crtDateTime != null" >
+        crt_date_time,
+      </if>
+      <if test="crtUpdTime != null" >
+        crt_upd_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="moblNo != null" >
+        #{moblNo,jdbcType=VARCHAR},
+      </if>
+      <if test="loginPwd != null" >
+        #{loginPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="payPwd != null" >
+        #{payPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="certNo != null" >
+        #{certNo,jdbcType=VARCHAR},
+      </if>
+      <if test="certTp != null" >
+        #{certTp,jdbcType=VARCHAR},
+      </if>
+      <if test="acctBal != null" >
+        #{acctBal,jdbcType=VARCHAR},
+      </if>
+      <if test="userFaceImg != null" >
+        #{userFaceImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardPositiveImg != null" >
+        #{idCardPositiveImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNegativeImg != null" >
+        #{idCardNegativeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="socre != null" >
+        #{socre,jdbcType=VARCHAR},
+      </if>
+      <if test="reminDrugNumber != null" >
+        #{reminDrugNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="certifStat != null" >
+        #{certifStat,jdbcType=VARCHAR},
+      </if>
+      <if test="newbiePurchaseStat != null" >
+        #{newbiePurchaseStat,jdbcType=VARCHAR},
+      </if>
+      <if test="allStar != null" >
+        #{allStar,jdbcType=VARCHAR},
+      </if>
+      <if test="avgStart != null" >
+        #{avgStart,jdbcType=VARCHAR},
+      </if>
+      <if test="crtChannel != null" >
+        #{crtChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="crtDateTime != null" >
+        #{crtDateTime,jdbcType=CHAR},
+      </if>
+      <if test="crtUpdTime != null" >
+        #{crtUpdTime,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.UserInfo" >
+    update user_info
+    <set >
+      <if test="moblNo != null" >
+        mobl_no = #{moblNo,jdbcType=VARCHAR},
+      </if>
+      <if test="loginPwd != null" >
+        login_pwd = #{loginPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="payPwd != null" >
+        pay_pwd = #{payPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="certNo != null" >
+        cert_no = #{certNo,jdbcType=VARCHAR},
+      </if>
+      <if test="certTp != null" >
+        cert_tp = #{certTp,jdbcType=VARCHAR},
+      </if>
+      <if test="acctBal != null" >
+        acct_bal = #{acctBal,jdbcType=VARCHAR},
+      </if>
+      <if test="userFaceImg != null" >
+        user_face_img = #{userFaceImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardPositiveImg != null" >
+        id_card_positive_img = #{idCardPositiveImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNegativeImg != null" >
+        id_card_negative_img = #{idCardNegativeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="socre != null" >
+        socre = #{socre,jdbcType=VARCHAR},
+      </if>
+      <if test="reminDrugNumber != null" >
+        remin_drug_number = #{reminDrugNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="certifStat != null" >
+        certif_stat = #{certifStat,jdbcType=VARCHAR},
+      </if>
+      <if test="newbiePurchaseStat != null" >
+        newbie_purchase_stat = #{newbiePurchaseStat,jdbcType=VARCHAR},
+      </if>
+      <if test="allStar != null" >
+        all_star = #{allStar,jdbcType=VARCHAR},
+      </if>
+      <if test="avgStart != null" >
+        avg_start = #{avgStart,jdbcType=VARCHAR},
+      </if>
+      <if test="crtChannel != null" >
+        crt_channel = #{crtChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="crtDateTime != null" >
+        crt_date_time = #{crtDateTime,jdbcType=CHAR},
+      </if>
+      <if test="crtUpdTime != null" >
+        crt_upd_time = #{crtUpdTime,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.UserInfo" >
+    update user_info
+    set mobl_no = #{moblNo,jdbcType=VARCHAR},
+      login_pwd = #{loginPwd,jdbcType=VARCHAR},
+      pay_pwd = #{payPwd,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      cert_no = #{certNo,jdbcType=VARCHAR},
+      cert_tp = #{certTp,jdbcType=VARCHAR},
+      acct_bal = #{acctBal,jdbcType=VARCHAR},
+      user_face_img = #{userFaceImg,jdbcType=VARCHAR},
+      id_card_positive_img = #{idCardPositiveImg,jdbcType=VARCHAR},
+      id_card_negative_img = #{idCardNegativeImg,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      socre = #{socre,jdbcType=VARCHAR},
+      remin_drug_number = #{reminDrugNumber,jdbcType=VARCHAR},
+      certif_stat = #{certifStat,jdbcType=VARCHAR},
+      newbie_purchase_stat = #{newbiePurchaseStat,jdbcType=VARCHAR},
+      all_star = #{allStar,jdbcType=VARCHAR},
+      avg_start = #{avgStart,jdbcType=VARCHAR},
+      crt_channel = #{crtChannel,jdbcType=VARCHAR},
+      crt_date_time = #{crtDateTime,jdbcType=CHAR},
+      crt_upd_time = #{crtUpdTime,jdbcType=CHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=CHAR}
+  </update>
+
+    <select id="selectByCustomerIdPayPwd" resultMap="BaseResultMap" parameterType="Map" >
+        select
+        <include refid="Base_Column_List" />
+        from user_info
+        where user_id = #{userId,jdbcType=CHAR}
+        AND pay_pwd = #{payPwd,jdbcType=VARCHAR}
+    </select>
+    <!--按照手机号查询用户-->
+    <select id="getCustomerInfoByMoblNo" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select * from user_info  where mobl_no = #{moblNo,jdbcType=VARCHAR}
+    </select>
+    <select id="getCustomerByTeleAndPwd" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from user_info
+        where mobl_no = #{moblNo,jdbcType=VARCHAR}
+        AND login_pwd = #{loginPwd,jdbcType=VARCHAR}
+    </select>
+  <!--修改图片-->
+  <update id="updateUserImage" parameterType="com.qianmo.qmyjback.bean.dto.UserInfo" >
+    update user_info
+    <set >
+      <if test="userFaceImg != null" >
+        user_face_img = #{userFaceImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardPositiveImg != null" >
+        id_card_positive_img = #{idCardPositiveImg,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNegativeImg != null" >
+        id_card_negative_img = #{idCardNegativeImg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=CHAR}
+  </update>
+
+    <select id="getUserCount" resultType="java.lang.Integer">
+        SELECT count(user_id)
+        FROM
+        user_info
+    </select>
+  <!--查询用户个数-->
+  <select id="getUserCountByUserStat" resultType="java.lang.Integer" parameterType="java.lang.String">
+    SELECT count(user_id)
+    FROM user_info
+    where 1=1
+    <if test="userStat != null" >
+      and user_stat = #{userStat,jdbcType=VARCHAR}
+    </if>
+  </select>
+<!--查询所有用户,区分黑名单-->
+  <select id="selectUserByUserStat" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where 1=1
+    <if test="userStat != null" >
+      and user_stat = #{userStat,jdbcType=VARCHAR}
+    </if>
+    ORDER BY crt_date_time DESC
+  </select>
+<!--修改用户状态-->
+  <update id="updateUserStatByUserId" parameterType="com.qianmo.qmyjback.bean.dto.UserInfo" >
+    update user_info
+    <set >
+      <if test="userStat != null" >
+        user_stat = #{userStat,jdbcType=VARCHAR}
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=CHAR}
+  </update>
+  <!--按照手机号和用户名查询用户-->
+  <select id="selectUserByMobilNoOrName" resultMap="BaseResultMap" parameterType="com.qianmo.qmyjback.bean.dto.UserInfo" >
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where 1=1
+    <if test="moblNo != null" >
+     AND mobl_no = #{moblNo,jdbcType=VARCHAR}
+    </if>
+    <if test="userName != null" >
+     AND user_name = #{userName,jdbcType=VARCHAR}
+    </if>
+    <if test="userStat != null" >
+      and user_stat = #{userStat,jdbcType=VARCHAR}
+    </if>
+    ORDER BY crt_date_time DESC
+  </select>
+</mapper>

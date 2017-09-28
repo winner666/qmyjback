@@ -1,0 +1,50 @@
+#title {
+    text-align: center;
+    color: slategray;
+}
+
+.nb_interface_r_log {
+    text-align: center;
+    /*vertical-align: middle;*/
+    top: 200%;
+    left: 50%;
+    margin-left: 680px;
+    margin-top: 320px;
+}
+
+h3 {
+    color: cadetblue;
+    margin-right: 100px;
+}
+
+.user_log_info {
+    width: 210px;
+    height: 22px;
+    font: 400 14px/22px 'simHei';
+    color: #f40;
+    padding-left: 15px;
+    margin-left: 265px;
+    background: #ffebeb url("../img/warn.png") no-repeat 4px center;
+    border: 1px solid #e4393c;
+    margin-bottom: 4px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+
+/*.user_log{width: 100%; border:1px solid #cbcbcb; background: #f0f8ff; box-sizing: border-box;}*/
+/*.user_log:hover{border:1px solid #507ebf;}*/
+/*.pep_log{top: 200%;left: 50%; margin-left: 680px;margin-top: 320px;display: block; width: 1em;height: 1em; background: url("../img/pep_icon.png") no-repeat center;}*/
+
+/*.pep_text_log{display: block; background: #f0f8ff; box-sizing: border-box; }*/
+/*.pep_text_log input{ width: 50%;height: 2.4em; outline: none; background: #f0f8ff; color: gray; line-height: 2.4em;}*/
+
+
+
+/*.pwd_log{ border:1px solid #cbcbcb; background: #f0f8ff;margin-bottom: 2em; box-sizing: border-box;}*/
+/*.pwd_log:hover{border:1px solid #507ebf;}*/
+
+/*.pwd_text_log{display: block; background: #f0f8ff; box-sizing: border-box; }*/
+/*.pwd_text_log input{ width: 50%; outline: none; background: #f0f8ff; color: gray; line-height: 2.4em;}*/
+
+/*.pw_log{top: 200%;left: 50%; margin-left: 680px;margin-top: 320px;display: block;  width: 1em;height: 1em;  background: url("../img/clock.png") no-repeat center;margin-right: 1em;}*/

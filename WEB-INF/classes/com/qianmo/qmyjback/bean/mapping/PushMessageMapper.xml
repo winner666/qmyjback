@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.PushMessageMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.PushMessage" >
+    <id column="push_id" property="pushId" jdbcType="CHAR" />
+    <result column="message_title" property="messageTitle" jdbcType="VARCHAR" />
+    <result column="message_context" property="messageContext" jdbcType="VARCHAR" />
+    <result column="message_date_time" property="messageDateTime" jdbcType="VARCHAR" />
+    <result column="message_jump_url" property="messageJumpUrl" jdbcType="VARCHAR" />
+    <result column="send_flg" property="sendFlg" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    push_id, message_title, message_context, message_date_time, message_jump_url, send_flg
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from push_message
+    where push_id = #{pushId,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from push_message
+    where push_id = #{pushId,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.PushMessage" >
+    insert into push_message (push_id, message_title, message_context, 
+      message_date_time, message_jump_url, send_flg)
+    values (#{pushId,jdbcType=CHAR}, #{messageTitle,jdbcType=VARCHAR}, #{messageContext,jdbcType=VARCHAR}, 
+      #{messageDateTime,jdbcType=VARCHAR}, #{messageJumpUrl,jdbcType=VARCHAR}, #{sendFlg,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.PushMessage" >
+    insert into push_message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pushId != null" >
+        push_id,
+      </if>
+      <if test="messageTitle != null" >
+        message_title,
+      </if>
+      <if test="messageContext != null" >
+        message_context,
+      </if>
+      <if test="messageDateTime != null" >
+        message_date_time,
+      </if>
+      <if test="messageJumpUrl != null" >
+        message_jump_url,
+      </if>
+      <if test="sendFlg != null" >
+        send_flg,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pushId != null" >
+        #{pushId,jdbcType=CHAR},
+      </if>
+      <if test="messageTitle != null" >
+        #{messageTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="messageContext != null" >
+        #{messageContext,jdbcType=VARCHAR},
+      </if>
+      <if test="messageDateTime != null" >
+        #{messageDateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="messageJumpUrl != null" >
+        #{messageJumpUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="sendFlg != null" >
+        #{sendFlg,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.PushMessage" >
+    update push_message
+    <set >
+      <if test="messageTitle != null" >
+        message_title = #{messageTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="messageContext != null" >
+        message_context = #{messageContext,jdbcType=VARCHAR},
+      </if>
+      <if test="messageDateTime != null" >
+        message_date_time = #{messageDateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="messageJumpUrl != null" >
+        message_jump_url = #{messageJumpUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="sendFlg != null" >
+        send_flg = #{sendFlg,jdbcType=CHAR},
+      </if>
+    </set>
+    where push_id = #{pushId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.PushMessage" >
+    update push_message
+    set message_title = #{messageTitle,jdbcType=VARCHAR},
+      message_context = #{messageContext,jdbcType=VARCHAR},
+      message_date_time = #{messageDateTime,jdbcType=VARCHAR},
+      message_jump_url = #{messageJumpUrl,jdbcType=VARCHAR},
+      send_flg = #{sendFlg,jdbcType=CHAR}
+    where push_id = #{pushId,jdbcType=CHAR}
+  </update>
+    <select id="findAllMessage" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from push_message
+        WHERE send_flg = '00' ORDER  BY  DESC
+    </select>
+
+    <update id="updatePushFlgById" parameterType="Map" >
+        update push_message
+        set
+        send_flg = #{sendFlg,jdbcType=CHAR}
+        where push_id = #{pushId,jdbcType=CHAR}
+    </update>
+
+    <select id="getAllPushMsg" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from push_message
+        WHERE push_id not in (20)
+        ORDER  BY push_id  DESC
+    </select>
+  <!--查询单个推送信息表-->
+  <select id="selectByDate" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from push_message
+    where message_date_time = #{messageDateTime,jdbcType=VARCHAR}
+  </select>
+
+</mapper>

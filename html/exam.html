@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>Basic Table</title>
+  <style>
+    #add-btn{padding:5px 30px;
+        margin-left:10px;
+        border-radius:5px;
+        border:1px solid #eee;
+        font-size:18px;
+    }
+    #select>p>input{width:400px;}
+ </style>
+  <link href="../css/style1.css" rel="stylesheet">
+  <link href="../css/style-responsive.css" rel="stylesheet">
+    <script src="../js/url.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="../js/html5shiv.js"></script>
+  <script src="../js/respond.min.js"></script>
+    <script src="../js/jquery-1.4.3.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="../img/logo1.png" alt=""></a>
+        </div>
+
+        <div class="logo-icon text-center">
+            <a href="index.html"><img src="../img/logo_icon.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="../img/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">John Doe</a></h4>
+                        <span>"Hello There..."</span>
+                    </div>
+                </div>
+
+                <h5 class="left-nav-title">Account Information</h5>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>广告管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="blank_page.html"> app banner管理</a></li>
+                        <li><a href="boxed_view.html"> 关于我们</a></li>
+                        <li><a href="user_fw.html"> 青木易家用户服务协议</a></li>
+                        <li><a href="userUseText.html"> 用户使用说明</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span> 新手技能培训</span></a>
+                    <ul style="display: block;" class="sub-menu-list">
+                        <li><a href="general.html"> 公司奖惩制度</a></li>
+                        <li><a href="buttons.html"> 礼貌服务要求</a></li>
+                        <li><a href="tabs-accordions.html"> 施工流程方法</a></li>
+                        <li><a style="color:#65CEA7;" href="exam.html"> 新手考试题目</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span> 用户管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="userlist.html"> 用户列表</a></li>
+                        <li><a href="backlist.html"> 退单列表</a></li>
+                    </ul>
+                </li>
+
+               <!-- <li><a href="orderlist.html"><i class="fa fa-bullhorn"></i> <span> 订单管理</span></a></li>-->
+               <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>订单管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="orderlist.html"> 订单列表</a></li>
+                        <li><a href="blacklist.html"> 退单列表</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-list"><a href=""><i class="fa fa-envelope"></i> <span> 设备耗材</span></a>
+                    <ul class="sub-menu-list">
+                       <li><a href="new_supplies.html"> 耗材列表</a></li>
+                        <li><a href="consumable_order.html"> 耗材订单</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="drug_quota.html"><i class="fa fa-tasks"></i> <span> 药剂配额管理</span></a>
+                </li>
+                <li class="menu-list"><a href=""><i class="fa fa-bar-chart-o"></i> <span> 财务管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="order_allocation.html"> 订单额分配</a></li>
+                        <li><a href="cash_management.html"> 提现管理</a></li>
+                        <li><a href="bank_statement.html">流水</a></li>
+                    </ul>
+                </li>
+                <li class="menu-list"><a href="#"><i class="fa fa-th-list"></i> <span> 消息管理</span></a>
+                    <ul class="sub-menu-list">
+                        <li><a href="message_list.html"> 消息列表</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+    
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+        <!--toggle button start-->
+        <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+        <!--toggle button end-->
+
+        <!--search start-->
+        <form class="searchform" action="http://view.jqueryfuns.com/2014/4/10/7_df25ceea231ba5f44f0fc060c943cdae/index.html" method="post">
+            <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+        </form>
+        <!--search end-->
+
+        <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="../img/photos/user-avatar.png" alt="" />
+                            John Doe
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="modifyPass.html"><i class="fa fa-cog"></i>修改密码</a></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out"></i> 退出</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        <!--notification menu end -->
+
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <span style="font-size:18px;"> 新手考试题目</span>
+                            <!-- 按钮触发模态框 -->
+                            <button id="add-btn" onclick="javascript:doit();">添加</button>
+                            <!-- 按钮触发模态框 end-->
+                            <!-- 模态框（Modal） -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+	                                    	<div class="modal-header">
+																						<button type="button" class="close" data-dismiss="modal" 
+																								aria-hidden="true">×
+																						</button>
+																						<h4 class="modal-title" id="myModalLabel">
+																							新增考试题
+																						</h4>
+																				</div>
+																				<div style="margin:46px 80px">
+																					<div>
+                                            <!--<p>题目序号：<span>1</span></p>-->
+	                                        </div>
+	                                        <div>
+	                                            <p>题目内容：<input id="neirong" type="text"value="请输入题目的内容"onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}" style="color:#999" ></p>
+	                                        </div>
+	                                        <div id="select" style="padding-left: 46px;">
+	                                            <p>A : <input id="A" type="text"value="请输入A的内容"onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}" style="color:#999" ></p>
+	                                            <p>B : <input id="B" type="text"value="请输入B的内容"onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}" style="color:#999" ></p>
+	                                            <p>C : <input id="C" type="text"value="请输入C的内容"onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}" style="color:#999" ></p>
+	                                            <p>D : <input id="D" type="text"value="请输入D的内容"onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}" style="color:#999" ></p>
+	                                        </div>
+	                                        <div>
+	                                            <div>
+	                                                <span>正确答案 :</span>
+	                                                <div style="display:inline-block;position: absolute;bottom:107px; left:160px;" id="wrap">
+	                                                    <p style="display: inline-block;margin-right:20px;"><input type="radio" VALUE="A" name="selectRedio" checked> A</p>
+	                                                    <p style="display: inline-block;margin-right:20px;"><input type="radio" VALUE="B" name="selectRedio"> B</p>
+	                                                    <p style="display: inline-block;margin-right:20px;"><input type="radio" VALUE="C" name="selectRedio"> C</p>
+	                                                    <p style="display: inline-block;margin-right:20px;"><input type="radio" VALUE="D" name="selectRedio"> D</p>
+	                                                </div>
+	                                            </div>
+	                                        </div>
+																				</div>
+                                        
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">关闭
+                                            </button>
+                                            <button type="button" onclick="addQuestion()" class="btn btn-primary">
+                                                添加
+                                            </button>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+                            <!-- 模态框（Modal）end -->
+                          <div id="anear" class="anear" style="width: 400px; height: 400px;background: gainsboro; display: none;z-index: auto; position: fixed;text-align: center;">
+                              <div>
+                                  <h4>
+                                      新增考试题
+                                  </h4>
+                              </div>
+                              <div style="margin:46px 80px">
+                                  <div>
+                                      <!--<p>题目序号：<span>1</span></p>-->
+                                  </div>
+                                  <div>
+                                      <p>题目内容：<input id="neirongs" type="text"value="请输入题目的内容"onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}" style="color:#999" ></p>
+                                        <input type="hidden" id="hiddens">
+                                  </div>
+                                  <div>
+                                      <p>A : <input id="As" type="text" value="请输入A的内容" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}"></p>
+                                      <p>B : <input id="Bs" type="text" value="请输入B的内容" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}"></p>
+                                      <p>C : <input id="Cs" type="text" value="请输入C的内容" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}"></p>
+                                      <p>D : <input id="Ds" type="text" value="请输入D的内容" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}"></p>
+                                      <p>答案 : <input id="DA" type="text" value="请输入试题的答案" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}"></p>
+                                  </div>
+                              </div>
+
+                              <div>
+                                  <button type="button" onclick="closed()" id="close">关闭</button>
+                                  <button type="button" onclick="updQuestion()">
+                                      修改
+                                  </button>
+                              </div>
+                          </div>
+                        </header>
+                        <div class="panel-body">
+                            <table class="table  table-hover general-table">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>内容</th>
+                                    <th>A</th>
+                                    <th>B</th>
+                                    <th>C</th>
+                                    <th>D</th>
+                                    <th>正确答案</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="zhengyue1">
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+        <!--footer section start-->
+        <footer>
+            2014 &copy; AdminEx by ThemeBucket
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/url.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+
+
+<script type="text/javascript">
+    $(function(){
+        $.ajax({
+            type: "POST",
+            url:dataUrl+'/QuestionController/queryQuestion.do',
+            data:{},
+            dataType: "json",
+            success: function(data){
+
+                var crmHtmlz2 = '';
+                $.each(data,function(i,item){
+                    $.each(item,function(i,dd){
+                        crmHtmlz2 += "<tr>" +
+                            "<td>"+(i+1)+"</td>" +
+                            "<td>"+dd.content+"</td>" +
+                            "<td>"+dd.optionsa+"</td>" +
+                            "<td>"+dd.optionsb+"</td>" +
+                            "<td>"+dd.optionsc+"</td>" +
+                            "<td>"+dd.optionsd+"</td>" +
+                            "<td>"+dd.sure+"</td>"+
+                            "<td><a href=javascript:query(" + dd.id + ")>修改</a></td>" +
+                            "<td><a href=javascript:del(" + dd.id + ")>删除</a></td>"+
+                            "</tr>";
+                    });
+                    $('.zhengyue1').html(crmHtmlz2);
+                });
+            }
+        });
+    });
+</script>
+<!--添加试题-->
+<script type="text/javascript">
+    function addQuestion() {
+        var obj_payPlatform = $('#wrap input[name="selectRedio"]');
+        var val_payPlatform = $('#wrap input[name="selectRedio"]:checked ').val();
+
+     //   var neirong = document.getElementById("neirong");//内容
+        var neirong = $("#neirong").val();
+        var A = $("#A").val();
+        var B = $("#B").val();
+        var C = $("#C").val();
+        var D = $("#D").val();
+        /*var A = document.getElementById("A");
+        var B = document.getElementById("B");
+        var C = document.getElementById("C");
+        var D = document.getElementById("D");*/
+        $.ajax({
+            url: dataUrl+"/QuestionController/insertQuestion.do",
+            data:{"sure":val_payPlatform,"content":neirong,"optionsa":A,"optionsb":B,"optionsc":C,"optionsd":D},
+            dataType: "json",
+            success: function(data) {
+                if (data == "9999")
+                    alert("添加失败！");
+                else {
+                    confirm("添加成功")
+                    window.location='exam.html';
+                    getusers();
+                }
+            }
+        });
+    };
+</script>
+<!--common scripts for all pages-->
+<script src="../js/scripts.js"></script>
+<!--添加试题的模态框-->
+<script>
+    function doit(){
+        $(function () { $('#myModal').modal({
+            keyboard: true
+        })});
+    }
+    function closed() {
+        //进行显示单个试题信息操作(通过ajax)
+        //使用jquery实现ajax
+        $(".anear").css('display','none');
+    }
+    function updQuestion() {
+        //进行显示单个试题信息操作(通过ajax)
+        //使用jquery实现ajax
+        var contensx = $("#neirongs").val();//标题
+        var A = $("#As").val();
+        var B = $("#Bs").val();
+        var C = $("#Cs").val();
+        var D = $("#Ds").val();
+        var id = $("#hiddens").val();//id
+        var sure = $("#DA").val();//sure
+
+        $.ajax({
+            url:dataUrl+"/QuestionController/updateQuestion.do",
+            data:{"id":id,"sure":sure,"content":contensx,"optionsa":A,"optionsb":B,"optionsc":C,"optionsd":D},
+            type: "post",
+            success: function(data) {
+                alert("修改成功");
+                $(".anear").css('display','block');
+                window.location='exam.html';
+            }
+        });
+    }
+    function query(id) {
+            //进行显示单个试题信息操作(通过ajax)
+            //使用jquery实现ajax
+        $(".anear").css('display','block');
+        //  document.getElementById("myModals").style.display = "block";
+     //   document.getElementById("myModals").style.display="none";//隐藏
+
+     //   document.getElementById("myModals").style.display="";//显示
+            $.ajax({
+                url:dataUrl+"/QuestionController/queryOneQuestion.do",
+                data:"id="+id,
+                type: "post",
+                success: function(data) {
+                    var crmHtmlz2 = '';
+                    $.each(data,function(i,item){
+                        $("#neirongs").val(item.content);
+                        $("#As").val(item.optionsa);
+                        $("#Bs").val(item.optionsb);
+                        $("#Cs").val(item.optionsc);
+                        $("#Ds").val(item.optionsd);
+                        $("#DA").val(item.sure);
+                        $("#hiddens").val(item.id);//id
+                    });
+                }
+            });
+    }
+    //删除试题信息
+    function del(id) {
+        if (confirm("是否确定删除？")) {
+            //进行删除操作(通过ajax)
+            //使用jquery实现ajax
+            $.ajax({
+                url:dataUrl+"/QuestionController/deleteQuestion.do",
+                data:"id="+id,
+                type: "post",
+                success: function(data) {
+                    if (data == "9999")
+                        alert("删除失败！");
+                    else {
+                        confirm("删除成功")
+                        window.location='exam.html';
+                    }
+                }
+            });
+        }
+    };
+</script>
+<!--添加试题的模态框 enf-->
+</body>
+</html>

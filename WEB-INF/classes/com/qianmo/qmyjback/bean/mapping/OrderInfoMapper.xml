@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.OrderInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    <id column="order_no" property="orderNo" jdbcType="CHAR" />
+    <id column="order_type" property="orderType" jdbcType="CHAR" />
+    <result column="user_id" property="userId" jdbcType="CHAR" />
+    <result column="open_id" property="openId" jdbcType="VARCHAR" />
+    <result column="order_user_name" property="orderUserName" jdbcType="VARCHAR" />
+    <result column="mobl_no" property="moblNo" jdbcType="VARCHAR" />
+    <result column="order_address" property="orderAddress" jdbcType="VARCHAR" />
+    <result column="consume_size" property="consumeSize" jdbcType="VARCHAR" />
+    <result column="construct_area" property="constructArea" jdbcType="VARCHAR" />
+    <result column="total_cost" property="totalCost" jdbcType="VARCHAR" />
+    <result column="reserve_construct_date_time" property="reserveConstructDateTime" jdbcType="VARCHAR" />
+    <result column="snap_date_time" property="snapDateTime" jdbcType="VARCHAR" />
+    <result column="goods_id" property="goodsId" jdbcType="CHAR" />
+    <result column="txn_type" property="txnType" jdbcType="VARCHAR" />
+    <result column="order_txn_amt" property="orderTxnAmt" jdbcType="VARCHAR" />
+    <result column="order_finish_stat" property="orderFinishStat" jdbcType="VARCHAR" />
+    <result column="order_stat" property="orderStat" jdbcType="VARCHAR" />
+    <result column="order_crt_date_time" property="orderCrtDateTime" jdbcType="CHAR" />
+    <result column="order_upd_date_time" property="orderUpdDateTime" jdbcType="CHAR" />
+    <result column="order_comment_finish_date_time" property="orderCommentFinishDateTime" jdbcType="CHAR" />
+    <result column="auto_trans_date_time" property="autoTransDateTime" jdbcType="CHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="extension_openId" property="extensionOpenId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    order_no, order_type, user_id, open_id, order_user_name, mobl_no, order_address,
+    consume_size, construct_area, total_cost, reserve_construct_date_time, snap_date_time, 
+    goods_id, txn_type, order_txn_amt, order_finish_stat, order_stat, order_crt_date_time,
+    order_upd_date_time, order_comment_finish_date_time, auto_trans_date_time, remark,extension_openId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_info
+    where order_no = #{orderNo,jdbcType=CHAR}
+      and order_type = #{orderType,jdbcType=CHAR}
+  </select>
+
+  <select id="getOrderByNo" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from order_info
+    where order_no = #{orderNo,jdbcType=CHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from order_info
+    where order_no = #{orderNo,jdbcType=CHAR}
+      and order_type = #{orderType,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    insert into order_info (order_no, order_type, user_id, 
+      open_id, order_user_name, mobl_no, 
+      order_address, consume_size,
+      construct_area, total_cost, reserve_construct_date_time, 
+      snap_date_time, goods_id, txn_type,
+      order_txn_amt, order_finish_stat,
+      order_stat, order_crt_date_time, order_upd_date_time,
+      order_comment_finish_date_time, auto_trans_date_time, 
+      remark)
+    values (#{orderNo,jdbcType=CHAR}, #{orderType,jdbcType=CHAR}, #{userId,jdbcType=CHAR}, 
+      #{openId,jdbcType=VARCHAR}, #{orderUserName,jdbcType=VARCHAR}, #{moblNo,jdbcType=VARCHAR}, 
+      #{orderAddress,jdbcType=VARCHAR}, #{consumeSize,jdbcType=VARCHAR},
+      #{constructArea,jdbcType=VARCHAR}, #{totalCost,jdbcType=VARCHAR}, #{reserveConstructDateTime,jdbcType=VARCHAR}, 
+      #{snapDateTime,jdbcType=VARCHAR}, #{goodsId,jdbcType=CHAR}, #{txnType,jdbcType=VARCHAR},
+      #{orderTxnAmt,jdbcType=VARCHAR}, #{orderFinishStat,jdbcType=VARCHAR},
+      #{orderStat,jdbcType=VARCHAR}, #{orderCrtDateTime,jdbcType=CHAR}, #{orderUpdDateTime,jdbcType=CHAR},
+      #{orderCommentFinishDateTime,jdbcType=CHAR}, #{autoTransDateTime,jdbcType=CHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    insert into order_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderNo != null" >
+        order_no,
+      </if>
+      <if test="orderType != null" >
+        order_type,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="openId != null" >
+        open_id,
+      </if>
+      <if test="orderUserName != null" >
+        order_user_name,
+      </if>
+      <if test="moblNo != null" >
+        mobl_no,
+      </if>
+      <if test="orderAddress != null" >
+        order_address,
+      </if>
+      <if test="consumeSize != null" >
+        consume_size,
+      </if>
+      <if test="constructArea != null" >
+        construct_area,
+      </if>
+      <if test="totalCost != null" >
+        total_cost,
+      </if>
+      <if test="reserveConstructDateTime != null" >
+        reserve_construct_date_time,
+      </if>
+      <if test="snapDateTime != null" >
+        snap_date_time,
+      </if>
+      <if test="goodsId != null" >
+        goods_id,
+      </if>
+      <if test="txnType != null" >
+        txn_type,
+      </if>
+      <if test="orderTxnAmt != null" >
+        order_txn_amt,
+      </if>
+      <if test="orderFinishStat != null" >
+        order_finish_stat,
+      </if>
+      <if test="orderStat != null" >
+        order_stat,
+      </if>
+      <if test="orderCrtDateTime != null" >
+        order_crt_date_time,
+      </if>
+      <if test="orderUpdDateTime != null" >
+        order_upd_date_time,
+      </if>
+      <if test="orderCommentFinishDateTime != null" >
+        order_comment_finish_date_time,
+      </if>
+      <if test="autoTransDateTime != null" >
+        auto_trans_date_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderNo != null" >
+        #{orderNo,jdbcType=CHAR},
+      </if>
+      <if test="orderType != null" >
+        #{orderType,jdbcType=CHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=CHAR},
+      </if>
+      <if test="openId != null" >
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderUserName != null" >
+        #{orderUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="moblNo != null" >
+        #{moblNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAddress != null" >
+        #{orderAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="consumeSize != null" >
+        #{consumeSize,jdbcType=VARCHAR},
+      </if>
+      <if test="constructArea != null" >
+        #{constructArea,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCost != null" >
+        #{totalCost,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveConstructDateTime != null" >
+        #{reserveConstructDateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="snapDateTime != null" >
+        #{snapDateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=CHAR},
+      </if>
+      <if test="txnType != null" >
+        #{txnType,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTxnAmt != null" >
+        #{orderTxnAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="orderFinishStat != null" >
+        #{orderFinishStat,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStat != null" >
+        #{orderStat,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCrtDateTime != null" >
+        #{orderCrtDateTime,jdbcType=CHAR},
+      </if>
+      <if test="orderUpdDateTime != null" >
+        #{orderUpdDateTime,jdbcType=CHAR},
+      </if>
+      <if test="orderCommentFinishDateTime != null" >
+        #{orderCommentFinishDateTime,jdbcType=CHAR},
+      </if>
+      <if test="autoTransDateTime != null" >
+        #{autoTransDateTime,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    update order_info
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=CHAR},
+      </if>
+      <if test="openId != null" >
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderUserName != null" >
+        order_user_name = #{orderUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="moblNo != null" >
+        mobl_no = #{moblNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAddress != null" >
+        order_address = #{orderAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="consumeSize != null" >
+        consume_size = #{consumeSize,jdbcType=VARCHAR},
+      </if>
+      <if test="constructArea != null" >
+        construct_area = #{constructArea,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCost != null" >
+        total_cost = #{totalCost,jdbcType=VARCHAR},
+      </if>
+      <if test="reserveConstructDateTime != null" >
+        reserve_construct_date_time = #{reserveConstructDateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="snapDateTime != null" >
+        snap_date_time = #{snapDateTime,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=CHAR},
+      </if>
+      <if test="txnType != null" >
+        txn_type = #{txnType,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTxnAmt != null" >
+        order_txn_amt = #{orderTxnAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="orderFinishStat != null" >
+        order_finish_stat = #{orderFinishStat,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStat != null" >
+        order_stat = #{orderStat,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCrtDateTime != null" >
+        order_crt_date_time = #{orderCrtDateTime,jdbcType=CHAR},
+      </if>
+      <if test="orderUpdDateTime != null" >
+        order_upd_date_time = #{orderUpdDateTime,jdbcType=CHAR},
+      </if>
+      <if test="orderCommentFinishDateTime != null" >
+        order_comment_finish_date_time = #{orderCommentFinishDateTime,jdbcType=CHAR},
+      </if>
+      <if test="autoTransDateTime != null" >
+        auto_trans_date_time = #{autoTransDateTime,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_no = #{orderNo,jdbcType=CHAR}
+      and order_type = #{orderType,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    update order_info
+    set user_id = #{userId,jdbcType=CHAR},
+      open_id = #{openId,jdbcType=VARCHAR},
+      order_user_name = #{orderUserName,jdbcType=VARCHAR},
+      mobl_no = #{moblNo,jdbcType=VARCHAR},
+      orderAddress = #{orderAddress,jdbcType=VARCHAR},
+      consume_size = #{consumeSize,jdbcType=VARCHAR},
+      construct_area = #{constructArea,jdbcType=VARCHAR},
+      total_cost = #{totalCost,jdbcType=VARCHAR},
+      reserve_construct_date_time = #{reserveConstructDateTime,jdbcType=VARCHAR},
+      snap_date_time = #{snapDateTime,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=CHAR},
+      txn_type = #{txnType,jdbcType=VARCHAR},
+      order_txn_amt = #{orderTxnAmt,jdbcType=VARCHAR},
+      order_finish_stat = #{orderFinishStat,jdbcType=VARCHAR},
+      order_stat = #{orderStat,jdbcType=VARCHAR},
+      order_crt_date_time = #{orderCrtDateTime,jdbcType=CHAR},
+      order_upd_date_time = #{orderUpdDateTime,jdbcType=CHAR},
+      order_comment_finish_date_time = #{orderCommentFinishDateTime,jdbcType=CHAR},
+      auto_trans_date_time = #{autoTransDateTime,jdbcType=CHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where order_no = #{orderNo,jdbcType=CHAR}
+      and order_type = #{orderType,jdbcType=CHAR}
+  </update>
+
+  <select id="getInfoByOrderNumber" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from order_info
+    where order_no = #{orderNo,jdbcType=CHAR}
+  </select>
+
+<!--微信用户查看自己发布的订单-->
+  <select id="selectOrderByTelephone" resultMap="BaseResultMap" parameterType="map" >
+    select
+    <include refid="Base_Column_List" />
+    from order_info
+    where open_id = #{openId,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectOrderByIf" resultMap="BaseResultMap" parameterType="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    select
+    <include refid="Base_Column_List" />
+    from order_info
+    where 1=1
+    <if test="orderAddress != null" >
+      and order_Address LIKE '%'||#{orderAddress,jdbcType=VARCHAR}||'%'
+    </if>
+    <if test="moblNo != null" >
+      and mobl_no = #{moblNo,jdbcType=VARCHAR}
+    </if>
+    <if test="userId != null" >
+      and user_id = #{userId,jdbcType=CHAR}
+    </if>
+    <if test="orderFinishStat != null" >
+      and order_finish_stat = #{orderFinishStat,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+  <!--查询已到账已抢订单未抢订单已完成订单的时间-->
+  <select id="selectOrderByComplete" resultMap="BaseResultMap" parameterType="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    select
+    <include refid="Base_Column_List" />
+    from order_info
+    where 1=1
+    <if test="userId != null and userId != ''" >
+      and user_id = #{userId,jdbcType=CHAR}
+    </if>
+    <if test="null!=orderAddress and ''!=orderAddress">
+      and order_Address LIKE '%${orderAddress}%'
+    </if>
+    <if test="null!=orderFinishStat and ''!=orderFinishStat">
+      and order_finish_stat = #{orderFinishStat,jdbcType=VARCHAR}
+    </if>
+    and order_finish_stat != '04'
+    and order_finish_stat != '03'
+    and order_finish_stat != '00'
+    and goods_id IS NULL
+    ORDER  BY  order_crt_date_time DESC
+  </select>
+  <!--查询是否为老手-->
+  <select id="selectYiWanChengOrder" resultMap="BaseResultMap" parameterType="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    select
+    <include refid="Base_Column_List" />
+    FROM order_info
+    where 1=1
+    <if test="userId != null and userId != ''" >
+      and user_id = #{userId,jdbcType=CHAR}
+    </if>
+    and order_finish_stat != #{orderFinishStat,jdbcType=VARCHAR}
+  </select>
+  <!--查询可抢订单-->
+<!--  <select id="selectRobOrderList" resultMap="BaseResultMap" parameterType="map" >
+    select
+    <include refid="Base_Column_List" />
+    from order_info
+    where 1=1
+    and order_finish_stat = #{orderFinishStat,jdbcType=VARCHAR}
+  </select>-->
+  <!--自动好评转账功能 订单状态  order_stat 02,订单完成状态  order_finish_stat 02，交易类型 txn_type 00，订单类型 order_type 00-->
+    <select id="getOrderInfoByOrderStatOrderFinishStat" resultMap="BaseResultMap" parameterType="map" >
+        select
+        <include refid="Base_Column_List" />
+        from order_info
+        WHERE order_stat = #{orderStat,jdbcType=VARCHAR}
+        AND order_finish_stat = #{orderFinishStat,jdbcType=VARCHAR}
+        and txn_type = #{txnType,jdbcType=CHAR}
+        and order_type = #{orderType,jdbcType=CHAR}
+        AND order_comment_finish_date_time IS NULL
+    </select>
+
+  <!--抢单 total_cost totalCost-->
+  <update id="updateOrderFinishStat" parameterType="Map" >
+    update order_info
+    set
+    user_id = #{userId,jdbcType=CHAR},
+    order_finish_stat = #{orderFinishStat,jdbcType=CHAR},
+    order_upd_date_time = #{orderUpdDateTime,jdbcType=CHAR},
+    total_cost = #{totalCost,jdbcType=CHAR}
+    where order_no = #{orderNo,jdbcType=CHAR}
+    and total_cost = '0'
+  </update>
+
+  <!--查询多个List放在一起-->
+  <!--工人查看自己已到账的订单-->
+  <!--工人查看自己已支付和提现成功的订单-->
+  <!--工人查看自己余额支付成功的订单,接着目前没有-->
+  <select id="selectYiDaoZhang" resultMap="BaseResultMap" parameterType="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    select
+    <include refid="Base_Column_List" />
+    from order_info
+    where user_id = #{userId,jdbcType=CHAR}
+    <if test="orderFinishStat != null" >
+      and order_finish_stat = #{orderFinishStat,jdbcType=CHAR}
+    </if>
+    <!--工人查看自己已支付和提现成功的订单-->
+    <if test="orderStat != null" >
+      and order_stat = #{orderStat,jdbcType=CHAR}
+      and reserve_construct_date_time IS NULL
+    </if>
+    <!--工人查看自己余额支付成功的订单,接着目前没有-->
+    <if test="txnType != null" >
+      and txn_type = #{txnType,jdbcType=CHAR}
+    </if>
+  </select>
+
+    <!--获取订单表的总金额-->
+  <select id="getOrderTotalAmt" resultType="double">
+      SELECT SUM(order_txn_amt)
+      FROM
+      order_info WHERE order_stat = "02"
+  </select>
+
+  <!--获取订单表的总数量-->
+  <select id="getOrderNumber" resultType="java.lang.Integer">
+      SELECT count(order_no)
+      FROM
+      order_info WHERE order_stat = "02"
+  </select>
+  <!--查询订单-->
+  <!--<select id="getOrderNumber" resultType="java.lang.Integer">
+    SELECT count(order_no)
+    FROM
+    order_info
+  </select>
+
+
+  order_no, order_type, user_id, open_id, order_user_name, mobl_no, order_address,
+    consume_size, construct_area, total_cost, reserve_construct_date_time, snap_date_time,
+    goods_id, txn_type, order_txn_amt, order_finish_stat, order_stat, order_crt_date_time,
+    order_upd_date_time, order_comment_finish_date_time, auto_trans_date_time, remark  -->
+  <!--按照日期等查询订单-->
+  <select id="selectOrderByDateOrNo" resultMap="BaseResultMap" parameterType="com.qianmo.qmyjback.bean.dto.OrderInfo" >
+    select user_id,order_user_name,mobl_no,order_address,construct_area,reserve_construct_date_time,order_crt_date_time,order_txn_amt,order_finish_stat
+    from order_info
+    where 1=1
+    <if test="orderNo != null" >
+      and order_no = #{orderNo,jdbcType=CHAR}
+    </if>
+    <if test="orderCrtDateTime != null" >
+      and order_crt_date_time LIKE '${orderCrtDateTime}%'
+    </if>
+    <if test="orderFinishStat != null" >
+      AND order_finish_stat = #{orderFinishStat,jdbcType=VARCHAR}
+    </if>
+    <if test="reserveConstructDateTime != null" >
+      and reserve_construct_date_time LIKE '${reserveConstructDateTime}%'
+    </if>
+    AND  goods_id IS NULL
+    ORDER BY order_crt_date_time DESC
+  </select>
+
+  <!--查询耗材订单-->
+  <select id="selectOrderByGoods" resultMap="BaseResultMap">
+    select
+    order_no, order_user_name, mobl_no, order_address,goods_id
+    from order_info
+    where goods_id is NOT NULL
+    ORDER BY order_crt_date_time DESC
+  </select>
+
+  <!--获取当前正在申请退款的订单信息-->
+  <select id="getAllRetreatList" resultType="com.qianmo.qmyjback.bean.dto.Vo.OrderInfoVo">
+    SELECT o.order_no AS orderNo,o.order_type AS orderType,o.order_user_name AS orderUserName,o.mobl_no AS moblNo,o.order_address AS orderAddress,
+    o.construct_area AS constructArea,o.total_cost AS totalCost ,o.reserve_construct_date_time AS reserveConstructDateTime,o.snap_date_time AS snapDateTime
+    ,o.order_finish_stat AS orderFinishStat,o.order_crt_date_time AS reserveConstructDateTime,o.order_txn_amt AS orderTxnAmt,o.remark AS remark
+    ,o.all_amt AS  allAmt,r.cma AS cma ,r.reason AS reason,r.create_time AS createTime,r.state AS state,r.retreatId AS retreatid ,u.user_name AS userName,u.mobl_no AS userMoblNo
+     from order_info o  LEFT JOIN  retreat_order r ON o.order_no = r.order_no
+     LEFT JOIN user_info u on u.user_id = o.user_id
+    WHERE order_finish_stat = '05' ORDER BY r.create_time DESC;
+  </select>
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+	    http://www.springframework.org/schema/mvc
+	    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	    http://www.springframework.org/schema/context
+     	http://www.springframework.org/schema/context/spring-context.xsd
+	    http://www.springframework.org/schema/util
+     	http://www.springframework.org/schema/util/spring-util.xsd
+	    http://www.springframework.org/schema/aop
+     	http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+    <context:component-scan base-package="com.qianmo.qmyjback.controller,com.qianmo.qmyjback.service"/>
+    <!--配置视图相关-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--前缀-->
+        <property name="prefix" value=""/>
+        <!--后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+
+
+
+    <!--开启任务注解扫描-->
+<!--    <task:annotation-driven/>
+    <bean id="autoTransTask" class=""/>
+    <task:scheduled-tasks>
+        &lt;!&ndash;此计划任务用于用户不给好评，从工人点击完工（7日后）自动 5星好评 并且 转账&ndash;&gt;
+        <task:scheduled ref="autoTransTask" method="" cron="0 35 13 * * *"/>
+    </task:scheduled-tasks>-->
+
+
+
+
+
+</beans>

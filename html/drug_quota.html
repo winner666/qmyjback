@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="ThemeBucket">
+		<link rel="shortcut icon" href="#" type="image/png">
+		<link rel="stylesheet" href="../css/page.css" />
+		<title>Basic Table</title>
+		<style>
+			.add-on {
+				display: inline-block;
+				height: 26px;
+				min-width: 16px;
+				padding: 6px 5px;
+				font-size: 14px;
+				font-weight: normal;
+				line-height: 20px;
+				text-align: center;
+				text-shadow: 0 1px 0 #ffffff;
+				border: 1px solid #999;
+				border-left: none;
+				border-radius: 0 20% 20% 0;
+				margin-top: -37px;
+			}
+			
+			.icon-th {
+				display: inline-block;
+				width: 14px;
+				height: 14px;
+				line-height: 14px;
+				vertical-align: text-top;
+				background-position: -240px 0;
+				background-image: url(../images/glyphicons-halflings.png);
+				background-repeat: no-repeat;
+				margin-top: 1px;
+			}
+		</style>
+		<link href="../css/style1.css" rel="stylesheet">
+		<link href="../css/style-responsive.css" rel="stylesheet">
+
+		<!--日期选择部分-->
+		<link rel="stylesheet" href="../js/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+		<!--日期选择部分结束-->
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+  <script src="../js/html5shiv.js"></script>
+  <script src="../js/respond.min.js"></script>
+
+  <script src="../js/jquery-1.4.3.js"></script>
+  <script src="../js/url.js"></script>
+  <![endif]-->
+	</head>
+
+	<body class="sticky-header">
+
+		<section>
+			<!-- left side start-->
+			<div class="left-side sticky-left-side">
+
+				<!--logo and iconic logo start-->
+				<div class="logo">
+					<a href="index.html"><img src="../img/logo1.png" alt=""></a>
+				</div>
+
+				<div class="logo-icon text-center">
+					<a href="index.html"><img src="../img/logo_icon.png" alt=""></a>
+				</div>
+				<!--logo and iconic logo end-->
+
+				<div class="left-side-inner">
+
+					<!-- visible to small devices only -->
+					<div class="visible-xs hidden-sm hidden-md hidden-lg">
+						<div class="media logged-user">
+							<img alt="" src="../img/photos/user-avatar.png" class="media-object">
+							<div class="media-body">
+								<h4><a href="#">John Doe</a></h4>
+								<span>"Hello There..."</span>
+							</div>
+						</div>
+
+						<h5 class="left-nav-title">Account Information</h5>
+						<ul class="nav nav-pills nav-stacked custom-nav">
+							<li>
+								<a href="#"><i class="fa fa-user"></i> <span>Profile</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a>
+							</li>
+						</ul>
+					</div>
+
+					<!--sidebar nav start-->
+					<ul class="nav nav-pills nav-stacked custom-nav">
+						<li>
+							<a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-laptop"></i> <span>广告管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="blank_page.html"> app banner管理</a>
+								</li>
+								<li>
+									<a href="boxed_view.html"> 关于我们</a>
+								</li>
+								<li>
+									<a href="user_fw.html"> 青木易家用户服务协议</a>
+								</li>
+								<li>
+									<a href="userUseText.html"> 用户使用说明</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-book"></i> <span> 新手技能培训</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="general.html"> 公司奖惩制度</a>
+								</li>
+								<li>
+									<a href="buttons.html"> 礼貌服务要求</a>
+								</li>
+								<li>
+									<a href="tabs-accordions.html"> 施工流程方法</a>
+								</li>
+								<li>
+									<a href="exam.html"> 新手考试题目</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-cogs"></i> <span> 用户管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="userlist.html"> 用户列表</a>
+								</li>
+								<li>
+									<a href="blacklist.html"> 黑名单</a>
+								</li>
+							</ul>
+						</li>
+
+						<!--<li><a href="orderlist.html"><i class="fa fa-bullhorn"></i> <span> 订单管理</span></a></li>-->
+						<li class="menu-list">
+							<a href=""><i class="fa fa-cogs"></i> <span>订单管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="orderlist.html"> 订单列表</a>
+								</li>
+								<li>
+									<a href="backlist.html"> 退单列表</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="menu-list">
+							<a href=""><i class="fa fa-envelope"></i> <span> 设备耗材</span></a>
+							<ul class="sub-menu-list">
+								<li><a href="new_supplies.html"> 耗材列表</a></li>
+								<li>
+									<a href="consumable_order.html"> 耗材订单</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="drug_quota.html"><i class="fa fa-tasks"></i> <span> 药剂配额管理</span></a>
+						</li>
+						<li class="menu-list">
+							<a href=""><i class="fa fa-bar-chart-o"></i> <span> 财务管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="order_allocation.html"> 订单额分配</a>
+								</li>
+								<li>
+									<a href="cash_management.html"> 提现管理</a>
+								</li>
+								<li>
+									<a href="bank_statement.html">流水</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href="#"><i class="fa fa-th-list"></i> <span> 消息管理</span></a>
+							<ul class="sub-menu-list">
+								<li>
+									<a href="message_list.html"> 消息列表</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!--sidebar nav end-->
+
+				</div>
+			</div>
+			<!-- left side end-->
+
+			<!-- main content start-->
+			<div class="main-content">
+
+				<!-- header section start-->
+				<div class="header-section">
+
+					<!--toggle button start-->
+					<a class="toggle-btn"><i class="fa fa-bars"></i></a>
+					<!--toggle button end-->
+
+					<!--search start-->
+					<form class="searchform" action="http://view.jqueryfuns.com/2014/4/10/7_df25ceea231ba5f44f0fc060c943cdae/index.html" method="post">
+						<input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+					</form>
+					<!--search end-->
+
+					<!--notification menu start -->
+					<div class="menu-right">
+						<ul class="notification-menu">
+							<li>
+								<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<img src="../img/photos/user-avatar.png" alt="" /> John Doe
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+									 <li><a href="modifyPass.html"><i class="fa fa-cog"></i>修改密码</a></li>
+									<li>
+										<a href="login.html"><i class="fa fa-sign-out"></i> 退出</a>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+					<!--notification menu end -->
+
+				</div>
+				<!-- header section end-->
+
+				<!-- page heading start-->
+
+				<!-- page heading end-->
+
+				<!--body wrapper start-->
+				<div class="wrapper">
+					<div class="row">
+						<div class="col-sm-12">
+							<section class="panel">
+								<from class="panel-body">
+									<div style="padding:10px;" class="row">
+										<div class="col-xs-3">
+											<span class="col-xs-6 user"> 申请人电话：</span>
+											<input class="col-xs-6" id="orderNo" type="text" />
+										</div>
+										<div class="col-xs-2">
+											<span class="col-xs-7 user">订单状态：</span>
+											<select id="order">
+												<option value="-1">请选择</option>
+												<option value="00">已申请</option>
+												<option value="01">已派送</option>
+												
+											</select>
+										</div>
+										<div class="col-xs-6">
+											<span class="col-xs-2 user col-xs-offset-1"> 申请日期：</span>
+											<div class="input-append date form_datetime col-xs-3">
+												<input size="16" type="text" value="" id="orderCrtDate" readonly class="col-xs-9">
+												<span style="position:absolute;top:37px;" class="add-on"><i class="icon-th"></i></span>
+											</div>
+											<span style="position:absolute; left:48%;">--</span>
+											<div class="input-append date form_datetime col-xs-3">
+												<input size="16" type="text" value="" id="orderUpdDate" readonly class="col-xs-9">
+												<span style="position:absolute;top:37px;" class="add-on"><i class="icon-th"></i></span>
+											</div>
+										</div>
+										<button style="position: absolute;right:10%; bottom:46px;" class="btn btn-info col-xs-1" type="button" onclick="tiaojianQuery(1,-1)">查询</button>
+									</div>
+									<!-- <div class="row" style="margin-top: 28px;">
+                                <div class="col-xs-8">
+                                    <span class="col-xs-2 user"> 施工日期：</span>
+                                    <div class="input-append date form_datetime col-xs-3">
+                                        <input size="16" type="text" value="2012-06-15" readonly class="col-xs-9">
+                                        <span style="position:absolute;top:37px;" class="add-on"><i class="icon-th"></i></span>
+                                    </div>
+                                    <span style="position:absolute; left:40%;">&#45;&#45;</span>
+                                    <div class="input-append date form_datetime col-xs-3">
+                                        <input size="16" type="text" value="2012-06-15" readonly class="col-xs-9">
+                                        <span style="position:absolute;top:37px;" class="add-on"><i class="icon-th"></i></span>
+                                    </div>
+                                </div>
+
+                            </div>-->
+								</from>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<section class="panel">
+								<header class="panel-heading">
+									药剂配额管理
+								</header>
+								<div class="panel-body">
+									<table class="table  table-hover general-table">
+										<thead>
+											<tr>
+												<th> 申请人</th>
+												<th class="hidden-phone"> 申请药剂量</th>
+												<th> 申请人电话</th>
+												<th> 申请人地址</th>
+												<th> 申请时间</th>
+												<th> 申请次数</th>
+												<th>快递单号</th>
+												<th> 状态</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+										<tbody class="agenList">
+
+										</tbody>
+
+										<tfooter>
+											<!--<tr>
+												<td></td>
+												<td>用户统计量</td>
+												<td id="userCount"></td>
+											</tr>-->
+										</tfooter>
+									</table>
+									<div class='isPage'>
+										<!--<div class="tcdPageCode"></div>-->
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+				<!--body wrapper end-->
+
+				<!--footer section start-->
+				<footer>
+					2014 &copy; AdminEx by ThemeBucket
+				</footer>
+				<!--footer section end-->
+				<!--模态框-->
+				  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                		<div class="modal-header">
+																				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+																					×
+																				</button>
+																				<h4 class="modal-title" id="myModalLabel">
+																						已派送
+																				</h4>
+																		</div>
+                                   
+                                    <div id="select" style="padding-left: 80px;margin-top:40px;padding-right:30px;">
+                                        <p>快递单号 ： <input id="num" name="consumName" type="text" placeholder="请输入快递单号"></p>
+                                        </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">关闭
+                                        </button>
+                                        <button type="button" class="btn btn-primary" id="sure">
+                                          		  确定
+                                        </button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+					<!--end-->
+			</div>
+			<!-- main content end-->
+		</section>
+
+		<!-- Placed js at the end of the document so the pages load faster -->
+
+		<script src="../js/jquery-1.10.2.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/jquery.page.js"></script>
+		<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/modernizr.min.js"></script>
+		<script src="../js/jquery.nicescroll.js"></script>
+	
+		<script>
+			var pageNumber = 1;
+			var pageSize =10;
+				var totalCount=0;
+				var bTestTag = true; //测试代码
+			
+			tiaojianQuery(pageNumber)
+
+			function tiaojianQuery(pageNumber,isInit) {
+				var orderNo = $("#orderNo").val();
+				var orderCrtDate = $("#orderCrtDate").val();
+				var orderUpdDate = $("#orderUpdDate").val();
+				var myselect = document.getElementById("order");
+				var index = myselect.selectedIndex; // selectedIndex代表的是你所选中项的index
+				var orderFinish = myselect.options[index].value;
+				console.log(orderNo)
+				if(orderNo==''){
+					orderNo=null;
+					
+				}
+				if(orderCrtDate==''){
+					orderCrtDate=null;
+				}
+				if(orderUpdDate==''){
+					orderUpdDate=null;
+				}
+				if(orderFinish==-1){
+					orderFinish=null
+				}
+				console.log(orderNo,orderCrtDate,orderUpdDate,orderFinish)
+				$.ajax({
+					type: "POST",
+					url: dataUrl + "/ApplyAgentController/getApplyAgentVoList.do",
+					contentType: 'application/json;charset=utf-8',
+					dataType: "JSON",
+					 async:false,
+					data: JSON.stringify({
+						"moblNo": orderNo,
+						"aplDrugStat": orderFinish,
+						"crtDate": orderCrtDate,
+						"updDate": orderUpdDate,
+						"pageNumber": pageNumber,
+						"pageSize": pageSize
+					}),
+					success: function(data) {
+						console.log(data)
+						if(data.code==0000){
+							totalCount=Math.ceil(data.total/pageSize);
+							
+							/*新添加的代码，仅供测试使用*/
+						if(bTestTag||isInit==-1){
+							console.log("为什么没进来？")
+							//window.location.reload()
+							bTestTag = false
+							isInit = !isInit
+							page()
+						}else{
+							console.log("执行下一页")
+						}
+							var list=data.obj;
+							var html='';
+							 if(list.lenght!=0){
+								for(var i=0;i<list.length;i++){
+									var year=list[i].updDateTime.substring(0,4);
+									var month=list[i].updDateTime.substring(4,6);
+									var data=list[i].updDateTime.substring(6,8);
+									var  hour=list[i].updDateTime.substring(8,10);
+									var minute=list[i].updDateTime.substring(10,12);
+									var second=list[i].updDateTime.substring(12,14);
+									console.log(year,month,data,hour,minute,second)
+									time=year+'-'+month+'-'+data+' '+hour+':'+minute+':'+second;
+									
+									html+='<tr>';
+									html+='<td>'+list[i].orderUserName+'</td>';
+									html+='<td>'+list[i].aplDrugDose+'</td>';
+									html+='<td>'+list[i].moblNo+'</td>';
+									html+='<td>'+list[i].recieveDoseAddress+'</td>';
+									html+='<td>'+time+'</td>';
+									html+='<td>'+list[i].aplDrugCount+'</td>';
+									html+='<td>'+list[i].expressNumber+'</td>';
+									if(list[i].aplDrugStat==00){
+										html+='<td>已申请</td>';
+										html+='<td><button class="give" userId="'+list[i].userId+'">派送</button></td>';
+									}else if(list[i].aplDrugStat==01){
+										html+='<td>已派送</td>';
+										html+='<td></td>'
+									}
+									
+									
+								}
+								 $('.agenList').html(html);
+								 $('.give').click(function(){
+								 
+								 	var userId=$(this).attr('userId');
+								 	sessionStorage.setItem('userId',userId)
+								 	
+								 	 $(function () { $('#myModal').modal({
+            							keyboard: true
+        								})});
+								 })
+							}
+						}
+					},
+					error: function(data) {
+						console.log(data)
+					}
+				})
+			}
+		
+			    
+			 function page(){  //这段代码不能放在tiaojianQuery()函数内执行，会引起下一页出问题
+			 	
+			 	$(".tcdPageCode").remove();
+   				 $(".isPage").append("<div class='tcdPageCode'></div>");
+			 	console.log(666)
+					$(".tcdPageCode").createPage({
+				        pageCount:totalCount,
+				        current:1,
+				        backFn:function(p){
+				          tiaojianQuery(p)
+				          
+				        }
+				    });
+				}    
+			    
+			    
+			    $('#sure').click(function(){
+			    	var userId=sessionStorage.getItem('userId');
+			    	var num=$('#num').val()
+			    	if(num==''){
+			    		alert('请输入快递单号')
+			    		return false;
+			    	}
+			    	numer(userId,num)
+			    })
+			    function numer(userId,num){
+			    	$.ajax({
+					type: "POST",
+					url: dataUrl + "/ApplyAgentController/updateAgentStaut.do",
+//					contentType: 'application/json;charset=utf-8',
+					dataType: "JSON",
+					 async:false,
+					data:{
+						userId:userId,
+						agentStaut:01,
+						expressNumber:num
+					},
+					success: function(data) {
+						console.log(data)
+						if(data.sum>0){
+							tiaojianQuery(pageNumber)
+								$('#myModal').hide()
+               					$('.modal-backdrop').hide()
+						}
+					}
+					})
+			    }
+			    
+		</script>
+		<script type="text/javascript">
+			//修改状态
+			function updStaut(userId) {
+				//进行删除操作(通过ajax)
+				//使用jquery实现ajax
+				$.ajax({
+					url: dataUrl + "/ApplyAgentController/updateAgentStaut.do",
+					data: {
+						"userId": userId,
+						"agentStaut": "01"
+					},
+					type: "post",
+					success: function(data) {
+						confirm("成功");
+						window.location = 'drug_quota.html';
+					}
+				});
+			}
+		</script>
+
+		<!--common scripts for all pages-->
+		<script src="../js/scripts.js"></script>
+		<!--日期的选择相关-->
+	
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+		<script src="../js/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.fr.js"></script>
+		<script type="text/javascript">
+			$(".form_datetime").datetimepicker({
+				format: "yyyy-mm-dd",
+				autoclose: true,
+				todayBtn: true,
+				pickerPosition: "bottom-left"
+			});
+			$(function() {
+				$('#datetimepicker6').datetimepicker();
+				$('#datetimepicker7').datetimepicker({
+					useCurrent: false //Important! See issue #1075
+				});
+				$("#datetimepicker6").on("dp.change", function(e) {
+					$('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+				});
+				$("#datetimepicker7").on("dp.change", function(e) {
+					$('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+				});
+			});
+		</script>
+		<!--日期的选择相关结束-->
+	</body>
+
+</html>

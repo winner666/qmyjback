@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.DiscountManageMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.DiscountManage" >
+    <id column="discount_plan" property="discountPlan" jdbcType="CHAR" />
+    <result column="discount_percent" property="discountPercent" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    discount_plan, discount_percent, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from discount_manage
+    where discount_plan = #{discountPlan,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from discount_manage
+    where discount_plan = #{discountPlan,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.DiscountManage" >
+    insert into discount_manage (discount_plan, discount_percent, remark
+      )
+    values (#{discountPlan,jdbcType=CHAR}, #{discountPercent,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.DiscountManage" >
+    insert into discount_manage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="discountPlan != null" >
+        discount_plan,
+      </if>
+      <if test="discountPercent != null" >
+        discount_percent,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="discountPlan != null" >
+        #{discountPlan,jdbcType=CHAR},
+      </if>
+      <if test="discountPercent != null" >
+        #{discountPercent,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.DiscountManage" >
+    update discount_manage
+    <set >
+      <if test="discountPercent != null" >
+        discount_percent = #{discountPercent,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where discount_plan = #{discountPlan,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.DiscountManage" >
+    update discount_manage
+    set discount_percent = #{discountPercent,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where discount_plan = #{discountPlan,jdbcType=CHAR}
+  </update>
+</mapper>

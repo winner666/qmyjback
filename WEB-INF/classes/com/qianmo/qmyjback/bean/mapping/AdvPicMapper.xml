@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmo.qmyjback.bean.mapper.AdvPicMapper" >
+  <resultMap id="BaseResultMap" type="com.qianmo.qmyjback.bean.dto.AdvPic" >
+    <id column="pic_code" property="picCode" jdbcType="CHAR" />
+    <result column="pic_type" property="picType" jdbcType="VARCHAR" />
+    <result column="pic_url" property="picUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pic_code, pic_type, pic_url
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from adv_pic
+    where pic_code = #{picCode,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from adv_pic
+    where pic_code = #{picCode,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qianmo.qmyjback.bean.dto.AdvPic" >
+    insert into adv_pic (pic_code, pic_type, pic_url
+      )
+    values (#{picCode,jdbcType=CHAR}, #{picType,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianmo.qmyjback.bean.dto.AdvPic" >
+    insert into adv_pic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="picCode != null" >
+        pic_code,
+      </if>
+      <if test="picType != null" >
+        pic_type,
+      </if>
+      <if test="picUrl != null" >
+        pic_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="picCode != null" >
+        #{picCode,jdbcType=CHAR},
+      </if>
+      <if test="picType != null" >
+        #{picType,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null" >
+        #{picUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianmo.qmyjback.bean.dto.AdvPic" >
+    update adv_pic
+    <set >
+      <if test="picType != null" >
+        pic_type = #{picType,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null" >
+        pic_url = #{picUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pic_code = #{picCode,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianmo.qmyjback.bean.dto.AdvPic" >
+    update adv_pic
+    set pic_type = #{picType,jdbcType=VARCHAR},
+      pic_url = #{picUrl,jdbcType=VARCHAR}
+    where pic_code = #{picCode,jdbcType=CHAR}
+  </update>
+  <!--查询青木易家banner图列表-->
+  <select id="selectBannerList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from adv_pic
+  </select>
+</mapper>

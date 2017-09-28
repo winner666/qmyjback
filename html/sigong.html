@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>甲醛的危害</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.si{
+				width: 80%;
+				height: auto;
+				margin: auto;
+			}
+			.banner{
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		</style>
+		<script src="../js/jquery-1.10.2.min.js"></script>
+		<script src="../js/url.js"></script>
+		<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/modernizr.min.js"></script>
+		<script src="../js/jquery.nicescroll.js"></script>
+	</head>
+
+	<body bgcolor="#eeeeee">
+	<div class="Thlog_box" id="zhengyue">
+
+	</div>
+	<script type="text/javascript">
+        $(function(){
+            $.ajax({
+                type: "GET",
+                url:dataUrl+'/CommponyInfoController/queryCommponyInfo.do',
+                data:{"priKey":"00"},
+                dataType: "json",
+                success: function(data){
+                    $.each(data,function(i,item){
+                        $('#zhengyue').html(item.constructMethod);
+                    });
+
+                }
+            });
+        });
+	</script>
+	</body>
+
+</html>
